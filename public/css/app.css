@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 *,
 *::before,
 *::after {
@@ -504,5 +506,107 @@ img {
   color: #117355;
   margin-bottom: 1.5rem;
   padding: 1rem;
+}
+
+.note-form {
+  background: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  max-height: 75vh;
+  max-width: 600px;
+  overflow: scroll;
+  padding: 1.5rem;
+  position: absolute;
+  right: 2%;
+  top: 3.5rem;
+  width: 90%;
+}
+
+li {
+  list-style: none;
+}
+
+.title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.border {
+  border-bottom: 1px solid #ccc;
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+}
+
+.image-radio-button {
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 20px;
+  padding: 10px;
+  float: left;
+}
+
+.image-radio-button:hover {
+  background: #eee;
+}
+
+.image-radio-button label {
+  cursor: pointer;
+}
+
+.raised {
+  display: inline-block;
+  background-color: #26a69b;
+  /*背景色*/
+  color: #FFF;
+  /*文字色*/
+  font-size: 1em;
+  /*文字サイズ*/
+  line-height: 1;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  /*字間*/
+  padding: 0.2em 1em;
+  /*ボタン内の余白*/
+  border-radius: 3px;
+  /*角の丸み*/
+  cursor: pointer;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  /*影*/
+  -webkit-tap-highlight-color: transparent;
+  transition: 0.3s ease-out;
+  /*変化を緩やかに*/
+}
+
+.raised:hover {
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+  /*浮き上がるように*/
+}
+
+textarea,
+button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+textarea {
+  background: #f8f8f8;
+  display: block;
+  font-size: 16px;
+  padding: 12px 15px;
+  width: 480px;
+  transition: 0.8s;
+  border-radius: 0;
 }
 

@@ -6,6 +6,9 @@ import FeelingList from './pages/FeelingList.vue'
 import Login from './pages/Login.vue'
 import store from './store'
 import SystemError from './pages/errors/System.vue'
+import NoteDetail from './pages/NoteDetail.vue'
+
+import sendpage from './pages/sendpage.vue'
 
 // VueRouterプラグインを使用する
 // これによって<RouterView />コンポーネントなどを使うことができる
@@ -16,6 +19,15 @@ const routes = [
   {
     path: '/',
     component: FeelingList
+  },
+  {
+    path: '/sendpage',
+    component: sendpage
+  },
+  {
+    path: '/notes/:id',
+    component: NoteDetail,
+    props: true
   },
   {
     path: '/login',

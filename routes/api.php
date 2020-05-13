@@ -24,3 +24,6 @@ Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 // ログインユーザー
 Route::get('/user', fn() => Auth::user())->name('user');
+
+// ノート投稿
+Route::post('/notes', 'NoteController@create')->name('note.create');
