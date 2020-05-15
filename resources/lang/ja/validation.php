@@ -103,6 +103,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'record' => '日付'
+    ],
 
 ];

@@ -24,7 +24,7 @@ class StoreNote extends FormRequest
     public function rules()
     {
         return [
-            'record' => 'required',
+            'record' => 'required|unique:notes',
             'wake_uptime' => 'required',
             'bedtime' => 'required',
             //'am_image' => 'required',

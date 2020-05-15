@@ -140,9 +140,8 @@ export default {
         async note () {
             await this.$store.dispatch('create/note', this.noteform)
             
-            this.$emit('input', false)
-            
             if (this.apiStatus) {
+                this.$emit('input', false)
                 this.$router.push('/sendpage')
                 //this.$router.push(`/notes/${response.data.id}`)
             }

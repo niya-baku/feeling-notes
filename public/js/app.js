@@ -2274,14 +2274,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 return _this.$store.dispatch('create/note', _this.noteform);
 
               case 2:
-                _this.$emit('input', false);
-
                 if (_this.apiStatus) {
+                  _this.$emit('input', false);
+
                   _this.$router.push('/sendpage'); //this.$router.push(`/notes/${response.data.id}`)
 
                 }
 
-              case 4:
+              case 3:
               case "end":
                 return _context.stop();
             }
