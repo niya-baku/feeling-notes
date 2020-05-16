@@ -13,3 +13,5 @@
 
 Route::get('/{any?}', fn() => view('index'))->where('any', '.+');
 
+//Route::get('/', 'NoteController@index');
+

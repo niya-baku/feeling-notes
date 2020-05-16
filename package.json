@@ -25,6 +25,7 @@
         "vuex": "^3.3.0"
     },
     "dependencies": {
+        "vue-scrollto": "^2.18.1",
         "yargs-parser": "^13.1.2"
     }
 }

@@ -14,6 +14,25 @@ class NoteController extends Controller
         $this->middleware('auth');
     }
 
+    /**
+     * 写真一覧
+     */
+    public function index()
+    {
+        $notes = Note::with(['user'])->orderBy(Note::CREATED_AT, 'desc')->paginate();
+        //$notes = Note::all();
+        //dd($notes);
+        //return view('index', compact('notes'));
+        return $notes;
+    }
+
+    public function show($id)
+    {
+        $note = Note::where('id', $id)->with(['user'])->first();
+
+        return $note ?? abort(404);
+    }
+
     public function create(StoreNote $request){
 
         $note = new Note();

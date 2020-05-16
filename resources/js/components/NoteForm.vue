@@ -1,6 +1,7 @@
 <template>
     <div v-show="value" class="note-form">
     <form class="form" @submit.prevent="note">
+
           <div v-if="noteErrors" class="errors">
             <ul v-if="noteErrors.record">
             <li v-for="msg in noteErrors.record" :key="msg">{{ msg }}</li>
@@ -11,7 +12,8 @@
             <ul v-if="noteErrors.bedtime">
             <li v-for="msg in noteErrors.bedtime" :key="msg">{{ msg }}</li>
             </ul>
-        </div>
+            </div>
+
         <h3 class="note_title">記録日</h3>
         <input type="date" name="record" v-model="noteform.record"><br>
         
@@ -81,7 +83,7 @@
                     </li>
                 </ol>
             </div>-->
-            <button type="submit" class="raised">投稿する</button>
+            <button type="submit" class="raised" >投稿する</button>
         </div>
     </form>
     </div>
@@ -144,6 +146,8 @@ export default {
                 this.$emit('input', false)
                 this.$router.push('/sendpage')
                 //this.$router.push(`/notes/${response.data.id}`)
+            }else{
+                console.log('send NG')
             }
         }
     }

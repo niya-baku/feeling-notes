@@ -104,7 +104,9 @@ return [
     */
 
     'attributes' => [
-        'record' => '日付'
+        'record' => '日付',
+        'wake_uptime' => '起床時間',
+        'bedtime' => '就寝時間'
     ],
 
 ];
