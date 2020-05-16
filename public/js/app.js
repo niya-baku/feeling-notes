@@ -2126,12 +2126,63 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     item: {
       type: Object,
       required: true
     }
+  },
+  data: function data() {
+    return {
+      show: false,
+      am_icon_id: 1,
+      pm_icon_id: 1,
+      night_icon_id: 1,
+      am_icons: {
+        1: '/images/absolute_upset_nimi.png',
+        2: '/images/upset_nimi.png',
+        3: '/images/usually_nimi.png',
+        4: '/images/smile_nimi.png',
+        5: '/images/nice_smile_nimi.png'
+      },
+      pm_icons: {
+        1: '/images/absolute_upset_nimi.png',
+        2: '/images/upset_nimi.png',
+        3: '/images/usually_nimi.png',
+        4: '/images/smile_nimi.png',
+        5: '/images/nice_smile_nimi.png'
+      },
+      night_icons: {
+        1: '/images/absolute_upset_nimi.png',
+        2: '/images/upset_nimi.png',
+        3: '/images/usually_nimi.png',
+        4: '/images/smile_nimi.png',
+        5: '/images/nice_smile_nimi.png'
+      }
+    };
   }
 });
 
@@ -4066,30 +4117,97 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "photo" },
+    { staticClass: "note" },
     [
-      _c("figure", { staticClass: "photo__wrapper" }, [
-        _vm._v(
-          "\n    日付 " +
-            _vm._s(_vm.item.record) +
-            "\n    起床時間" +
-            _vm._s(_vm.item.wake_uptime) +
-            "\n    就寝時間" +
-            _vm._s(_vm.item.bedtime) +
-            "\n    午前中の気分" +
-            _vm._s(_vm.item.am_image) +
-            "\n    午後の気分" +
-            _vm._s(_vm.item.pm_image) +
-            "\n    夜の気分" +
-            _vm._s(_vm.item.night_image) +
-            "\n    一言" +
-            _vm._s(_vm.item.body) +
-            "\n  "
-        )
+      _c("figure", { staticClass: "note__wrapper" }, [
+        _c("h3", { staticClass: "note_title" }, [
+          _vm._v("日付 " + _vm._s(_vm.item.record))
+        ]),
+        _vm._v(" "),
+        _c("h3", { staticClass: "item" }, [
+          _vm._v("起床時間" + _vm._s(_vm.item.wake_uptime))
+        ]),
+        _vm._v(" "),
+        _c("h3", { staticClass: "item" }, [
+          _vm._v("就寝時間" + _vm._s(_vm.item.bedtime))
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "icon_display" }, [
+          _c(
+            "div",
+            { staticClass: "icon_side" },
+            [
+              _c("p", { staticClass: "icon_Vertical" }, [
+                _vm._v("午前の気分"),
+                _c("span", { staticClass: "hidden_id" }, [
+                  _vm._v(_vm._s((_vm.am_icon_id = _vm.item.am_image)))
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.am_icons, function(am_icon, id) {
+                return _c("div", [
+                  id == _vm.am_icon_id
+                    ? _c("div", { staticClass: "image-radio-button" }, [
+                        _c("img", { attrs: { src: am_icon } })
+                      ])
+                    : _vm._e()
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "icon_side" },
+            [
+              _c("p", { staticClass: "icon_Vertical" }, [
+                _vm._v("午後の気分"),
+                _c("span", { staticClass: "hidden_id" }, [
+                  _vm._v(_vm._s((_vm.pm_icon_id = _vm.item.pm_image)))
+                ])
+              ]),
+              _vm._l(_vm.pm_icons, function(pm_icon, id) {
+                return _c("div", [
+                  id == _vm.pm_icon_id
+                    ? _c("div", { staticClass: "image-radio-button" }, [
+                        _c("img", { attrs: { src: pm_icon } })
+                      ])
+                    : _vm._e()
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "icon_side" },
+            [
+              _c("p", { staticClass: "icon_Vertical" }, [
+                _vm._v("夜の気分"),
+                _c("span", { staticClass: "hidden_id" }, [
+                  _vm._v(_vm._s((_vm.night_icon_id = _vm.item.night_image)))
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.night_icons, function(night_icon, id) {
+                return _c("div", [
+                  id == _vm.night_icon_id
+                    ? _c("div", { staticClass: "image-radio-button" }, [
+                        _c("img", { attrs: { src: night_icon } })
+                      ])
+                    : _vm._e()
+                ])
+              })
+            ],
+            2
+          )
+        ])
       ]),
       _vm._v(" "),
       _c("RouterLink", {
-        staticClass: "photo__overlay",
+        staticClass: "note__overlay",
         attrs: { to: "/notes/" + _vm.item.id }
       })
     ],

@@ -610,3 +610,110 @@ textarea {
   border-radius: 0;
 }
 
+.note {
+  position: relative;
+}
+
+.note:hover .note__overlay {
+  visibility: visible;
+}
+
+.note:nth-child(4n+1) .note__wrapper {
+  background: #DBBCD5;
+}
+
+.note:nth-child(4n+2) .note__wrapper {
+  background: #DBDBBC;
+}
+
+.note:nth-child(4n+3) .note__wrapper {
+  background: #BCDBC8;
+}
+
+.note:nth-child(4n) .note__wrapper {
+  background: #BCC8DB;
+}
+
+.note__wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.note__image {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.note__overlay {
+  background: rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  color: #fff;
+  cursor: zoom-in;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  left: 0;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+  top: 0;
+  visibility: hidden;
+}
+
+.note__controls {
+  text-align: right;
+}
+
+.note__action {
+  background: #fff;
+  border: 0;
+  border-radius: 0.25rem;
+  color: #222;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  margin-left: 0.25rem;
+  opacity: 0.8;
+  outline: none;
+  padding: 0.5em 0.75em;
+}
+
+.note__action:hover {
+  opacity: 1;
+}
+
+.note__action--like .icon {
+  color: #e4406f;
+  margin-right: 0.5em;
+}
+
+.note__action--liked {
+  background: #e4406f;
+  color: #fff;
+}
+
+.note__action--liked .icon {
+  color: #fff;
+}
+
+.icon_display {
+  text-align: center;
+}
+
+.icon_side {
+  display: inline-block;
+}
+
+.hidden_id {
+  visibility: hidden;
+}
+

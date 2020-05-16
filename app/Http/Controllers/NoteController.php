@@ -20,9 +20,6 @@ class NoteController extends Controller
     public function index()
     {
         $notes = Note::with(['user'])->orderBy(Note::CREATED_AT, 'desc')->paginate();
-        //$notes = Note::all();
-        //dd($notes);
-        //return view('index', compact('notes'));
         return $notes;
     }
 
