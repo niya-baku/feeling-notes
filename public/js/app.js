@@ -2183,6 +2183,31 @@ __webpack_require__.r(__webpack_exports__);
         5: '/images/nice_smile_nimi.png'
       }
     };
+  },
+  methods: {
+    am_icon_display: function am_icon_display() {
+      this.am_icon_id = this.item.am_image;
+      return this.am_icon_id;
+    },
+    pm_icon_display: function pm_icon_display() {
+      this.pm_icon_id = this.item.pm_image;
+      return this.pm_icon_id;
+    },
+    night_icon_display: function night_icon_display() {
+      this.night_icon_id = this.item.night_image;
+      return this.night_icon_id;
+    }
+  },
+  computed: {
+    show_am_id: function show_am_id() {
+      return this.am_icon_display();
+    },
+    show_pm_id: function show_pm_id() {
+      return this.pm_icon_display();
+    },
+    show_night_id: function show_night_id() {
+      return this.night_icon_display();
+    }
   }
 });
 
@@ -2725,6 +2750,190 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   created: function created() {
     this.clearError();
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/NoteDetail.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/NoteDetail.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util */ "./resources/js/util.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    id: {
+      type: String,
+      required: true
+    }
+  },
+  data: function data() {
+    return {
+      note: null,
+      am_icon_id: 1,
+      pm_icon_id: 1,
+      night_icon_id: 1,
+      am_icons: {
+        1: '/images/absolute_upset_nimi.png',
+        2: '/images/upset_nimi.png',
+        3: '/images/usually_nimi.png',
+        4: '/images/smile_nimi.png',
+        5: '/images/nice_smile_nimi.png'
+      },
+      pm_icons: {
+        1: '/images/absolute_upset_nimi.png',
+        2: '/images/upset_nimi.png',
+        3: '/images/usually_nimi.png',
+        4: '/images/smile_nimi.png',
+        5: '/images/nice_smile_nimi.png'
+      },
+      night_icons: {
+        1: '/images/absolute_upset_nimi.png',
+        2: '/images/upset_nimi.png',
+        3: '/images/usually_nimi.png',
+        4: '/images/smile_nimi.png',
+        5: '/images/nice_smile_nimi.png'
+      }
+    };
+  },
+  methods: {
+    fetchNote: function fetchNote() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return axios.get("/api/notes/".concat(_this.id));
+
+              case 2:
+                response = _context.sent;
+
+                if (!(response.status !== _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+                  _context.next = 6;
+                  break;
+                }
+
+                _this.$store.commit('error/setCode', response.status);
+
+                return _context.abrupt("return", false);
+
+              case 6:
+                _this.note = response.data;
+
+              case 7:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    am_icon_display: function am_icon_display() {
+      this.am_icon_id = this.note.am_image;
+      return this.am_icon_id;
+    },
+    pm_icon_display: function pm_icon_display() {
+      this.pm_icon_id = this.note.pm_image;
+      return this.pm_icon_id;
+    },
+    night_icon_display: function night_icon_display() {
+      this.night_icon_id = this.note.night_image;
+      return this.night_icon_id;
+    }
+  },
+  computed: {
+    show_am_id: function show_am_id() {
+      return this.am_icon_display();
+    },
+    show_pm_id: function show_pm_id() {
+      return this.pm_icon_display();
+    },
+    show_night_id: function show_night_id() {
+      return this.night_icon_display();
+    }
+  },
+  watch: {
+    $route: {
+      handler: function handler() {
+        var _this2 = this;
+
+        return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+            while (1) {
+              switch (_context2.prev = _context2.next) {
+                case 0:
+                  _context2.next = 2;
+                  return _this2.fetchNote();
+
+                case 2:
+                case "end":
+                  return _context2.stop();
+              }
+            }
+          }, _callee2);
+        }))();
+      },
+      immediate: true
+    }
   }
 });
 
@@ -4137,16 +4346,11 @@ var render = function() {
             "div",
             { staticClass: "icon_side" },
             [
-              _c("p", { staticClass: "icon_Vertical" }, [
-                _vm._v("午前の気分"),
-                _c("span", { staticClass: "hidden_id" }, [
-                  _vm._v(_vm._s((_vm.am_icon_id = _vm.item.am_image)))
-                ])
-              ]),
+              _c("p", { staticClass: "icon_Vertical" }, [_vm._v("午前の気分")]),
               _vm._v(" "),
               _vm._l(_vm.am_icons, function(am_icon, id) {
                 return _c("div", [
-                  id == _vm.am_icon_id
+                  id == _vm.show_am_id
                     ? _c("div", { staticClass: "image-radio-button" }, [
                         _c("img", { attrs: { src: am_icon } })
                       ])
@@ -4161,15 +4365,11 @@ var render = function() {
             "div",
             { staticClass: "icon_side" },
             [
-              _c("p", { staticClass: "icon_Vertical" }, [
-                _vm._v("午後の気分"),
-                _c("span", { staticClass: "hidden_id" }, [
-                  _vm._v(_vm._s((_vm.pm_icon_id = _vm.item.pm_image)))
-                ])
-              ]),
+              _c("p", { staticClass: "icon_Vertical" }, [_vm._v("午後の気分")]),
+              _vm._v(" "),
               _vm._l(_vm.pm_icons, function(pm_icon, id) {
                 return _c("div", [
-                  id == _vm.pm_icon_id
+                  id == _vm.show_pm_id
                     ? _c("div", { staticClass: "image-radio-button" }, [
                         _c("img", { attrs: { src: pm_icon } })
                       ])
@@ -4184,16 +4384,11 @@ var render = function() {
             "div",
             { staticClass: "icon_side" },
             [
-              _c("p", { staticClass: "icon_Vertical" }, [
-                _vm._v("夜の気分"),
-                _c("span", { staticClass: "hidden_id" }, [
-                  _vm._v(_vm._s((_vm.night_icon_id = _vm.item.night_image)))
-                ])
-              ]),
+              _c("p", { staticClass: "icon_Vertical" }, [_vm._v("夜の気分")]),
               _vm._v(" "),
               _vm._l(_vm.night_icons, function(night_icon, id) {
                 return _c("div", [
-                  id == _vm.night_icon_id
+                  id == _vm.show_night_id
                     ? _c("div", { staticClass: "image-radio-button" }, [
                         _c("img", { attrs: { src: night_icon } })
                       ])
@@ -5042,7 +5237,94 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Note Detail")])
+  return _vm.note
+    ? _c("div", { staticClass: "photo-detail" }, [
+        _c("div", { staticClass: "photo-detail__pane photo-detail__image" }, [
+          _c("div", { staticClass: "icon_display" }, [
+            _c(
+              "div",
+              { staticClass: "icon_side" },
+              [
+                _c("p", { staticClass: "icon_Vertical" }, [
+                  _vm._v("午前の気分")
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.am_icons, function(am_icon, id) {
+                  return _c("div", [
+                    id == _vm.show_am_id
+                      ? _c("div", { staticClass: "image-radio-button" }, [
+                          _c("img", { attrs: { src: am_icon } })
+                        ])
+                      : _vm._e()
+                  ])
+                })
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "icon_side" },
+              [
+                _c("p", { staticClass: "icon_Vertical" }, [
+                  _vm._v("午後の気分")
+                ]),
+                _vm._v(" "),
+                _vm._l(_vm.pm_icons, function(pm_icon, id) {
+                  return _c("div", [
+                    id == _vm.show_pm_id
+                      ? _c("div", { staticClass: "image-radio-button" }, [
+                          _c("img", { attrs: { src: pm_icon } })
+                        ])
+                      : _vm._e()
+                  ])
+                })
+              ],
+              2
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "icon_side" },
+              [
+                _c("p", { staticClass: "icon_Vertical" }, [_vm._v("夜の気分")]),
+                _vm._v(" "),
+                _vm._l(_vm.night_icons, function(night_icon, id) {
+                  return _c("div", [
+                    id == _vm.show_night_id
+                      ? _c("div", { staticClass: "image-radio-button" }, [
+                          _c("img", { attrs: { src: night_icon } })
+                        ])
+                      : _vm._e()
+                  ])
+                })
+              ],
+              2
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "photo-detail__pane" }, [
+          _c("h3", { staticClass: "note_title" }, [
+            _vm._v("日付  " + _vm._s(_vm.note.record))
+          ]),
+          _vm._v(" "),
+          _c("h3", { staticClass: "item" }, [
+            _vm._v("起床時間  " + _vm._s(_vm.note.wake_uptime))
+          ]),
+          _vm._v(" "),
+          _c("h3", { staticClass: "item" }, [
+            _vm._v("就寝時間  " + _vm._s(_vm.note.bedtime))
+          ]),
+          _vm._v(" "),
+          _c("h2", { staticClass: "photo-detail__title" }, [
+            _vm._v("コメント")
+          ]),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(_vm.note.body))])
+        ])
+      ])
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -21915,15 +22197,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NoteDetail_vue_vue_type_template_id_14011fac___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NoteDetail.vue?vue&type=template&id=14011fac& */ "./resources/js/pages/NoteDetail.vue?vue&type=template&id=14011fac&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _NoteDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NoteDetail.vue?vue&type=script&lang=js& */ "./resources/js/pages/NoteDetail.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _NoteDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _NoteDetail_vue_vue_type_template_id_14011fac___WEBPACK_IMPORTED_MODULE_0__["render"],
   _NoteDetail_vue_vue_type_template_id_14011fac___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -21937,6 +22221,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/pages/NoteDetail.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/NoteDetail.vue?vue&type=script&lang=js&":
+/*!********************************************************************!*\
+  !*** ./resources/js/pages/NoteDetail.vue?vue&type=script&lang=js& ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NoteDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./NoteDetail.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/NoteDetail.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NoteDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 

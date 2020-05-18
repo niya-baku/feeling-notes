@@ -33,3 +33,4 @@ Route::get('/notes', 'NoteController@index')->name('note.index');
 
 // ノート詳細
 Route::get('/notes/{id}', 'NoteController@show')->name('note.show');
+

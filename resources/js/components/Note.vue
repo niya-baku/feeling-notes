@@ -6,25 +6,25 @@
       <h3 class="item">就寝時間{{ item.bedtime }}</h3>
       <div class="icon_display">
         <div class="icon_side">
-          <p class="icon_Vertical" >午前の気分<span class="hidden_id">{{am_icon_id = item.am_image}}</span></p>  
+          <p class="icon_Vertical" >午前の気分</p>  
           <div v-for="(am_icon,id) in am_icons">
-            <div v-if="id == am_icon_id" class="image-radio-button">
+            <div v-if="id == show_am_id" class="image-radio-button">
               <img :src="am_icon">    
             </div>
           </div>
         </div>
         <div class="icon_side">
-          <p class="icon_Vertical">午後の気分<span class="hidden_id">{{pm_icon_id = item.pm_image}}</span</p>
+          <p class="icon_Vertical">午後の気分</p>
           <div v-for="(pm_icon,id) in pm_icons">
-            <div v-if="id == pm_icon_id" class="image-radio-button">
+            <div v-if="id == show_pm_id" class="image-radio-button">
               <img :src="pm_icon">    
             </div>
           </div>
         </div>
         <div class="icon_side">
-          <p class="icon_Vertical">夜の気分<span class="hidden_id">{{night_icon_id = item.night_image}}</span></p>  
+          <p class="icon_Vertical">夜の気分</p>  
           <div v-for="(night_icon,id) in night_icons">
-            <div v-if="id == night_icon_id" class="image-radio-button">
+            <div v-if="id == show_night_id" class="image-radio-button">
               <img :src="night_icon">    
             </div>
           </div>
@@ -75,6 +75,31 @@ export default {
         5: '/images/nice_smile_nimi.png'
       },
     }
+  },
+  methods: {
+    am_icon_display: function() {
+      this.am_icon_id = this.item.am_image;
+      return this.am_icon_id;
+    },
+    pm_icon_display: function() {
+      this.pm_icon_id = this.item.pm_image;
+      return this.pm_icon_id;
+    },
+    night_icon_display: function() {
+      this.night_icon_id = this.item.night_image;
+      return this.night_icon_id;
+    }     
+  },
+  computed: {
+    show_am_id() {
+      return this.am_icon_display();
+    },
+    show_pm_id() {
+      return this.pm_icon_display();
+    },
+    show_night_id() {
+      return this.night_icon_display();
+    },
   }
 }
 </script>
