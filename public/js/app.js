@@ -2767,6 +2767,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util */ "./resources/js/util.js");
+/* harmony import */ var _components_EditForm_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/EditForm.vue */ "./resources/js/components/EditForm.vue");
+/* harmony import */ var _components_DeleteForm_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/DeleteForm.vue */ "./resources/js/components/DeleteForm.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2814,8 +2816,37 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    EditForm: _components_EditForm_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    DeleteForm: _components_DeleteForm_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   props: {
     id: {
       type: String,
@@ -2824,6 +2855,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   data: function data() {
     return {
+      showEdit: false,
+      showDelete: false,
       note: null,
       am_icon_id: 1,
       pm_icon_id: 1,
@@ -4183,6 +4216,54 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DeleteForm.vue?vue&type=template&id=2d7fc63a&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DeleteForm.vue?vue&type=template&id=2d7fc63a& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("h1", [_vm._v("削除画面です。")])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditForm.vue?vue&type=template&id=64596f4e&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EditForm.vue?vue&type=template&id=64596f4e& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("h1", [_vm._v("編集画面です。")])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Footer.vue?vue&type=template&id=61a7c374&":
 /*!*********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Footer.vue?vue&type=template&id=61a7c374& ***!
@@ -5238,92 +5319,151 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _vm.note
-    ? _c("div", { staticClass: "photo-detail" }, [
-        _c("div", { staticClass: "photo-detail__pane photo-detail__image" }, [
-          _c("div", { staticClass: "icon_display" }, [
-            _c(
-              "div",
-              { staticClass: "icon_side" },
-              [
-                _c("p", { staticClass: "icon_Vertical" }, [
-                  _vm._v("午前の気分")
+    ? _c(
+        "div",
+        { staticClass: "photo-detail" },
+        [
+          _c(
+            "div",
+            { staticClass: "photo-detail__pane photo-detail__image" },
+            [
+              _c(
+                "RouterLink",
+                { staticClass: "detail-back__brand", attrs: { to: "/" } },
+                [
+                  _c("i", { staticClass: "icon ion-ios-arrow-back" }),
+                  _vm._v(" トップに戻る\n  ")
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "condition_display" }, [
+                _c("div", { staticClass: "note-icon" }, [
+                  _c("h1", [_vm._v(_vm._s(_vm.note.record) + "の体調")]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "button2 button2--info",
+                      attrs: { title: "更新・編集" },
+                      on: {
+                        click: function($event) {
+                          _vm.showEdit = !_vm.showEdit
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "icon ion-md-information-circle" })]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "button2 button2--delete",
+                      attrs: { title: "削除" },
+                      on: {
+                        click: function($event) {
+                          _vm.showDelete = !_vm.showDelete
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "icon ion-ios-trash" })]
+                  )
                 ]),
                 _vm._v(" "),
-                _vm._l(_vm.am_icons, function(am_icon, id) {
-                  return _c("div", [
-                    id == _vm.show_am_id
-                      ? _c("div", { staticClass: "image-radio-button" }, [
-                          _c("img", { attrs: { src: am_icon } })
+                _c("div", { staticClass: "icon_display" }, [
+                  _c(
+                    "div",
+                    { staticClass: "icon_side" },
+                    [
+                      _c("p", { staticClass: "icon_Vertical" }, [
+                        _vm._v("午前の気分")
+                      ]),
+                      _vm._v(" "),
+                      _vm._l(_vm.am_icons, function(am_icon, id) {
+                        return _c("div", [
+                          id == _vm.show_am_id
+                            ? _c("div", { staticClass: "image-radio-button" }, [
+                                _c("img", { attrs: { src: am_icon } })
+                              ])
+                            : _vm._e()
                         ])
-                      : _vm._e()
-                  ])
-                })
-              ],
-              2
-            ),
+                      })
+                    ],
+                    2
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "icon_side" },
+                    [
+                      _c("p", { staticClass: "icon_Vertical" }, [
+                        _vm._v("午後の気分")
+                      ]),
+                      _vm._v(" "),
+                      _vm._l(_vm.pm_icons, function(pm_icon, id) {
+                        return _c("div", [
+                          id == _vm.show_pm_id
+                            ? _c("div", { staticClass: "image-radio-button" }, [
+                                _c("img", { attrs: { src: pm_icon } })
+                              ])
+                            : _vm._e()
+                        ])
+                      })
+                    ],
+                    2
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "icon_side" },
+                    [
+                      _c("p", { staticClass: "icon_Vertical" }, [
+                        _vm._v("夜の気分")
+                      ]),
+                      _vm._v(" "),
+                      _vm._l(_vm.night_icons, function(night_icon, id) {
+                        return _c("div", [
+                          id == _vm.show_night_id
+                            ? _c("div", { staticClass: "image-radio-button" }, [
+                                _c("img", { attrs: { src: night_icon } })
+                              ])
+                            : _vm._e()
+                        ])
+                      })
+                    ],
+                    2
+                  )
+                ])
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "photo-detail__pane" }, [
+            _c("h3", { staticClass: "note_title" }, [
+              _vm._v("日付  " + _vm._s(_vm.note.record))
+            ]),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "icon_side" },
-              [
-                _c("p", { staticClass: "icon_Vertical" }, [
-                  _vm._v("午後の気分")
-                ]),
-                _vm._v(" "),
-                _vm._l(_vm.pm_icons, function(pm_icon, id) {
-                  return _c("div", [
-                    id == _vm.show_pm_id
-                      ? _c("div", { staticClass: "image-radio-button" }, [
-                          _c("img", { attrs: { src: pm_icon } })
-                        ])
-                      : _vm._e()
-                  ])
-                })
-              ],
-              2
-            ),
+            _c("h3", { staticClass: "item" }, [
+              _vm._v("起床時間  " + _vm._s(_vm.note.wake_uptime))
+            ]),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "icon_side" },
-              [
-                _c("p", { staticClass: "icon_Vertical" }, [_vm._v("夜の気分")]),
-                _vm._v(" "),
-                _vm._l(_vm.night_icons, function(night_icon, id) {
-                  return _c("div", [
-                    id == _vm.show_night_id
-                      ? _c("div", { staticClass: "image-radio-button" }, [
-                          _c("img", { attrs: { src: night_icon } })
-                        ])
-                      : _vm._e()
-                  ])
-                })
-              ],
-              2
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "photo-detail__pane" }, [
-          _c("h3", { staticClass: "note_title" }, [
-            _vm._v("日付  " + _vm._s(_vm.note.record))
+            _c("h3", { staticClass: "item" }, [
+              _vm._v("就寝時間  " + _vm._s(_vm.note.bedtime))
+            ]),
+            _vm._v(" "),
+            _c("h2", { staticClass: "photo-detail__title" }, [
+              _vm._v("コメント")
+            ]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.note.body))])
           ]),
           _vm._v(" "),
-          _c("h3", { staticClass: "item" }, [
-            _vm._v("起床時間  " + _vm._s(_vm.note.wake_uptime))
-          ]),
+          _c("EditForm"),
           _vm._v(" "),
-          _c("h3", { staticClass: "item" }, [
-            _vm._v("就寝時間  " + _vm._s(_vm.note.bedtime))
-          ]),
-          _vm._v(" "),
-          _c("h2", { staticClass: "photo-detail__title" }, [
-            _vm._v("コメント")
-          ]),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(_vm.note.body))])
-        ])
-      ])
+          _c("DeleteForm")
+        ],
+        1
+      )
     : _vm._e()
 }
 var staticRenderFns = []
@@ -21701,6 +21841,112 @@ window.axios.interceptors.response.use(function (response) {
 }, function (error) {
   return error.response || error;
 });
+
+/***/ }),
+
+/***/ "./resources/js/components/DeleteForm.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/DeleteForm.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _DeleteForm_vue_vue_type_template_id_2d7fc63a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DeleteForm.vue?vue&type=template&id=2d7fc63a& */ "./resources/js/components/DeleteForm.vue?vue&type=template&id=2d7fc63a&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _DeleteForm_vue_vue_type_template_id_2d7fc63a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _DeleteForm_vue_vue_type_template_id_2d7fc63a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/DeleteForm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/DeleteForm.vue?vue&type=template&id=2d7fc63a&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/DeleteForm.vue?vue&type=template&id=2d7fc63a& ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DeleteForm_vue_vue_type_template_id_2d7fc63a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./DeleteForm.vue?vue&type=template&id=2d7fc63a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DeleteForm.vue?vue&type=template&id=2d7fc63a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DeleteForm_vue_vue_type_template_id_2d7fc63a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DeleteForm_vue_vue_type_template_id_2d7fc63a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/EditForm.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/components/EditForm.vue ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _EditForm_vue_vue_type_template_id_64596f4e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EditForm.vue?vue&type=template&id=64596f4e& */ "./resources/js/components/EditForm.vue?vue&type=template&id=64596f4e&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _EditForm_vue_vue_type_template_id_64596f4e___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _EditForm_vue_vue_type_template_id_64596f4e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/EditForm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/EditForm.vue?vue&type=template&id=64596f4e&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/EditForm.vue?vue&type=template&id=64596f4e& ***!
+  \*****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditForm_vue_vue_type_template_id_64596f4e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./EditForm.vue?vue&type=template&id=64596f4e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditForm.vue?vue&type=template&id=64596f4e&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditForm_vue_vue_type_template_id_64596f4e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditForm_vue_vue_type_template_id_64596f4e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 

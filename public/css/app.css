@@ -246,6 +246,39 @@ img {
   margin: 0;
 }
 
+.note-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-back {
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  height: 4rem;
+  justify-content: space-between;
+  left: 0;
+  padding: 2%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.detail-back__brand {
+  color: inherit;
+  font-family: Merriweather, serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.detail-back__brand:hover {
+  opacity: 0.6;
+}
+
 .photo-form {
   background: #fff;
   border-radius: 0.25rem;
@@ -323,6 +356,30 @@ img {
   border-color: #e4406f;
   color: #fff;
   opacity: 0.8;
+}
+
+.button2 {
+  background: transparent;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  outline: none;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.button2--info .icon {
+  color: black;
+  font-size: 30px;
+}
+
+.button2--delete .icon {
+  color: #e4406f;
+  font-size: 30px;
 }
 
 .form__item {
@@ -552,6 +609,7 @@ li {
   margin-right: 20px;
   padding: 10px;
   float: left;
+  color: #fff;
 }
 
 .image-radio-button:hover {
@@ -703,6 +761,11 @@ textarea {
 
 .note__action--liked .icon {
   color: #fff;
+}
+
+.condition_display {
+  border: 1px solid #dedede;
+  padding-bottom: 50px;
 }
 
 .icon_display {

@@ -65,4 +65,34 @@
       opacity: .8;
     }
   }
+
+}
+
+.button2 {
+  background: transparent;
+  border-radius: .25rem;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  outline: none;
+  padding: .5rem .75rem;
+  text-decoration: none;
+  transition:
+    border-color 300ms ease-in-out,
+    color 300ms ease-in-out;
+
+  &--info {
+    .icon {
+      color: black;
+      font-size: 30px;
+    }
+  }
+  &--delete {
+    .icon {
+      color: $red;
+      font-size: 30px;
+    }
+  }
 }

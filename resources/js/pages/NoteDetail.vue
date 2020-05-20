@@ -1,28 +1,50 @@
 <template>
   <div v-if="note" class="photo-detail">
     <div class="photo-detail__pane photo-detail__image">
-      <div class="icon_display">
-        <div class="icon_side">
-          <p class="icon_Vertical" >午前の気分</p>  
-          <div v-for="(am_icon,id) in am_icons">
-            <div v-if="id == show_am_id" class="image-radio-button">
-              <img :src="am_icon">    
+    <RouterLink class="detail-back__brand" to="/">
+      <i class="icon ion-ios-arrow-back"></i> トップに戻る
+    </RouterLink>
+      <div class="condition_display">
+        <div class=note-icon>
+        <h1>{{note.record}}の体調</h1>
+        <button
+          class="button2 button2--info"
+          title="更新・編集"
+          @click="showEdit = ! showEdit"
+        >
+        <i class="icon ion-md-information-circle"></i>
+        </button>
+        <button
+          class="button2 button2--delete"
+          title="削除"
+          @click="showDelete = ! showDelete"
+        >
+        <i class="icon ion-ios-trash"></i>
+        </button>
+        </div>
+        <div class="icon_display">
+          <div class="icon_side">
+            <p class="icon_Vertical" >午前の気分</p>  
+            <div v-for="(am_icon,id) in am_icons">
+              <div v-if="id == show_am_id" class="image-radio-button">
+                <img :src="am_icon">    
+              </div>
             </div>
           </div>
-        </div>
-        <div class="icon_side">
-          <p class="icon_Vertical">午後の気分</p>
-          <div v-for="(pm_icon,id) in pm_icons">
-            <div v-if="id == show_pm_id" class="image-radio-button">
-              <img :src="pm_icon">    
+          <div class="icon_side">
+            <p class="icon_Vertical">午後の気分</p>
+            <div v-for="(pm_icon,id) in pm_icons">
+              <div v-if="id == show_pm_id" class="image-radio-button">
+                <img :src="pm_icon">    
+              </div>
             </div>
           </div>
-        </div>
-        <div class="icon_side">
-          <p class="icon_Vertical">夜の気分</p>  
-          <div v-for="(night_icon,id) in night_icons">
-            <div v-if="id == show_night_id" class="image-radio-button">
-              <img :src="night_icon">    
+          <div class="icon_side">
+            <p class="icon_Vertical">夜の気分</p>  
+            <div v-for="(night_icon,id) in night_icons">
+              <div v-if="id == show_night_id" class="image-radio-button">
+                <img :src="night_icon">    
+              </div>
             </div>
           </div>
         </div>
@@ -35,14 +57,21 @@
       <h2 class="photo-detail__title">コメント</h2>
       <p>{{note.body}}</p>
     </div>
-    
+    <EditForm/>
+    <DeleteForm/>
   </div>
 </template>
 
 <script>
 import { OK } from '../util'
+import EditForm from '../components/EditForm.vue'
+import DeleteForm from '../components/DeleteForm.vue'
 
 export default {
+    components: {
+      EditForm,
+      DeleteForm
+  },
   props: {
     id: {
       type: String,
@@ -51,6 +80,8 @@ export default {
   },
   data () {
     return {
+      showEdit: false,
+      showDelete: false,
       note: null,
       am_icon_id: 1,
       pm_icon_id: 1,
