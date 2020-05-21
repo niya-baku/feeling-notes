@@ -57,8 +57,8 @@
       <h2 class="photo-detail__title">コメント</h2>
       <p>{{note.body}}</p>
     </div>
-    <EditForm/>
-    <DeleteForm/>
+    <EditForm v-model="showEdit" v-on:from-edit="close_editModal"/>
+    <DeleteForm　v-model="showDelete" v-on:from-delete="close_deleteModal"/>
   </div>
 </template>
 
@@ -80,6 +80,7 @@ export default {
   },
   data () {
     return {
+      //showContent: false,
       showEdit: false,
       showDelete: false,
       note: null,
@@ -131,7 +132,13 @@ export default {
     night_icon_display: function() {
       this.night_icon_id = this.note.night_image;
       return this.night_icon_id;
-    }     
+    },
+    close_editModal: function(){
+      this.showEdit = false
+    },
+    close_deleteModal: function(){
+      this.showDelete = false
+    }
   },
   computed: {
     show_am_id() {
