@@ -34,3 +34,10 @@ Route::get('/notes', 'NoteController@index')->name('note.index');
 // ノート詳細
 Route::get('/notes/{id}', 'NoteController@show')->name('note.show');
 
+//ノート更新
+Route::put('/notes/{id}', 'NoteController@update')->name('note.update');
+
+//ノート削除
+Route::delete('/notes/{id}', 'NoteController@delete')->name('note.delete');
+
+

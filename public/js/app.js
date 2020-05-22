@@ -2011,6 +2011,21 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2020,14 +2035,134 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
+    item: {
+      type: Object,
+      required: true
+    },
     value: {
       type: Boolean,
       required: true
     }
   },
+  data: function data() {
+    return {
+      am_icons: {
+        1: '/images/absolute_upset_nimi.png',
+        2: '/images/upset_nimi.png',
+        3: '/images/usually_nimi.png',
+        4: '/images/smile_nimi.png',
+        5: '/images/nice_smile_nimi.png'
+      },
+      pm_icons: {
+        1: '/images/absolute_upset_nimi.png',
+        2: '/images/upset_nimi.png',
+        3: '/images/usually_nimi.png',
+        4: '/images/smile_nimi.png',
+        5: '/images/nice_smile_nimi.png'
+      },
+      night_icons: {
+        1: '/images/absolute_upset_nimi.png',
+        2: '/images/upset_nimi.png',
+        3: '/images/usually_nimi.png',
+        4: '/images/smile_nimi.png',
+        5: '/images/nice_smile_nimi.png'
+      }
+    };
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
+    apiStatus: function apiStatus(state) {
+      return state.create.apiStatus;
+    },
+    noteErrors: function noteErrors(state) {
+      return state.create.noteErrorMessages;
+    }
+  })),
   methods: {
+    update: function update() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return _this.$store.dispatch('create/update', _this.item);
+
+              case 2:
+                if (_this.apiStatus) {
+                  _this.$emit('input', false); //this.$router.push('/notes/${item.id}')
+
+
+                  _this.$router.push("/");
+                } else {
+                  console.log('update NG');
+                }
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
     clickEvent: function clickEvent() {
       this.$emit('from-edit');
     }
@@ -4376,24 +4511,273 @@ var render = function() {
           expression: "value"
         }
       ],
-      staticClass: "overlay",
-      on: { click: _vm.clickEvent }
+      staticClass: "overlay"
     },
-    [_vm._m(0)]
+    [
+      _c("div", { staticClass: "modal-content" }, [
+        _c(
+          "form",
+          {
+            staticClass: "form-edit",
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.update($event)
+              }
+            }
+          },
+          [
+            _c("dl", { staticClass: "input-wide" }, [
+              _c("dt", [_vm._v("起床時間")]),
+              _vm._v(" "),
+              _c("dd", [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.item.wake_uptime,
+                      expression: "item.wake_uptime"
+                    }
+                  ],
+                  attrs: {
+                    type: "time",
+                    name: "wake_uptime",
+                    value: "00:00",
+                    step: "900"
+                  },
+                  domProps: { value: _vm.item.wake_uptime },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.item, "wake_uptime", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("dt", [_vm._v("就寝時間")]),
+              _vm._v(" "),
+              _c("dd", [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.item.bedtime,
+                      expression: "item.bedtime"
+                    }
+                  ],
+                  attrs: {
+                    type: "time",
+                    name: "bedtime",
+                    value: "00:00",
+                    step: "900"
+                  },
+                  domProps: { value: _vm.item.bedtime },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.item, "bedtime", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("h3", [_vm._v("コメント")]),
+            _vm._v(" "),
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.item.body,
+                  expression: "item.body"
+                }
+              ],
+              staticClass: "text_edit",
+              attrs: { name: "body" },
+              domProps: { value: _vm.item.body },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.item, "body", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("h3", { staticClass: "border" }, [
+              _vm._v("午前中の体調は？" + _vm._s(_vm.item.am_image))
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "display" },
+              _vm._l(_vm.am_icons, function(icon, am_id) {
+                return _c(
+                  "div",
+                  {
+                    staticClass: "image-radio-button-small",
+                    style: {
+                      background: am_id == _vm.item.am_image ? "#ddd" : ""
+                    }
+                  },
+                  [
+                    _c("label", [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.item.am_image,
+                            expression: "item.am_image"
+                          }
+                        ],
+                        attrs: { type: "radio", name: "am_icons" },
+                        domProps: {
+                          value: am_id,
+                          checked: _vm._q(_vm.item.am_image, am_id)
+                        },
+                        on: {
+                          change: function($event) {
+                            return _vm.$set(_vm.item, "am_image", am_id)
+                          }
+                        }
+                      }),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("img", {
+                        staticClass: "small-icon",
+                        attrs: { src: icon }
+                      })
+                    ])
+                  ]
+                )
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c("h3", { staticClass: "border" }, [
+              _vm._v("午後の体調は？" + _vm._s(_vm.item.pm_image))
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "display" },
+              _vm._l(_vm.pm_icons, function(icon, pm_id) {
+                return _c(
+                  "div",
+                  {
+                    staticClass: "image-radio-button-small",
+                    style: {
+                      background: pm_id == _vm.item.pm_image ? "#ddd" : ""
+                    }
+                  },
+                  [
+                    _c("label", [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.item.pm_image,
+                            expression: "item.pm_image"
+                          }
+                        ],
+                        attrs: { type: "radio", name: "pm_icons" },
+                        domProps: {
+                          value: pm_id,
+                          checked: _vm._q(_vm.item.pm_image, pm_id)
+                        },
+                        on: {
+                          change: function($event) {
+                            return _vm.$set(_vm.item, "pm_image", pm_id)
+                          }
+                        }
+                      }),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("img", {
+                        staticClass: "small-icon",
+                        attrs: { src: icon }
+                      })
+                    ])
+                  ]
+                )
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c("h3", { staticClass: "border" }, [
+              _vm._v("夜の体調は？" + _vm._s(_vm.item.night_image))
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "display" },
+              _vm._l(_vm.night_icons, function(icon, night_id) {
+                return _c(
+                  "div",
+                  {
+                    staticClass: "image-radio-button-small",
+                    style: {
+                      background: night_id == _vm.item.night_image ? "#ddd" : ""
+                    }
+                  },
+                  [
+                    _c("label", [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.item.night_image,
+                            expression: "item.night_image"
+                          }
+                        ],
+                        attrs: { type: "radio", name: "night_icons" },
+                        domProps: {
+                          value: night_id,
+                          checked: _vm._q(_vm.item.night_image, night_id)
+                        },
+                        on: {
+                          change: function($event) {
+                            return _vm.$set(_vm.item, "night_image", night_id)
+                          }
+                        }
+                      }),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("img", {
+                        staticClass: "small-icon",
+                        attrs: { src: icon }
+                      })
+                    ])
+                  ]
+                )
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c("button", { on: { click: _vm.clickEvent } }, [_vm._v("close")]),
+            _vm._v(" "),
+            _c("button", { staticClass: "raised", attrs: { type: "submit" } }, [
+              _vm._v("変更する")
+            ])
+          ]
+        )
+      ])
+    ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-content" }, [
-      _c("p", [_vm._v("編集画面です。")]),
-      _vm._v(" "),
-      _c("p", [_c("button", [_vm._v("close")])])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -5595,6 +5979,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("EditForm", {
+            attrs: { item: _vm.note },
             on: { "from-edit": _vm.close_editModal },
             model: {
               value: _vm.showEdit,
@@ -23116,7 +23501,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 var state = {
-  note: null,
+  notes: [],
   apiStatus: null,
   noteErrorMessages: null
 };
@@ -23133,6 +23518,7 @@ var mutations = {
   }
 };
 var actions = {
+  //ノート作成
   note: function note(context, data) {
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
       var response;
@@ -23175,6 +23561,94 @@ var actions = {
           }
         }
       }, _callee);
+    }))();
+  },
+  update: function update(context, data) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              context.commit('setApiStatus', null);
+              _context2.next = 3;
+              return axios.put('/api/notes/' + data.id, data)["catch"](function (err) {
+                return err.response || err;
+              });
+
+            case 3:
+              response = _context2.sent;
+
+              if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+                _context2.next = 8;
+                break;
+              }
+
+              context.commit('setApiStatus', true);
+              context.commit('setNote', response.data);
+              return _context2.abrupt("return", false);
+
+            case 8:
+              context.commit('setApiStatus', false);
+
+              if (response.status === _util__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"]) {
+                context.commit('setnoteErrorMessages', response.data.errors);
+              } else {
+                context.commit('error/setCode', response.status, {
+                  root: true
+                });
+              }
+
+            case 10:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }))();
+  },
+  "delete": function _delete(context, data) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              context.commit('setApiStatus', null);
+              _context3.next = 3;
+              return axios["delete"]('/api/notes/' + data.id, data)["catch"](function (err) {
+                return err.response || err;
+              });
+
+            case 3:
+              response = _context3.sent;
+
+              if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+                _context3.next = 8;
+                break;
+              }
+
+              context.commit('setApiStatus', true);
+              context.commit('setNote', response.data);
+              return _context3.abrupt("return", false);
+
+            case 8:
+              context.commit('setApiStatus', false);
+
+              if (response.status === _util__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"]) {
+                context.commit('setnoteErrorMessages', response.data.errors);
+              } else {
+                context.commit('error/setCode', response.status, {
+                  root: true
+                });
+              }
+
+            case 10:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
     }))();
   }
 };

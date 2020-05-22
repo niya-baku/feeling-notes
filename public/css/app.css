@@ -681,7 +681,7 @@ button {
   border: none;
 }
 
-textarea {
+.text_form {
   background: #f8f8f8;
   display: block;
   font-size: 16px;
@@ -801,5 +801,61 @@ textarea {
 
 .hidden_id {
   visibility: hidden;
+}
+
+.small-icon {
+  width: 50%;
+}
+
+.form-edit__item {
+  border: 1px solid #dedede;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5em 0.75em;
+  width: 100%;
+}
+
+.form-edit label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-edit__output {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.form-edit__button {
+  text-align: right;
+}
+
+.input-wide {
+  display: flex;
+  align-items: center;
+}
+
+.text_edit {
+  background: #f8f8f8;
+  display: block;
+  font-size: 16px;
+  padding: 12px 15px;
+  width: 700px;
+  height: 35px;
+  transition: 0.8s;
+  border-radius: 0;
+}
+
+.image-radio-button-small {
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 20px;
+  float: left;
+  color: #fff;
+}
+
+.image-radio-button-small:hover {
+  background: #eee;
 }
 

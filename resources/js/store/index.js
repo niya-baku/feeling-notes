@@ -5,6 +5,7 @@ import auth from './auth'
 import error from './error'
 import create from './create'
 
+
 Vue.use(Vuex)
 
 const store = new Vuex.Store({

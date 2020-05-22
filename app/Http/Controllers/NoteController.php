@@ -49,4 +49,25 @@ class NoteController extends Controller
         
         return response($note, 201);
     }
+
+    public function update(Request $request, $id){
+        $note = Note::find($id);
+    
+        $note->wake_uptime = $request->wake_uptime; //起床時間の取得
+        $note->bedtime = $request->bedtime; //就寝時間の取得
+        $note->am_image = $request->am_image; //午前の調子値 
+        $note->pm_image = $request->pm_image; //午後の調子値
+        $note->night_image = $request->night_image; //夜の調子値
+        $note->body = $request->body; //テキスト取得
+            //$note->bedtime = $request->bedtime; 画像データ取得 
+            
+        $note->save();
+        return $note ?? abort(404);
+    }
+
+    public function delete($id)
+    {
+        Note::find($id)->delete();
+        return redirect()->route('note.index');
+    }
 }
