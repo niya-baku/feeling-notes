@@ -25,19 +25,22 @@ Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 // ログインユーザー
 Route::get('/user', fn() => Auth::user())->name('user');
 
-// ノート投稿
-Route::post('/notes', 'NoteController@create')->name('note.create');
+// ログインしている人だけがアクセスできるルーティンググループ
+Route::group(['middleware' => 'auth'], function () {
+    // ノート投稿
+    Route::post('/notes', 'NoteController@create')->name('note.create');
 
-// ノート一覧
-Route::get('/notes', 'NoteController@index')->name('note.index');
+    // ノート一覧
+    Route::get('/notes', 'NoteController@index')->name('note.index');
 
-// ノート詳細
-Route::get('/notes/{id}', 'NoteController@show')->name('note.show');
+    // ノート詳細
+    Route::get('/notes/{id}', 'NoteController@show')->name('note.show');
 
-//ノート更新
-Route::put('/notes/{id}', 'NoteController@update')->name('note.update');
+    //ノート更新
+    Route::put('/notes/{id}', 'NoteController@update')->name('note.update');
 
-//ノート削除
-Route::delete('/notes/{id}', 'NoteController@delete')->name('note.delete');
+    //ノート削除
+    Route::delete('/notes/{id}', 'NoteController@delete')->name('note.delete');
+});
 
 

@@ -65,9 +65,10 @@ class NoteController extends Controller
         return $note ?? abort(404);
     }
 
-    public function delete($id)
+    public function delete(Request $request, $id)
     {
         Note::find($id)->delete();
-        return redirect()->route('note.index');
+
+        return response(200);
     }
 }

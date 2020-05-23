@@ -35,8 +35,6 @@
         display: block;
         font-size: 16px;
         padding: 12px 15px;
-        width: 700px;
-        height: 35px;
         transition: 0.8s;
         border-radius: 0;
 }
@@ -52,3 +50,23 @@
   .image-radio-button-small:hover {
     background: #eee;
   }
+
+  .modal-header, .modal-body {
+    padding: 5px 25px;
+  }
+  .modal-header {
+    border-bottom: 1px solid #ddd;
+  }
+
+.scrollItem{
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.ps{
+  position: absolute;
+  overflow: hidden;
+  width: 50%;
+  height: 100%;
+}

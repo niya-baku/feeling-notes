@@ -22,9 +22,14 @@ li {
   margin-bottom: 10px;
 }
 
-.item{
+.note-item{
   margin-top: 10px;
   margin-bottom: 10px;
+  text-align: center;
+}
+
+.note-title{
+  text-align: center;
 }
 
 .border{
@@ -35,14 +40,31 @@ li {
   display: flex;
   justify-content: center;
 }
+
+.display-item{
+  display: flex;
+  margin-bottom: 1.5em;
+}
+
+input.width-record{
+  height: 25%;
+  margin: 1em 0  0 1.5em; 
+}
+
+input.width-time{
+  height: 25%;
+  margin: 1em 0  0 1.5em; 
+}
+
 .image-radio-button {
   text-align: center;
   border:1px solid #ccc;
   border-radius: 5px;
-  margin-right: 20px;
+  margin: 0 0.5em 2em 0;
   padding: 10px;
   float: left;
   color: #fff;
+  background-color: #fff;
 }
 .image-radio-button:hover {
   background: #eee;
@@ -50,26 +72,6 @@ li {
 
 .image-radio-button label {
   cursor: pointer;
-}
-
-.raised{
-  display: inline-block;
-  background-color: #26a69b;/*背景色*/
-  color: #FFF;/*文字色*/
-  font-size: 1em;/*文字サイズ*/
-  line-height: 1;
-  text-decoration: none;
-  letter-spacing: 0.05em;/*字間*/
-  padding: 0.2em 1em;/*ボタン内の余白*/
-  border-radius: 3px;/*角の丸み*/
-    cursor: pointer;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);/*影*/
-  -webkit-tap-highlight-color: transparent;
-  transition: .3s ease-out;/*変化を緩やかに*/
-}
-
-.raised:hover{
-    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
 }
 
 textarea,
@@ -92,4 +94,72 @@ border: none;
   border-radius: 0;
 }
 
+.overlay{
+  /*　要素を重ねた時の順番　*/
+  z-index:1;
 
+  /*　画面全体を覆う設定　*/
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.5);
+
+  /*　画面の中央に要素を表示させる設定　*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.raised{
+  display: inline-block;
+  background-color: #26a69b;/*背景色*/
+  color: #FFF;/*文字色*/
+  font-size: 1em;/*文字サイズ*/
+  line-height: 1;
+  text-decoration: none;
+  letter-spacing: 0.05em;/*字間*/
+  padding: 0.2em 1em;/*ボタン内の余白*/
+  margin-top: 2em;
+  border-radius: 3px;/*角の丸み*/
+    cursor: pointer;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);/*影*/
+  -webkit-tap-highlight-color: transparent;
+  transition: .3s ease-out;/*変化を緩やかに*/
+}
+
+.modal-content{
+z-index:2;
+margin-top: 5em;
+padding: 2em;
+background:#fff;
+}
+
+.modal-delete{
+  z-index:2;
+  margin-top: 5em;
+  padding: 2em;
+  background:#fff;
+}
+
+.required{
+    display: inline-block;
+    background-color: #ff0000;/*背景色*/
+    color: #FFF;/*文字色*/
+    font-size: 0.8em;/*文字サイズ*/
+    line-height: 1;
+    text-decoration: none;
+    letter-spacing: 0.05em;/*字間*/
+    padding: 0.2em 0.4em;/*ボタン内の余白*/
+    margin-right: 0.5em;
+    border-radius: 3px;/*角の丸み*/
+      cursor: pointer;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);/*影*/
+    -webkit-tap-highlight-color: transparent;
+    transition: .3s ease-out;/*変化を緩やかに*/
+}
+
+.note_item{
+  display: flex;
+}

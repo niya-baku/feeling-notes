@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Note extends Model
 {
+    
     /** JSONに含める属性 */
     protected $visible = [
         'id', 'record', 'wake_uptime','bedtime','am_image','pm_image','night_image','body',

@@ -1,9 +1,9 @@
 <template>
   <div class ="note">
     <figure class="note__wrapper">
-      <h3 class="note_title">日付 {{ item.record }}</h3>
-      <h3 class="item">起床時間{{ item.wake_uptime }}</h3>
-      <h3 class="item">就寝時間{{ item.bedtime }}</h3>
+      <h3 class="note-title">日付 {{ item.record }}</h3>
+      <h3 class="note-item">起床時間{{ item.wake_uptime }}</h3>
+      <h3 class="note-item">就寝時間{{ item.bedtime }}</h3>
       <div class="icon_display">
         <div class="icon_side">
           <p class="icon_Vertical" >午前の気分</p>  

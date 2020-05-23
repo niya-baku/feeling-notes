@@ -1,6 +1,10 @@
 <template>
      <div class="overlay" v-show="value">
+      <perfect-scrollbar>
       <div class="modal-content">
+        <button class="buttonBack buttonBack--back" title="戻る" @click="clickEvent">
+          <i class="icon ion-md-close"></i>
+        </button>
       <form class="form-edit" @submit.prevent="update">
         <dl class="input-wide">
           <dt >起床時間</dt>
@@ -53,16 +57,23 @@
                 </label>
             </div>
             </div>
-      <button @click="clickEvent">close</button>
-      <button type="submit" class="raised" >変更する</button>
+        <div class="button-submit">
+          <button @click="clickEvent" class="cancel">キャンセル</button>
+          <button type="submit" class="change" >変更する</button>
+        </div>
       </form>
       </div>
+      </perfect-scrollbar>
     </div>
 </template>
 
 <script>
+import { PerfectScrollbar } from 'vue2-perfect-scrollbar'
 import { mapState } from 'vuex'
 export default {
+  components:{
+    PerfectScrollbar
+  },
   props: {
     item: {
       type: Object,
@@ -105,20 +116,19 @@ export default {
     })
   },
   methods :{
+    clickEvent: function(){
+      this.$emit('from-edit')
+    },
     async update () {
       await this.$store.dispatch('create/update', this.item)
       
       if (this.apiStatus) {
           this.$emit('input', false)
-          //this.$router.push('/notes/${item.id}')
-          this.$router.push("/")
       }else{
           console.log('update NG')
       }
-    },
-    clickEvent: function(){
-      this.$emit('from-edit')
     }
   }
 }
 </script>
+<style src="vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css"/>

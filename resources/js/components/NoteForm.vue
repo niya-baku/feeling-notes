@@ -2,27 +2,21 @@
     <div v-show="value" class="note-form">
     <form class="form" @submit.prevent="note">
 
-          <div v-if="noteErrors" class="errors">
-            <ul v-if="noteErrors.record">
-            <li v-for="msg in noteErrors.record" :key="msg">{{ msg }}</li>
-            </ul>
-            <ul v-if="noteErrors.wake_uptime">
-            <li v-for="msg in noteErrors.wake_uptime" :key="msg">{{ msg }}</li>
-            </ul>
-            <ul v-if="noteErrors.bedtime">
-            <li v-for="msg in noteErrors.bedtime" :key="msg">{{ msg }}</li>
-            </ul>
-            </div>
 
-        <h3 class="note_title">記録日</h3>
-        <input type="date" name="record" v-model="noteform.record"><br>
-        
-        <h3 class="item">起床時間 ※15分単位に設定しているので近い時間を入力して下さい</h3>
-        <input type="time" name="wake_uptime" value="00:00" step="900" v-model="noteform.wake_uptime"><br>
-        <h3 class="item">就寝時間 ※15分単位に設定しているので近い時間を入力して下さい</h3>
-        <input type="time" name="bedtime" value="00:00" step="900" v-model="noteform.bedtime"><br>
+        <div class="display-item">
+            <h3 class="note_title"><span class="required">必須</span>記録日</h3>
+            <input type="date" name="record" class="width-record" v-model="noteform.record">
+        </div>
+        <div class="display-item">
+            <h3 class="item"><span class="required">必須</span>起床時間</h3>
+            <input type="time" name="wake_uptime" class="width-time" value="00:00" step="900" v-model="noteform.wake_uptime">
+        </div>
+        <div class="display-item">
+            <h3 class="item"><span class="required">必須</span>就寝時間</h3>
+            <input type="time" name="bedtime" class="width-time" value="00:00" step="900" v-model="noteform.bedtime">
+        </div>
         <div id="app">
-            <h2 class="border">午前中の体調は？{{noteform.iconId_1}}</h2>
+            <h2 class="border">午前中の体調は？</h2>
             <div class="display">
             
             <div
@@ -37,7 +31,7 @@
             </div>
             
 
-            <h2 class="border">午後の体調は？{{noteform.iconId_2}}</h2>
+            <h2 class="border">午後の体調は？</h2>
             <div class="display">
             
             <div
@@ -52,7 +46,7 @@
             </div>
             
 
-            <h2 class="border">夜の体調は？{{noteform.iconId_3}}</h2>
+            <h2 class="border">夜の体調は？</h2>
             <div class="display">
           
             <div
@@ -67,7 +61,7 @@
             </div>
             
         
-        <h2 class="border">今日のGoodポイントは？</h2>
+        <h2 class="border">一言ありますか？</h2>
         <textarea name="body" class="text_form" v-model="noteform.body" cols="30" rows="10" placeholder="(例)早く起きれた、投稿できたとか何か褒めてみよう！"></textarea>
 
             <!--<div>
@@ -84,6 +78,17 @@
                 </ol>
             </div>-->
             <button type="submit" class="raised" >投稿する</button>
+        </div>
+            <div v-if="noteErrors" class="errors">
+            <ul v-if="noteErrors.record">
+            <li v-for="msg in noteErrors.record" :key="msg">{{ msg }}</li>
+            </ul>
+            <ul v-if="noteErrors.wake_uptime">
+            <li v-for="msg in noteErrors.wake_uptime" :key="msg">{{ msg }}</li>
+            </ul>
+            <ul v-if="noteErrors.bedtime">
+            <li v-for="msg in noteErrors.bedtime" :key="msg">{{ msg }}</li>
+            </ul>
         </div>
     </form>
     </div>
@@ -144,8 +149,8 @@ export default {
             
             if (this.apiStatus) {
                 this.$emit('input', false)
-                this.$router.push('/sendpage')
-                //this.$router.push(`/notes/${response.data.id}`)
+                //this.$router.push('/')
+                this.$router.go({ path: '/', force: true })
             }else{
                 console.log('send NG')
             }

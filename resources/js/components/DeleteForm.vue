@@ -1,22 +1,53 @@
 <template>
-     <div class="overlay" v-show="value" @click="clickEvent">
-      <div class="modal-content">
-      <p>削除画面です。</p>
-      <p><button　@click="clickEvent">キャンセル</button></p>
-      <p><button>削除</button></p>
+     <div class="overlay" v-show="value">
+      <div class="modal-delete">
+        <button class="buttonBack buttonBack--back" title="戻る" @click="clickEvent">
+            <i class="icon ion-md-close"></i>
+        </button>
+        <div class="form-edit">
+        <p>本当に削除しますか?</p>
+        
+        <form  @submit.prevent="delete_note">
+          <div class="button-submit">
+            <button type="button" @click="clickEvent" class="cancel">キャンセル</button>
+            <button type="submit" class="change" >削除</button>
+          </div>
+        </form>
+        </div>
       </div>
     </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   props: {
+    item: {
+      type: Object,
+      required: true
+    },
     value: {
       type: Boolean,
       required: true
     }
   },
+  computed: {
+      ...mapState({
+      apiStatus: state => state.create.apiStatus,
+      noteErrors: state => state.create.noteErrorMessages,
+    })
+  },
   methods :{
+    async delete_note () {
+      await this.$store.dispatch('create/delete',this.item)
+      
+      if (this.apiStatus) {
+          this.$emit('input', false)
+          this.$router.push("/")
+      }else{
+          console.log('update NG')
+      }
+    },
     clickEvent: function(){
       this.$emit('from-delete')
      }

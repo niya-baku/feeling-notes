@@ -58,7 +58,7 @@
       <p>{{note.body}}</p>
     </div>
     <EditForm v-model="showEdit" v-on:from-edit="close_editModal" :item="note"/>
-    <DeleteForm　v-model="showDelete" v-on:from-delete="close_deleteModal"/>
+    <DeleteForm　v-model="showDelete" v-on:from-delete="close_deleteModal" :item="note"/>
   </div>
 </template>
 
