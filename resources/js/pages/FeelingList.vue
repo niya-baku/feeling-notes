@@ -7,8 +7,8 @@
         :key="note.id"
         :item="note"
       />
-      <Pagination :current-page="currentPage" :last-page="lastPage" />
     </div>
+    <Pagination v-if="isLogin" :current-page="currentPage" :last-page="lastPage" />
   </div>
 </template>
 
@@ -29,6 +29,11 @@ export default {
       lastPage: 0
     }
   },
+  computed: {
+    isLogin () {
+      return this.$store.getters['auth/check']
+    }
+  },
   props: {
     page: {
       type: Number,
@@ -38,16 +43,18 @@ export default {
   },
   methods: {
     async fetchNotes() {
-      const response = await axios.get('/api/notes/?page=${this.page}')
+      if(this.$store.getters['auth/check']){
+        const response = await axios.get(`api/notes/?page=${this.page}`)
 
-      if (response.status !== OK) {
-        this.$store.commit('error/setCode', response.status)
-        return false
+        if (response.status !== OK) {
+          this.$store.commit('error/setCode', response.status)
+          return false
+        }
+
+        this.notes = response.data.data
+        this.currentPage = response.data.current_page
+        this.lastPage = response.data.last_page
       }
-
-      this.notes = response.data.data
-      this.currentPage = response.data.current_page
-      this.lastPage = response.data.last_page
     }
   },
   watch: {

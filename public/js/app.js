@@ -2624,6 +2624,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       noteform: {
+        id: null,
         record: '',
         wake_uptime: '',
         bedtime: '',
@@ -2656,6 +2657,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
+    noteStatus: function noteStatus(state) {
+      return state.create.notes;
+    },
     apiStatus: function apiStatus(state) {
       return state.create.apiStatus;
     },
@@ -2678,13 +2682,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               case 2:
                 if (_this.apiStatus) {
                   _this.$emit('input', false);
-
-                  _this.$router.push('/');
                 } else {
                   console.log('send NG');
                 }
 
-              case 3:
+                _this.$router.push("/notes/".concat(_this.noteStatus.id));
+
+              case 4:
               case "end":
                 return _context.stop();
             }
@@ -2793,6 +2797,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       lastPage: 0
     };
   },
+  computed: {
+    isLogin: function isLogin() {
+      return this.$store.getters['auth/check'];
+    }
+  },
   props: {
     page: {
       type: Number,
@@ -2810,14 +2819,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
-                return axios.get('/api/notes/?page=${this.page}');
+                if (!_this.$store.getters['auth/check']) {
+                  _context.next = 10;
+                  break;
+                }
 
-              case 2:
+                _context.next = 3;
+                return axios.get("api/notes/?page=".concat(_this.page));
+
+              case 3:
                 response = _context.sent;
 
                 if (!(response.status !== _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
-                  _context.next = 6;
+                  _context.next = 7;
                   break;
                 }
 
@@ -2825,12 +2839,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 return _context.abrupt("return", false);
 
-              case 6:
+              case 7:
                 _this.notes = response.data.data;
                 _this.currentPage = response.data.current_page;
                 _this.lastPage = response.data.last_page;
 
-              case 9:
+              case 10:
               case "end":
                 return _context.stop();
             }
@@ -5832,31 +5846,44 @@ var render = function() {
           }
         },
         [
-          _c("div", { staticClass: "display-item" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.noteform.record,
-                  expression: "noteform.record"
-                }
-              ],
-              staticClass: "width-record",
-              attrs: { type: "date", name: "record" },
-              domProps: { value: _vm.noteform.record },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.noteform, "record", $event.target.value)
-                }
+          _c(
+            "div",
+            {
+              staticClass: "display-item",
+              model: {
+                value: _vm.noteform.id,
+                callback: function($$v) {
+                  _vm.$set(_vm.noteform, "id", $$v)
+                },
+                expression: "noteform.id"
               }
-            })
-          ]),
+            },
+            [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.noteform.record,
+                    expression: "noteform.record"
+                  }
+                ],
+                staticClass: "width-record",
+                attrs: { type: "date", name: "record" },
+                domProps: { value: _vm.noteform.record },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.noteform, "record", $event.target.value)
+                  }
+                }
+              })
+            ]
+          ),
           _vm._v(" "),
           _c("div", { staticClass: "display-item" }, [
             _vm._m(1),
@@ -6234,11 +6261,13 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "photo-list" }, [
-    _c(
-      "div",
-      { staticClass: "grid" },
-      [
+  return _c(
+    "div",
+    { staticClass: "photo-list" },
+    [
+      _c(
+        "div",
+        { staticClass: "grid" },
         _vm._l(_vm.notes, function(note) {
           return _c("Note", {
             key: note.id,
@@ -6246,14 +6275,20 @@ var render = function() {
             attrs: { item: note }
           })
         }),
-        _vm._v(" "),
-        _c("Pagination", {
-          attrs: { "current-page": _vm.currentPage, "last-page": _vm.lastPage }
-        })
-      ],
-      2
-    )
-  ])
+        1
+      ),
+      _vm._v(" "),
+      _vm.isLogin
+        ? _c("Pagination", {
+            attrs: {
+              "current-page": _vm.currentPage,
+              "last-page": _vm.lastPage
+            }
+          })
+        : _vm._e()
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -6764,7 +6799,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("h2", { staticClass: "photo-detail__title" }, [
-              _vm._v("コメント")
+              _vm._v("今日の一言")
             ]),
             _vm._v(" "),
             _c("p", [_vm._v(_vm._s(_vm.note.body))])
@@ -6821,30 +6856,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("p", [_vm._v("システムエラーが発生しました。")])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sendpage.vue?vue&type=template&id=4a55fe00&":
-/*!******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sendpage.vue?vue&type=template&id=4a55fe00& ***!
-  \******************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("投稿できました！！")])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -25419,59 +25430,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/pages/sendpage.vue":
-/*!*****************************************!*\
-  !*** ./resources/js/pages/sendpage.vue ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _sendpage_vue_vue_type_template_id_4a55fe00___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sendpage.vue?vue&type=template&id=4a55fe00& */ "./resources/js/pages/sendpage.vue?vue&type=template&id=4a55fe00&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-var script = {}
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
-  _sendpage_vue_vue_type_template_id_4a55fe00___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _sendpage_vue_vue_type_template_id_4a55fe00___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/pages/sendpage.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/pages/sendpage.vue?vue&type=template&id=4a55fe00&":
-/*!************************************************************************!*\
-  !*** ./resources/js/pages/sendpage.vue?vue&type=template&id=4a55fe00& ***!
-  \************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_sendpage_vue_vue_type_template_id_4a55fe00___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./sendpage.vue?vue&type=template&id=4a55fe00& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sendpage.vue?vue&type=template&id=4a55fe00&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_sendpage_vue_vue_type_template_id_4a55fe00___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_sendpage_vue_vue_type_template_id_4a55fe00___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
 /***/ "./resources/js/router.js":
 /*!********************************!*\
   !*** ./resources/js/router.js ***!
@@ -25489,10 +25447,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
 /* harmony import */ var _pages_errors_System_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/errors/System.vue */ "./resources/js/pages/errors/System.vue");
 /* harmony import */ var _pages_NoteDetail_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/NoteDetail.vue */ "./resources/js/pages/NoteDetail.vue");
-/* harmony import */ var _pages_sendpage_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/sendpage.vue */ "./resources/js/pages/sendpage.vue");
 
  // ページコンポーネントをインポートする
-
 
 
 
@@ -25512,9 +25468,6 @@ var routes = [{
       page: /^[1-9][0-9]*$/.test(page) ? page * 1 : 1
     };
   }
-}, {
-  path: '/sendpage',
-  component: _pages_sendpage_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
 }, {
   path: '/notes/:id',
   component: _pages_NoteDetail_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
@@ -25795,13 +25748,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var state = {
   notes: [],
+  note: null,
   apiStatus: null,
   noteErrorMessages: null
 };
-var getters = {};
+var getters = {
+  getnote: function getnote(state) {
+    return state.note;
+  }
+};
 var mutations = {
   setNote: function setNote(state, note) {
-    state.note = note;
+    state.notes = note;
   },
   setApiStatus: function setApiStatus(state, status) {
     state.apiStatus = status;

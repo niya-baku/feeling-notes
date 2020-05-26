@@ -1,9 +1,9 @@
 <template>
     <div v-show="value" class="note-form">
     <form class="form" @submit.prevent="note">
+    
 
-
-        <div class="display-item">
+        <div class="display-item" v-model="noteform.id">
             <h3 class="note_title"><span class="required">必須</span>記録日</h3>
             <input type="date" name="record" class="width-record" v-model="noteform.record">
         </div>
@@ -106,6 +106,7 @@ export default {
     data(){
         return{
             noteform: {
+                id: null,
                 record: '',
                 wake_uptime: '',
                 bedtime: '',
@@ -139,21 +140,23 @@ export default {
     },
     computed: {
         ...mapState({
-        apiStatus: state => state.create.apiStatus,
-        noteErrors: state => state.create.noteErrorMessages
+            noteStatus: state => state.create.notes,
+            apiStatus: state => state.create.apiStatus,
+            noteErrors: state => state.create.noteErrorMessages
         })
     },
     methods: {
         async note () {
             await this.$store.dispatch('create/note', this.noteform)
-            
+
             if (this.apiStatus) {
                 this.$emit('input', false)
-                //this.$router.push('/')
-                this.$router.go({ path: '/', force: true })
+                
             }else{
                 console.log('send NG')
             }
+            
+            this.$router.push(`/notes/${this.noteStatus.id}`)
         }
     }
 }

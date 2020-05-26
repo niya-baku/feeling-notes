@@ -17,6 +17,8 @@ class Note extends Model
         'night_image' => 'integer'
     ];
 
+    protected $perPage = 9;
+
     /**
      * リレーションシップ - usersテーブル
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

@@ -54,7 +54,7 @@
       <h3 class="note_title">日付  {{ note.record }}</h3>
       <h3 class="item">起床時間  {{ note.wake_uptime }}</h3>
       <h3 class="item">就寝時間  {{ note.bedtime }}</h3>
-      <h2 class="photo-detail__title">コメント</h2>
+      <h2 class="photo-detail__title">今日の一言</h2>
       <p>{{note.body}}</p>
     </div>
     <EditForm v-model="showEdit" v-on:from-edit="close_editModal" :item="note"/>

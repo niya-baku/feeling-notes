@@ -33,7 +33,7 @@ class NoteController extends Controller
     public function create(StoreNote $request){
 
         $note = new Note();
-        
+
         $note->record = $request->record; //日付取得
         $note->wake_uptime = $request->wake_uptime; //起床時間の取得
         $note->bedtime = $request->bedtime; //就寝時間の取得
@@ -45,7 +45,6 @@ class NoteController extends Controller
         $note->user_id = $request->user()->id;
         
         $note->save();
-        //dd($note);
         
         return response($note, 201);
     }

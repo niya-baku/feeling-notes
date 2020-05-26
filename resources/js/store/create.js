@@ -2,15 +2,18 @@ import { OK, CREATED, UNPROCESSABLE_ENTITY } from '../util'
 
 const state = {
     notes: [],
+    note: null,
     apiStatus: null,
     noteErrorMessages: null
 }
 
-const getters = {}
+const getters = {
+    getnote: state => state.note
+}
 
 const mutations = {
     setNote (state, note) {
-        state.note = note
+        state.notes = note
     },
     setApiStatus (state, status) {
         state.apiStatus = status

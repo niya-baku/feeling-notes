@@ -9,7 +9,6 @@ import store from './store'
 import SystemError from './pages/errors/System.vue'
 import NoteDetail from './pages/NoteDetail.vue'
 
-import sendpage from './pages/sendpage.vue'
 
 // VueRouterプラグインを使用する
 // これによって<RouterView />コンポーネントなどを使うことができる
@@ -24,10 +23,6 @@ const routes = [
       const page = route.query.page
       return { page: /^[1-9][0-9]*$/.test(page) ? page * 1 : 1 }
     }
-  },
-  {
-    path: '/sendpage',
-    component: sendpage
   },
   {
     path: '/notes/:id',

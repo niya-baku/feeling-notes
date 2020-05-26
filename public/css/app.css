@@ -52,7 +52,7 @@ img {
 
 .navbar {
   align-items: center;
-  background: #fff;
+  background: #66CCFF;
   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   height: 4rem;
@@ -531,7 +531,7 @@ img {
 }
 
 .pagination {
-  text-align: right;
+  text-align: center;
 }
 
 .panel {
