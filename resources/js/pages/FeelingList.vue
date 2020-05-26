@@ -8,25 +8,25 @@
         :item="note"
       />
     </div>
-    <Pagination v-if="isLogin" :current-page="currentPage" :last-page="lastPage" />
+    <!--<Pagination v-if="isLogin" :current-page="currentPage" :last-page="lastPage" />-->
   </div>
 </template>
 
 <script>
 import { OK } from '../util'
 import Note from '../components/Note.vue'
-import Pagination from '../components/Pagination.vue'
+//import Pagination from '../components/Pagination.vue'
 
 export default {
   components: {
-    Note,
-    Pagination
+    Note
+    //Pagination
   },
   data () {
     return {
       notes: [],
-      currentPage: 0,
-      lastPage: 0
+      //currentPage: 0,
+      //lastPage: 0
     }
   },
   computed: {

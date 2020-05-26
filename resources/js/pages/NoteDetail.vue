@@ -22,7 +22,7 @@
         <i class="icon ion-ios-trash"></i>
         </button>
         </div>
-        <div class="icon_display">
+        <div class="icon_display_edit">
           <div class="icon_side">
             <p class="icon_Vertical" >午前の気分</p>  
             <div v-for="(am_icon,id) in am_icons">

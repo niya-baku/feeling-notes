@@ -96,6 +96,7 @@
 
 <script>
 import { mapState } from 'vuex'
+import { CREATED, UNPROCESSABLE_ENTITY } from '../util'
 export default {
     props: {
         value: {
@@ -105,8 +106,8 @@ export default {
     },
     data(){
         return{
+            errors: null,
             noteform: {
-                id: null,
                 record: '',
                 wake_uptime: '',
                 bedtime: '',
@@ -149,14 +150,15 @@ export default {
         async note () {
             await this.$store.dispatch('create/note', this.noteform)
 
+            console.log(this.noteform);
             if (this.apiStatus) {
                 this.$emit('input', false)
+                this.$router.push(`/notes/${this.noteStatus.id}`)
                 
             }else{
                 console.log('send NG')
             }
             
-            this.$router.push(`/notes/${this.noteStatus.id}`)
         }
     }
 }

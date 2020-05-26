@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class StoreNote extends FormRequest
 {
@@ -16,6 +18,7 @@ class StoreNote extends FormRequest
         return true;
     }
 
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -23,8 +26,15 @@ class StoreNote extends FormRequest
      */
     public function rules()
     {
+         // ログインしているユーザーIDを取得
+        $user_id = Auth::id();
         return [
-            'record' => 'required|unique:notes',
+            'record' => [
+                'required',
+                //Rule::unique('notes')->where('user_id',$user_id)
+                Rule::unique('notes', 'user_id')
+                    ->ignore($user_id, 'user_id')
+            ],
             'wake_uptime' => 'required',
             'bedtime' => 'required',
             //'am_image' => 'required',

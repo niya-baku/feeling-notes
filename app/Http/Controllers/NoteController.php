@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreNote;
+use Illuminate\Support\Facades\Auth;
 use App\Note;
 
 
@@ -19,7 +20,11 @@ class NoteController extends Controller
      */
     public function index()
     {
-        $notes = Note::with(['user'])->orderBy(Note::CREATED_AT, 'desc')->paginate();
+        $user_id = Auth::id();
+        //$notes = Note::with(['user'])->orderBy(Note::CREATED_AT, 'desc')->paginate();
+        $notes = Note::where('user_id',$user_id)->orderBy('record', 'desc')->paginate();
+        //dd($notes);
+        //return view('index', compact('notes','user_id'));
         return $notes;
     }
 

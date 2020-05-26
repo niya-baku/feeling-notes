@@ -249,7 +249,6 @@ img {
 .note-icon {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .detail-back {
@@ -929,11 +928,15 @@ button {
 }
 
 .condition_display {
-  border: 1px solid #dedede;
   padding-bottom: 50px;
 }
 
 .icon_display {
+  text-align: center;
+}
+
+.icon_display_edit {
+  border: 5px solid #dedede;
   text-align: center;
 }
 
