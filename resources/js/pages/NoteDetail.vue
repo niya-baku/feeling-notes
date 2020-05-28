@@ -112,18 +112,8 @@ export default {
   },
   methods: {
     async fetchNote () {
-      //ローカル用
-      //const response = await axios.get(`/api/notes/${this.id}`)
+      const response = await axios.get(`/api/notes/${this.id}`)
 
-      //Mixed Contentエラー回避用
-      const response = await axios.get(`/api/notes`,
-          {
-              params: {
-                // ここにクエリパラメータを指定する
-                id: this.id // このようにパラメータを付けるとhttpsになる
-              }
-          }
-      )
       if (response.status !== OK) {
         this.$store.commit('error/setCode', response.status)
         return false

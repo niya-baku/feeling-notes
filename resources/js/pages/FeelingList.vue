@@ -8,25 +8,25 @@
         :item="note"
       />
     </div>
-    <!--<Pagination v-if="isLogin" :current-page="currentPage" :last-page="lastPage" />-->
+    <Pagination v-if="isLogin" :current-page="currentPage" :last-page="lastPage" />
   </div>
 </template>
 
 <script>
 import { OK } from '../util'
 import Note from '../components/Note.vue'
-//import Pagination from '../components/Pagination.vue'
+import Pagination from '../components/Pagination.vue'
 
 export default {
   components: {
-    Note
-    //Pagination
+    Note,
+    Pagination
   },
   data () {
     return {
       notes: [],
-      //currentPage: 0,
-      //lastPage: 0
+      currentPage: 0,
+      lastPage: 0
     }
   },
   computed: {
@@ -44,7 +44,19 @@ export default {
   methods: {
     async fetchNotes() {
       if(this.$store.getters['auth/check']){
-        const response = await axios.get(`api/notes/?page=${this.page}`)
+
+        //ローカル環境用
+        //const response = await axios.get(`api/notes/?page=${this.page}`)
+
+        //Mixed Contentエラー回避用
+        const response = await axios.get(`/api/notes`,
+            {
+                params: {
+                  // ここにクエリパラメータを指定する
+                  page: this.page // このようにパラメータを付けるとhttpsになる
+                }
+            }
+        )
 
         if (response.status !== OK) {
           this.$store.commit('error/setCode', response.status)
