@@ -9,11 +9,11 @@
         </div>
         <div class="display-item">
             <h3 class="item"><span class="required">必須</span>起床時間</h3>
-            <input type="time" name="wake_uptime" class="width-time" value="00:00" step="900" v-model="noteform.wake_uptime">
+            <input type="time" name="wake_uptime" class="width-time" value="00:00"  v-model="noteform.wake_uptime">
         </div>
         <div class="display-item">
             <h3 class="item"><span class="required">必須</span>就寝時間</h3>
-            <input type="time" name="bedtime" class="width-time" value="00:00" step="900" v-model="noteform.bedtime">
+            <input type="time" name="bedtime" class="width-time" value="00:00"  v-model="noteform.bedtime">
         </div>
         <div id="app">
             <h2 class="border">午前中の体調は？</h2>
@@ -96,7 +96,6 @@
 
 <script>
 import { mapState } from 'vuex'
-import { CREATED, UNPROCESSABLE_ENTITY } from '../util'
 export default {
     props: {
         value: {
@@ -106,7 +105,6 @@ export default {
     },
     data(){
         return{
-            errors: null,
             noteform: {
                 record: '',
                 wake_uptime: '',
@@ -150,8 +148,13 @@ export default {
         async note () {
             await this.$store.dispatch('create/note', this.noteform)
 
-            console.log(this.noteform);
             if (this.apiStatus) {
+
+                // メッセージ登録
+                this.$store.commit('message/setContent', {
+                    content: '写真が投稿されました！',
+                    timeout: 6000
+                })
                 this.$emit('input', false)
                 this.$router.push(`/notes/${this.noteStatus.id}`)
                 
