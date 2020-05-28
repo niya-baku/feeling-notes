@@ -49,7 +49,7 @@ export default {
         //const response = await axios.get(`api/notes/?page=${this.page}`)
 
         Mixed Contentエラー回避用
-        const response = await axios.get(`/api/notes`,
+        const response = await axios.get(`api/notes`,
             {
                 params: {
                   // ここにクエリパラメータを指定する
