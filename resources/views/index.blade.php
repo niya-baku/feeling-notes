@@ -11,9 +11,16 @@
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather|Roboto:400">
   <link rel="stylesheet" href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css">
-
+  
+  @if(app('env')=='local')
   <!-- Styles -->
   <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+  @endif
+  @if(app('env')=='production')
+  <!-- Styles -->
+  <link href="{{ secure_asset('/css/app.css') }}" rel="stylesheet">
+  @endif
+
 </head>
 <body>
   <div id="app"></div>
