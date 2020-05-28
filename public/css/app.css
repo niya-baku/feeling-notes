@@ -653,6 +653,15 @@ img {
   padding: 1rem;
 }
 
+.deletemessage {
+  background: #f9d7d7;
+  border: 1px solid #e24141;
+  border-radius: 0.25rem;
+  color: #731111;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
 .note-form {
   background: #fff;
   border-radius: 0.25rem;

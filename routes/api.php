@@ -40,5 +40,12 @@ Route::put('/notes/{id}', 'NoteController@update')->name('note.update');
 //ノート削除
 Route::delete('/notes/{id}', 'NoteController@delete')->name('note.delete');
 
+// トークンリフレッシュ
+Route::get('/reflesh-token', function (Illuminate\Http\Request $request) {
+    $request->session()->regenerateToken();
+
+    return response()->json();
+});
+
 
 

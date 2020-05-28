@@ -9,11 +9,11 @@
         <dl class="input-wide">
           <dt >起床時間</dt>
           <dd>
-            <input type="time" name="wake_uptime" value="00:00" step="900" v-model="item.wake_uptime">
+            <input type="time" name="wake_uptime" value="00:00" v-model="item.wake_uptime">
           </dd> 
           <dt>就寝時間</dt>
           <dd>
-            <input type="time" name="bedtime" value="00:00" step="900"  v-model="item.bedtime">
+            <input type="time" name="bedtime" value="00:00" v-model="item.bedtime">
           </dd>
         </dl>
           <h3>コメント</h3>
@@ -123,6 +123,10 @@ export default {
       await this.$store.dispatch('create/update', this.item)
       
       if (this.apiStatus) {
+          this.$store.commit('message/setEditcontent', {
+            content: '情報が更新されました！',
+            timeout: 6000
+          })
           this.$emit('input', false)
       }else{
           console.log('update NG')

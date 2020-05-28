@@ -3,16 +3,7 @@ const state = {
   }
   
   const mutations = {
-    setContent (state, { content, timeout }) {
-      state.content = content
-  
-      if (typeof timeout === 'undefined') {
-        timeout = 3000
-      }
-  
-      setTimeout(() => (state.content = ''), timeout)
-    },
-    setEditcontent (state, { content, timeout }) {
+    deletecontent (state, { content, timeout }) {
       state.content = content
   
       if (typeof timeout === 'undefined') {

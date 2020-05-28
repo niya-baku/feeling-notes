@@ -23,8 +23,6 @@ class NoteController extends Controller
         $user_id = Auth::id();
         //$notes = Note::with(['user'])->orderBy(Note::CREATED_AT, 'desc')->paginate();
         $notes = Note::where('user_id',$user_id)->orderBy('record', 'desc')->paginate();
-        //dd($notes);
-        //return view('index', compact('notes','user_id'));
         return $notes;
     }
 

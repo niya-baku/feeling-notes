@@ -42,6 +42,11 @@ export default {
       await this.$store.dispatch('create/delete',this.item)
       
       if (this.apiStatus) {
+          // 削除メッセージ
+          this.$store.commit('deletemessage/deletecontent', {
+            content: '投稿が削除されました！',
+            timeout: 6000
+          })
           this.$emit('input', false)
           this.$router.push("/")
       }else{
