@@ -45,10 +45,19 @@ export default {
     async fetchNotes() {
       if(this.$store.getters['auth/check']){
 
-        //ローカル環境用
-        const response = await axios.get(`/api/notes/?page=${this.page}`)
+        
+        //const response = await axios.get(`/api/notes/?page=${this.page}`)
+        //console.log(response);
 
-   
+        const response = await axios.get(`/api/notes/`,
+            {
+              params: {
+                // ここにクエリパラメータを指定する
+                page: this.page // このようにパラメータを付けるとhttpsになる
+              }
+            }
+        )
+        console.log(response);
         if (response.status !== OK) {
           this.$store.commit('error/setCode', response.status)
           return false

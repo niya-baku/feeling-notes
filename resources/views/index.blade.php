@@ -24,6 +24,5 @@
 </head>
 <body>
   <div id="app"></div>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 </html>

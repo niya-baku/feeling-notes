@@ -2961,18 +2961,25 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 if (!_this.$store.getters['auth/check']) {
-                  _context.next = 10;
+                  _context.next = 11;
                   break;
                 }
 
                 _context.next = 3;
-                return axios.get("api/notes/?page=".concat(_this.page));
+                return axios.get("/api/notes/", {
+                  params: {
+                    // ここにクエリパラメータを指定する
+                    page: _this.page // このようにパラメータを付けるとhttpsになる
+
+                  }
+                });
 
               case 3:
                 response = _context.sent;
+                console.log(response);
 
                 if (!(response.status !== _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
-                  _context.next = 7;
+                  _context.next = 8;
                   break;
                 }
 
@@ -2980,12 +2987,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 return _context.abrupt("return", false);
 
-              case 7:
+              case 8:
                 _this.notes = response.data.data;
                 _this.currentPage = response.data.current_page;
                 _this.lastPage = response.data.last_page;
 
-              case 10:
+              case 11:
               case "end":
                 return _context.stop();
             }
@@ -3339,9 +3346,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 2:
                 response = _context.sent;
+                console.log(response);
 
                 if (!(response.status !== _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
-                  _context.next = 6;
+                  _context.next = 7;
                   break;
                 }
 
@@ -3349,10 +3357,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 return _context.abrupt("return", false);
 
-              case 6:
+              case 7:
                 _this.note = response.data;
 
-              case 7:
+              case 8:
               case "end":
                 return _context.stop();
             }
