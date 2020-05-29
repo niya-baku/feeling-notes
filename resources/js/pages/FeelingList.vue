@@ -46,7 +46,7 @@ export default {
       if(this.$store.getters['auth/check']){
 
         //ローカル環境用
-        const response = await axios.get(`/api/notes/?page=${this.page}`)
+        const response = await axios.get(`/api/notes/?page=${this.$route.query.page}`)
 
    
         if (response.status !== OK) {
