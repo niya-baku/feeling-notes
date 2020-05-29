@@ -46,16 +46,9 @@ export default {
       if(this.$store.getters['auth/check']){
 
         //ローカル環境用
-        //const response = await axios.get(`/api/notes/?page=${this.page}`)
+        const response = await axios.get(`/api/notes/?page=${this.page}`)
 
-        //Mixted contentエラー回避
-        const response = await axios.get(`/api/notes/`,
-              {
-                parames:{
-                  page: this.page
-                }
-              }
-        )     
+   
         if (response.status !== OK) {
           this.$store.commit('error/setCode', response.status)
           return false
