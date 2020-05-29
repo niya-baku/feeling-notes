@@ -2,7 +2,6 @@ import { getCookieValue } from './util'
 
 window.axios = require('axios')
 
-window.axios.defaults.baseURL = 'https://feeling-notes.herokuapp.com/'
 // Ajaxリクエストであることを示すヘッダーを付与する
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 
