@@ -48,7 +48,7 @@ export default {
         //ローカル環境用
         //const response = await axios.get(`api/notes/?page=${this.page}`)
 
-        Mixed Contentエラー回避用
+        //Mixed Contentエラー回避用
         const response = await axios.get(`api/notes`,
             {
                 params: {
