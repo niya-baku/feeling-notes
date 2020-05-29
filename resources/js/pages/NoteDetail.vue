@@ -116,7 +116,7 @@ export default {
       //const response = await axios.get(`/api/notes/${this.id}`)
 
       //Mixed Contentエラー回避用
-      const response = await axios.get(`/api/notes`,
+      const response = await axios.get(`/api/notes/`,
           {
               params: {
                 // ここにクエリパラメータを指定する
