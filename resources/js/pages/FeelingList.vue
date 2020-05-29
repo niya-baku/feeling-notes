@@ -44,20 +44,9 @@ export default {
   methods: {
     async fetchNotes() {
       if(this.$store.getters['auth/check']){
-
-        
-        //const response = await axios.get(`/api/notes/?page=${this.page}`)
-        //console.log(response);
-
-        const response = await axios.get(`https://feeling-notes.test/api/notes`,
-            {
-              params: {
-                // ここにクエリパラメータを指定する
-                page: this.page // このようにパラメータを付けるとhttpsになる
-              }
-            }
-        )
+        const response = await axios.get(`/api/notes`)
         console.log(response);
+
         if (response.status !== OK) {
           this.$store.commit('error/setCode', response.status)
           return false
