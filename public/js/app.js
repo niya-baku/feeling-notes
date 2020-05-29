@@ -2966,7 +2966,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 }
 
                 _context.next = 3;
-                return axios.get("/api/notes/", {
+                return axios.get("https://feeling-notes.test/api/notes", {
                   params: {
                     // ここにクエリパラメータを指定する
                     page: _this.page // このようにパラメータを付けるとhttpsになる
