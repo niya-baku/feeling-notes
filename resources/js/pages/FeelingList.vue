@@ -49,7 +49,7 @@ export default {
         //const response = await axios.get(`/api/notes/?page=${this.page}`)
         //console.log(response);
 
-        const response = await axios.get(`api/notes/`,
+        const response = await axios.get(`/api/notes`,
             {
               params: {
                 // ここにクエリパラメータを指定する
@@ -57,7 +57,7 @@ export default {
               }
             }
         )
-        console.log(response);
+        
         if (response.status !== OK) {
           this.$store.commit('error/setCode', response.status)
           return false
