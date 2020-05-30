@@ -17,7 +17,7 @@ class Note extends Model
         'night_image' => 'integer'
     ];
 
-    protected $perPage = 9;
+    protected $perPage = 6;
 
     /**
      * リレーションシップ - usersテーブル

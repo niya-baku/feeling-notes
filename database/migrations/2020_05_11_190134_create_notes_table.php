@@ -22,7 +22,7 @@ class CreateNotesTable extends Migration
             $table->bigInteger('am_image'); //午前の調子
             $table->bigInteger('pm_image'); //午後の調子
             $table->bigInteger('night_image'); //夜の調子
-            $table->text('body'); //自由欄
+            $table->text('body')->nullable(); //自由欄
             $table->string('image')->nullable(); //画像
             $table->timestamps();
 

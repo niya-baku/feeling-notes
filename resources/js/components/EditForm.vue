@@ -125,7 +125,7 @@ export default {
       if (this.apiStatus) {
           this.$store.commit('message/setEditcontent', {
             content: '情報が更新されました！',
-            timeout: 6000
+            timeout: 3000
           })
           this.$emit('input', false)
       }else{

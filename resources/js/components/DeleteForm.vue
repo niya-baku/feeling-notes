@@ -45,7 +45,7 @@ export default {
           // 削除メッセージ
           this.$store.commit('deletemessage/deletecontent', {
             content: '投稿が削除されました！',
-            timeout: 6000
+            timeout: 3000
           })
           this.$emit('input', false)
           this.$router.push("/")
