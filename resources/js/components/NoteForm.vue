@@ -77,7 +77,9 @@
                     </li>
                 </ol>
             </div>-->
-            <button type="submit" class="raised" >投稿する</button>
+            <div class="submit_button">
+                <button type="submit" class="raised" >投稿する</button>
+            </div>
         </div>
             <div v-if="noteErrors" class="errors">
             <ul v-if="noteErrors.record">

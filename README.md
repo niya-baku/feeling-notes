@@ -6,10 +6,14 @@
 
 # Feeling-notesとは
 
-<details><summary>自分のその日の体調を記録し、一覧表示で管理することができるアプリです。</summary>
+自分のその日の体調を記録し、一覧表示で管理することができるアプリです。
 
 ## 🌐 App URL 
 ### https://feeling-notes.site
+
+## 🔑 TEST User account
+
+### Mali test@laravel.com  PW feelingnotes
 
 ## 💬 Usage
 `$ git clone https://github.com/niya-baku/feeling-notes.git` 

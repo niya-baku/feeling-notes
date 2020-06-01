@@ -51,11 +51,11 @@
       </div>
     </div>
     <div class="photo-detail__pane">
-      <h3 class="note_title">日付  {{ note.record }}</h3>
-      <h3 class="item">起床時間  {{ note.wake_uptime }}</h3>
-      <h3 class="item">就寝時間  {{ note.bedtime }}</h3>
-      <h2 class="photo-detail__title">今日の一言</h2>
-      <p>{{note.body}}</p>
+      <h3 class="note_title"><i class="icon ion-md-bookmarks"></i>日付  {{ note.record }}</h3>
+      <h3 class="item_detail"><i class="icon ion-ios-alarm"></i>起床時間  {{ note.wake_uptime }}</h3>
+      <h3 class="item_detail"><i class="icon ion-ios-alarm"></i>就寝時間  {{ note.bedtime }}</h3>
+      <h2 class="photo-detail__title"><i class="icon ion-ios-chatbubbles"></i>今日の一言</h2>
+      <p class="photo-detail__body_border">{{note.body}}</p>
     </div>
     <EditForm v-model="showEdit" v-on:from-edit="close_editModal" :item="note"/>
     <DeleteForm　v-model="showDelete" v-on:from-delete="close_deleteModal" :item="note"/>

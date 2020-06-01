@@ -1,6 +1,6 @@
 <template>
   <div class="photo-list">
-    <div class="grid">
+    <div class="grid" media="(min-width: 320px) and (max-width: 639px)">
       <Note 
         class="grid__item"
         v-for="note in notes"
