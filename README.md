@@ -11,6 +11,10 @@
 ## 🌐 App URL 
 ### https://feeling-notes.site
 
+## 🔑 TEST User account
+
+### Mali test@laravel.com  PW feelingnotes
+
 ## 💬 Usage
 `$ git clone https://github.com/niya-baku/feeling-notes.git` 
 
