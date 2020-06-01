@@ -44,9 +44,14 @@ export default {
   methods: {
     async fetchNotes() {
       if(this.$store.getters['auth/check']){
+<<<<<<< HEAD
 
         //ローカル環境用
         const response = await axios.get(`api/notes/?page=${this.page}`)
+=======
+        const response = await axios.get(`/api/notes`)
+        console.log(response);
+>>>>>>> origin/master
 
         if (response.status !== OK) {
           this.$store.commit('error/setCode', response.status)

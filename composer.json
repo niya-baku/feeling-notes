@@ -56,6 +56,9 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "compile": [
+            "@php -r \"file_exists('.env') || copy('.env.heroku', '.env');\""
         ]
     }
 }
