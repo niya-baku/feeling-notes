@@ -2514,6 +2514,121 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Note.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Note.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    item: {
+      type: Object,
+      required: true
+    }
+  },
+  data: function data() {
+    return {
+      show: false,
+      am_icon_id: 1,
+      pm_icon_id: 1,
+      night_icon_id: 1,
+      am_icons: {
+        1: '/images/absolute_upset_nimi.png',
+        2: '/images/upset_nimi.png',
+        3: '/images/usually_nimi.png',
+        4: '/images/smile_nimi.png',
+        5: '/images/nice_smile_nimi.png'
+      },
+      pm_icons: {
+        1: '/images/absolute_upset_nimi.png',
+        2: '/images/upset_nimi.png',
+        3: '/images/usually_nimi.png',
+        4: '/images/smile_nimi.png',
+        5: '/images/nice_smile_nimi.png'
+      },
+      night_icons: {
+        1: '/images/absolute_upset_nimi.png',
+        2: '/images/upset_nimi.png',
+        3: '/images/usually_nimi.png',
+        4: '/images/smile_nimi.png',
+        5: '/images/nice_smile_nimi.png'
+      }
+    };
+  },
+  methods: {
+    am_icon_display: function am_icon_display() {
+      this.am_icon_id = this.item.am_image;
+      return this.am_icon_id;
+    },
+    pm_icon_display: function pm_icon_display() {
+      this.pm_icon_id = this.item.pm_image;
+      return this.pm_icon_id;
+    },
+    night_icon_display: function night_icon_display() {
+      this.night_icon_id = this.item.night_image;
+      return this.night_icon_id;
+    }
+  },
+  computed: {
+    show_am_id: function show_am_id() {
+      return this.am_icon_display();
+    },
+    show_pm_id: function show_pm_id() {
+      return this.pm_icon_display();
+    },
+    show_night_id: function show_night_id() {
+      return this.night_icon_display();
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NoteForm.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/NoteForm.vue?vue&type=script&lang=js& ***!
@@ -2763,14 +2878,183 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Pagination.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Pagination.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    currentPage: {
+      type: Number,
+      required: true
+    },
+    lastPage: {
+      type: Number,
+      required: true
+    }
+  },
+  computed: {
+    isFirstPage: function isFirstPage() {
+      return this.currentPage === 1;
+    },
+    isLastPage: function isLastPage() {
+      return this.currentPage === this.lastPage;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/FeelingList.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/FeelingList.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /home/ec2-user/environment/feeling-notes/resources/js/pages/FeelingList.vue: Unexpected token (47:0)\n\n\u001b[0m \u001b[90m 45 | \u001b[39m    async fetchNotes() {\u001b[0m\n\u001b[0m \u001b[90m 46 | \u001b[39m      \u001b[36mif\u001b[39m(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39m$store\u001b[33m.\u001b[39mgetters[\u001b[32m'auth/check'\u001b[39m]){\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 47 | \u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 48 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 49 | \u001b[39m        \u001b[90m//ローカル環境用\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 50 | \u001b[39m        \u001b[36mconst\u001b[39m response \u001b[33m=\u001b[39m await axios\u001b[33m.\u001b[39mget(\u001b[32m`api/notes/?page=${this.page}`\u001b[39m)\u001b[0m\n    at Parser._raise (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:742:17)\n    at Parser.raiseWithData (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:735:17)\n    at Parser.raise (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:729:17)\n    at Parser.unexpected (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:8779:16)\n    at Parser.parseExprAtom (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:10074:20)\n    at Parser.parseExprSubscripts (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:9624:23)\n    at Parser.parseMaybeUnary (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:9604:21)\n    at Parser.parseExprOps (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:9474:23)\n    at Parser.parseMaybeConditional (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:9447:23)\n    at Parser.parseMaybeAssign (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:9402:21)\n    at Parser.parseExpression (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:9354:23)\n    at Parser.parseStatementContent (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:11233:23)\n    at Parser.parseStatement (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:11104:17)\n    at Parser.parseBlockOrModuleBlockBody (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:11679:25)\n    at Parser.parseBlockBody (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:11665:10)\n    at Parser.parseBlock (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:11649:10)\n    at Parser.parseStatementContent (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:11180:21)\n    at Parser.parseStatement (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:11104:17)\n    at Parser.parseIfStatement (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:11456:28)\n    at Parser.parseStatementContent (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:11149:21)\n    at Parser.parseStatement (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:11104:17)\n    at Parser.parseBlockOrModuleBlockBody (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:11679:25)\n    at Parser.parseBlockBody (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:11665:10)\n    at Parser.parseBlock (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:11649:10)\n    at Parser.parseFunctionBody (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:10656:24)\n    at Parser.parseFunctionBodyAndFinish (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:10639:10)\n    at Parser.parseMethod (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:10601:10)\n    at Parser.parseObjectMethod (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:10517:19)\n    at Parser.parseObjPropValue (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:10559:23)\n    at Parser.parseObjectMember (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:10483:10)\n    at Parser.parseObj (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:10396:25)\n    at Parser.parseExprAtom (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:10017:28)\n    at Parser.parseExprSubscripts (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:9624:23)\n    at Parser.parseMaybeUnary (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:9604:21)\n    at Parser.parseExprOps (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:9474:23)\n    at Parser.parseMaybeConditional (/home/ec2-user/environment/feeling-notes/node_modules/@babel/parser/lib/index.js:9447:23)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util */ "./resources/js/util.js");
+/* harmony import */ var _components_Note_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Note.vue */ "./resources/js/components/Note.vue");
+/* harmony import */ var _components_Pagination_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Pagination.vue */ "./resources/js/components/Pagination.vue");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Note: _components_Note_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    Pagination: _components_Pagination_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
+  data: function data() {
+    return {
+      notes: [],
+      currentPage: 0,
+      lastPage: 0
+    };
+  },
+  computed: {
+    isLogin: function isLogin() {
+      return this.$store.getters['auth/check'];
+    }
+  },
+  props: {
+    page: {
+      type: Number,
+      required: false,
+      "default": 1
+    }
+  },
+  methods: {
+    fetchNotes: function fetchNotes() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (!_this.$store.getters['auth/check']) {
+                  _context.next = 10;
+                  break;
+                }
+
+                _context.next = 3;
+                return axios.get("api/notes/?page=".concat(_this.page));
+
+              case 3:
+                response = _context.sent;
+
+                if (!(response.status !== _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+                  _context.next = 7;
+                  break;
+                }
+
+                _this.$store.commit('error/setCode', response.status);
+
+                return _context.abrupt("return", false);
+
+              case 7:
+                _this.notes = response.data.data;
+                _this.currentPage = response.data.current_page;
+                _this.lastPage = response.data.last_page;
+
+              case 10:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  },
+  watch: {
+    $route: {
+      handler: function handler() {
+        var _this2 = this;
+
+        return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+            while (1) {
+              switch (_context2.prev = _context2.next) {
+                case 0:
+                  _context2.next = 2;
+                  return _this2.fetchNotes();
+
+                case 2:
+                case "end":
+                  return _context2.stop();
+              }
+            }
+          }, _callee2);
+        }))();
+      },
+      immediate: true
+    }
+  }
+});
 
 /***/ }),
 
@@ -5673,6 +5957,113 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Note.vue?vue&type=template&id=01dddddd&":
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Note.vue?vue&type=template&id=01dddddd& ***!
+  \*******************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "note" },
+    [
+      _c("figure", { staticClass: "note__wrapper" }, [
+        _c("h3", { staticClass: "note-title" }, [
+          _vm._v("日付 " + _vm._s(_vm.item.record))
+        ]),
+        _vm._v(" "),
+        _c("h3", { staticClass: "note-item" }, [
+          _vm._v("起床時間" + _vm._s(_vm.item.wake_uptime))
+        ]),
+        _vm._v(" "),
+        _c("h3", { staticClass: "note-item" }, [
+          _vm._v("就寝時間" + _vm._s(_vm.item.bedtime))
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "icon_display" }, [
+          _c(
+            "div",
+            { staticClass: "icon_side" },
+            [
+              _c("p", { staticClass: "icon_Vertical" }, [_vm._v("午前の気分")]),
+              _vm._v(" "),
+              _vm._l(_vm.am_icons, function(am_icon, id) {
+                return _c("div", [
+                  id == _vm.show_am_id
+                    ? _c("div", { staticClass: "image-radio-button" }, [
+                        _c("img", { attrs: { src: am_icon } })
+                      ])
+                    : _vm._e()
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "icon_side" },
+            [
+              _c("p", { staticClass: "icon_Vertical" }, [_vm._v("午後の気分")]),
+              _vm._v(" "),
+              _vm._l(_vm.pm_icons, function(pm_icon, id) {
+                return _c("div", [
+                  id == _vm.show_pm_id
+                    ? _c("div", { staticClass: "image-radio-button" }, [
+                        _c("img", { attrs: { src: pm_icon } })
+                      ])
+                    : _vm._e()
+                ])
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "icon_side" },
+            [
+              _c("p", { staticClass: "icon_Vertical" }, [_vm._v("夜の気分")]),
+              _vm._v(" "),
+              _vm._l(_vm.night_icons, function(night_icon, id) {
+                return _c("div", [
+                  id == _vm.show_night_id
+                    ? _c("div", { staticClass: "image-radio-button" }, [
+                        _c("img", { attrs: { src: night_icon } })
+                      ])
+                    : _vm._e()
+                ])
+              })
+            ],
+            2
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("RouterLink", {
+        staticClass: "note__overlay",
+        attrs: { to: "/notes/" + _vm.item.id }
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/NoteForm.vue?vue&type=template&id=480b2241&":
 /*!***********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/NoteForm.vue?vue&type=template&id=480b2241& ***!
@@ -6055,6 +6446,57 @@ var staticRenderFns = [
     ])
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Pagination.vue?vue&type=template&id=d7acf176&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Pagination.vue?vue&type=template&id=d7acf176& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "pagination" },
+    [
+      !_vm.isFirstPage
+        ? _c(
+            "RouterLink",
+            {
+              staticClass: "button",
+              attrs: { to: "/?page=" + (_vm.currentPage - 1) }
+            },
+            [_vm._v("« prev")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      !_vm.isLastPage
+        ? _c(
+            "RouterLink",
+            {
+              staticClass: "button",
+              attrs: { to: "/?page=" + (_vm.currentPage + 1) }
+            },
+            [_vm._v("next »")]
+          )
+        : _vm._e()
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -24956,6 +25398,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Note.vue":
+/*!******************************************!*\
+  !*** ./resources/js/components/Note.vue ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Note_vue_vue_type_template_id_01dddddd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Note.vue?vue&type=template&id=01dddddd& */ "./resources/js/components/Note.vue?vue&type=template&id=01dddddd&");
+/* harmony import */ var _Note_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Note.vue?vue&type=script&lang=js& */ "./resources/js/components/Note.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Note_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Note_vue_vue_type_template_id_01dddddd___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Note_vue_vue_type_template_id_01dddddd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Note.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Note.vue?vue&type=script&lang=js&":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/Note.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Note_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Note.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Note.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Note_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Note.vue?vue&type=template&id=01dddddd&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/Note.vue?vue&type=template&id=01dddddd& ***!
+  \*************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Note_vue_vue_type_template_id_01dddddd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Note.vue?vue&type=template&id=01dddddd& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Note.vue?vue&type=template&id=01dddddd&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Note_vue_vue_type_template_id_01dddddd___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Note_vue_vue_type_template_id_01dddddd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/NoteForm.vue":
 /*!**********************************************!*\
   !*** ./resources/js/components/NoteForm.vue ***!
@@ -25025,19 +25536,87 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Pagination.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/Pagination.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Pagination_vue_vue_type_template_id_d7acf176___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Pagination.vue?vue&type=template&id=d7acf176& */ "./resources/js/components/Pagination.vue?vue&type=template&id=d7acf176&");
+/* harmony import */ var _Pagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Pagination.vue?vue&type=script&lang=js& */ "./resources/js/components/Pagination.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Pagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Pagination_vue_vue_type_template_id_d7acf176___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Pagination_vue_vue_type_template_id_d7acf176___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Pagination.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Pagination.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/Pagination.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Pagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Pagination.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Pagination.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Pagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Pagination.vue?vue&type=template&id=d7acf176&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/Pagination.vue?vue&type=template&id=d7acf176& ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Pagination_vue_vue_type_template_id_d7acf176___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Pagination.vue?vue&type=template&id=d7acf176& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Pagination.vue?vue&type=template&id=d7acf176&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Pagination_vue_vue_type_template_id_d7acf176___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Pagination_vue_vue_type_template_id_d7acf176___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/FeelingList.vue":
 /*!********************************************!*\
   !*** ./resources/js/pages/FeelingList.vue ***!
   \********************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FeelingList_vue_vue_type_template_id_2527eb41___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FeelingList.vue?vue&type=template&id=2527eb41& */ "./resources/js/pages/FeelingList.vue?vue&type=template&id=2527eb41&");
 /* harmony import */ var _FeelingList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FeelingList.vue?vue&type=script&lang=js& */ "./resources/js/pages/FeelingList.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _FeelingList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _FeelingList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -25067,15 +25646,13 @@ component.options.__file = "resources/js/pages/FeelingList.vue"
 /*!*********************************************************************!*\
   !*** ./resources/js/pages/FeelingList.vue?vue&type=script&lang=js& ***!
   \*********************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FeelingList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./FeelingList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/FeelingList.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FeelingList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FeelingList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FeelingList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FeelingList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FeelingList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FeelingList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -26042,7 +26619,7 @@ var UNAUTHORIZED = 419;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\n\n<<<<<<< HEAD\n           ^\n      Expected \"{\".\n   ╷\n21 │ <<<<<<< HEAD\n   │             ^\n   ╵\n  resources/sass/_grid.scss 21:13  @import\n  stdin 4:9                        root stylesheet\n      in /home/ec2-user/environment/feeling-notes/resources/sass/_grid.scss (line 21, column 13)\n    at runLoaders (/home/ec2-user/environment/feeling-notes/node_modules/webpack/lib/NormalModule.js:316:20)\n    at /home/ec2-user/environment/feeling-notes/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /home/ec2-user/environment/feeling-notes/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/home/ec2-user/environment/feeling-notes/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at render (/home/ec2-user/environment/feeling-notes/node_modules/sass-loader/dist/index.js:89:7)\n    at Function.call$2 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:87584:16)\n    at _render_closure1.call$2 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:77359:12)\n    at _RootZone.runBinary$3$3 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:25587:18)\n    at _RootZone.runBinary$3 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:25591:19)\n    at _FutureListener.handleError$1 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:24041:19)\n    at _Future__propagateToListeners_handleError.call$0 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:24337:40)\n    at Object._Future__propagateToListeners (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:3497:88)\n    at _Future._completeError$2 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:24165:9)\n    at _AsyncAwaitCompleter.completeError$2 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:23557:12)\n    at Object._asyncRethrow (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:3253:17)\n    at /home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:13333:20\n    at _wrapJsFunctionForAsync_closure.$protected (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:3276:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:23578:12)\n    at _awaitOnObject_closure0.call$2 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:23570:25)\n    at _RootZone.runBinary$3$3 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:25587:18)\n    at _RootZone.runBinary$3 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:25591:19)\n    at _FutureListener.handleError$1 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:24041:19)\n    at _Future__propagateToListeners_handleError.call$0 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:24337:40)\n    at Object._Future__propagateToListeners (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:3497:88)\n    at _Future._completeError$2 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:24165:9)\n    at _AsyncAwaitCompleter.completeError$2 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:23557:12)\n    at Object._asyncRethrow (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:3253:17)\n    at /home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:15991:20\n    at _wrapJsFunctionForAsync_closure.$protected (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:3276:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:23578:12)\n    at _awaitOnObject_closure0.call$2 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:23570:25)\n    at _RootZone.runBinary$3$3 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:25587:18)\n    at _RootZone.runBinary$3 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:25591:19)\n    at _FutureListener.handleError$1 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:24041:19)\n    at _Future__propagateToListeners_handleError.call$0 (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:24337:40)\n    at Object._Future__propagateToListeners (/home/ec2-user/environment/feeling-notes/node_modules/sass/sass.dart.js:3497:88)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
