@@ -6,22 +6,20 @@
           <i class="icon ion-md-close"></i>
         </button>
       <form class="form-edit" @submit.prevent="update">
-        <dl class="input-wide">
-          <dt >起床時間</dt>
-          <dd>
-            <input type="time" name="wake_uptime" value="00:00" v-model="item.wake_uptime">
-          </dd> 
-          <dt>就寝時間</dt>
-          <dd>
-            <input type="time" name="bedtime" value="00:00" v-model="item.bedtime">
-          </dd>
-        </dl>
-          <h3>コメント</h3>
+        <div class="display-item_edit">
+            <h3 class="item">起床時間</h3>
+            <input type="time" name="wake_uptime" class="width-time" value="00:00"  v-model="item.wake_uptime">
+        </div>
+        <div class="display-item_edit">
+            <h3 class="item">就寝時間</h3>
+            <input type="time" name="bedtime" class="width-time" value="00:00"  v-model="item.bedtime">
+        </div>
+          <h3>今日の一言</h3>
           <textarea name="body" class="text_edit" v-model="item.body"></textarea>
         
       
 
-            <h3 class="border">午前中の体調は？{{item.am_image}}</h3>
+            <h3 class="border">午前中の体調は？</h3>
             <div class="display">          
             <div
                 v-for="(icon,am_id) in am_icons"
@@ -33,7 +31,7 @@
                 </label>
             </div>
             </div>
-            <h3 class="border">午後の体調は？{{item.pm_image}}</h3>
+            <h3 class="border">午後の体調は？</h3>
             <div class="display">            
             <div
                 v-for="(icon,pm_id) in pm_icons"
@@ -45,7 +43,7 @@
                 </label>
             </div>
             </div>
-            <h3 class="border">夜の体調は？{{item.night_image}}</h3>
+            <h3 class="border">夜の体調は？</h3>
             <div class="display">    
             <div
                 v-for="(icon,night_id) in night_icons"

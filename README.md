@@ -1,4 +1,4 @@
-# Laravel + Vue + Vue Router + Vuexを使用した体調管理アプリ「Feeling-notes」
+# Laravel + Vue + Vue Router + Vuexを使用した体調管理アプリ「Feeling-notes」(レスポンシブ対応)
 
 ![20200530235740](https://user-images.githubusercontent.com/40636920/83381193-f4b79b80-a41a-11ea-94bf-b2882f6e38bc.png)
 

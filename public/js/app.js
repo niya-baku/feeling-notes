@@ -2259,8 +2259,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -5531,63 +5529,59 @@ var render = function() {
               }
             },
             [
-              _c("dl", { staticClass: "input-wide" }, [
-                _c("dt", [_vm._v("起床時間")]),
+              _c("div", { staticClass: "display-item_edit" }, [
+                _c("h3", { staticClass: "item" }, [_vm._v("起床時間")]),
                 _vm._v(" "),
-                _c("dd", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.item.wake_uptime,
-                        expression: "item.wake_uptime"
-                      }
-                    ],
-                    attrs: {
-                      type: "time",
-                      name: "wake_uptime",
-                      value: "00:00"
-                    },
-                    domProps: { value: _vm.item.wake_uptime },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.item, "wake_uptime", $event.target.value)
-                      }
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.item.wake_uptime,
+                      expression: "item.wake_uptime"
                     }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("dt", [_vm._v("就寝時間")]),
-                _vm._v(" "),
-                _c("dd", [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.item.bedtime,
-                        expression: "item.bedtime"
+                  ],
+                  staticClass: "width-time",
+                  attrs: { type: "time", name: "wake_uptime", value: "00:00" },
+                  domProps: { value: _vm.item.wake_uptime },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
                       }
-                    ],
-                    attrs: { type: "time", name: "bedtime", value: "00:00" },
-                    domProps: { value: _vm.item.bedtime },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(_vm.item, "bedtime", $event.target.value)
-                      }
+                      _vm.$set(_vm.item, "wake_uptime", $event.target.value)
                     }
-                  })
-                ])
+                  }
+                })
               ]),
               _vm._v(" "),
-              _c("h3", [_vm._v("コメント")]),
+              _c("div", { staticClass: "display-item_edit" }, [
+                _c("h3", { staticClass: "item" }, [_vm._v("就寝時間")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.item.bedtime,
+                      expression: "item.bedtime"
+                    }
+                  ],
+                  staticClass: "width-time",
+                  attrs: { type: "time", name: "bedtime", value: "00:00" },
+                  domProps: { value: _vm.item.bedtime },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.item, "bedtime", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("h3", [_vm._v("今日の一言")]),
               _vm._v(" "),
               _c("textarea", {
                 directives: [
@@ -5611,9 +5605,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _c("h3", { staticClass: "border" }, [
-                _vm._v("午前中の体調は？" + _vm._s(_vm.item.am_image))
-              ]),
+              _c("h3", { staticClass: "border" }, [_vm._v("午前中の体調は？")]),
               _vm._v(" "),
               _c(
                 "div",
@@ -5662,9 +5654,7 @@ var render = function() {
                 0
               ),
               _vm._v(" "),
-              _c("h3", { staticClass: "border" }, [
-                _vm._v("午後の体調は？" + _vm._s(_vm.item.pm_image))
-              ]),
+              _c("h3", { staticClass: "border" }, [_vm._v("午後の体調は？")]),
               _vm._v(" "),
               _c(
                 "div",
@@ -5713,9 +5703,7 @@ var render = function() {
                 0
               ),
               _vm._v(" "),
-              _c("h3", { staticClass: "border" }, [
-                _vm._v("夜の体調は？" + _vm._s(_vm.item.night_image))
-              ]),
+              _c("h3", { staticClass: "border" }, [_vm._v("夜の体調は？")]),
               _vm._v(" "),
               _c(
                 "div",
