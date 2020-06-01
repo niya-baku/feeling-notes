@@ -2107,7 +2107,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   // 削除メッセージ
                   _this.$store.commit('deletemessage/deletecontent', {
                     content: '投稿が削除されました！',
-                    timeout: 6000
+                    timeout: 3000
                   });
 
                   _this.$emit('input', false);
@@ -2329,7 +2329,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 if (_this.apiStatus) {
                   _this.$store.commit('message/setEditcontent', {
                     content: '情報が更新されました！',
-                    timeout: 6000
+                    timeout: 3000
                   });
 
                   _this.$emit('input', false);
@@ -2749,6 +2749,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -2763,7 +2765,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         record: '',
         wake_uptime: '',
         bedtime: '',
-        body: '',
+        body: null,
         icons_1: {
           1: '/images/absolute_upset_nimi.png',
           2: '/images/upset_nimi.png',
@@ -2803,6 +2805,38 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   })),
   methods: {
+    reset: function reset() {
+      this.noteform = {
+        record: '',
+        wake_uptime: '',
+        bedtime: '',
+        body: null,
+        icons_1: {
+          1: '/images/absolute_upset_nimi.png',
+          2: '/images/upset_nimi.png',
+          3: '/images/usually_nimi.png',
+          4: '/images/smile_nimi.png',
+          5: '/images/nice_smile_nimi.png'
+        },
+        iconId_1: 3,
+        icons_2: {
+          1: '/images/absolute_upset_nimi.png',
+          2: '/images/upset_nimi.png',
+          3: '/images/usually_nimi.png',
+          4: '/images/smile_nimi.png',
+          5: '/images/nice_smile_nimi.png'
+        },
+        iconId_2: 3,
+        icons_3: {
+          1: '/images/absolute_upset_nimi.png',
+          2: '/images/upset_nimi.png',
+          3: '/images/usually_nimi.png',
+          4: '/images/smile_nimi.png',
+          5: '/images/nice_smile_nimi.png'
+        },
+        iconId_3: 3
+      };
+    },
     note: function note() {
       var _this = this;
 
@@ -2819,8 +2853,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   // メッセージ登録
                   _this.$store.commit('message/setContent', {
                     content: '写真が投稿されました！',
-                    timeout: 6000
+                    timeout: 3000
                   });
+
+                  _this.reset();
 
                   _this.$emit('input', false);
 
@@ -6329,9 +6365,7 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("button", { staticClass: "raised", attrs: { type: "submit" } }, [
-              _vm._v("投稿する")
-            ])
+            _vm._m(3)
           ]),
           _vm._v(" "),
           _vm.noteErrors
@@ -6398,6 +6432,16 @@ var staticRenderFns = [
     return _c("h3", { staticClass: "item" }, [
       _c("span", { staticClass: "required" }, [_vm._v("必須")]),
       _vm._v("就寝時間")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "submit_button" }, [
+      _c("button", { staticClass: "raised", attrs: { type: "submit" } }, [
+        _vm._v("投稿する")
+      ])
     ])
   }
 ]
@@ -6999,22 +7043,25 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "photo-detail__pane" }, [
             _c("h3", { staticClass: "note_title" }, [
+              _c("i", { staticClass: "icon ion-md-bookmarks" }),
               _vm._v("日付  " + _vm._s(_vm.note.record))
             ]),
             _vm._v(" "),
-            _c("h3", { staticClass: "item" }, [
+            _c("h3", { staticClass: "item_detail" }, [
+              _c("i", { staticClass: "icon ion-ios-alarm" }),
               _vm._v("起床時間  " + _vm._s(_vm.note.wake_uptime))
             ]),
             _vm._v(" "),
-            _c("h3", { staticClass: "item" }, [
+            _c("h3", { staticClass: "item_detail" }, [
+              _c("i", { staticClass: "icon ion-ios-alarm" }),
               _vm._v("就寝時間  " + _vm._s(_vm.note.bedtime))
             ]),
             _vm._v(" "),
-            _c("h2", { staticClass: "photo-detail__title" }, [
-              _vm._v("今日の一言")
-            ]),
+            _vm._m(0),
             _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(_vm.note.body))])
+            _c("p", { staticClass: "photo-detail__body_border" }, [
+              _vm._v(_vm._s(_vm.note.body))
+            ])
           ]),
           _vm._v(" "),
           _c("EditForm", {
@@ -7045,7 +7092,17 @@ var render = function() {
       )
     : _vm._e()
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", { staticClass: "photo-detail__title" }, [
+      _c("i", { staticClass: "icon ion-ios-chatbubbles" }),
+      _vm._v("今日の一言")
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -26569,8 +26626,8 @@ var UNAUTHORIZED = 419;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/vagrant/code/Feeling-notes/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/vagrant/code/Feeling-notes/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/ec2-user/environment/feeling-notes/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/feeling-notes/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -48,16 +48,6 @@ export default {
         //ローカル環境用
         const response = await axios.get(`api/notes/?page=${this.page}`)
 
-        //Mixed Contentエラー回避用
-        /*const response = await axios.get(`/api/photos`,
-            {
-                params: {
-                  // ここにクエリパラメータを指定する
-                  page: this.page // このようにパラメータを付けるとhttpsになる
-                }
-            }
-        )*/
-
         if (response.status !== OK) {
           this.$store.commit('error/setCode', response.status)
           return false

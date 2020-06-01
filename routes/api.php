@@ -23,7 +23,12 @@ Route::post('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 // ログインユーザー
-Route::get('/user', fn() => Auth::user())->name('user');
+//Route::get('/user', fn() => Auth::user())->name('user');
+
+// ログインユーザー
+Route::get('/user', function () {
+    return Auth::user();
+})->name('user');
 
 // ノート投稿
 Route::post('/notes', 'NoteController@create')->name('note.create');

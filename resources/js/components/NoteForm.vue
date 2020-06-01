@@ -77,7 +77,9 @@
                     </li>
                 </ol>
             </div>-->
-            <button type="submit" class="raised" >投稿する</button>
+            <div class="submit_button">
+                <button type="submit" class="raised" >投稿する</button>
+            </div>
         </div>
             <div v-if="noteErrors" class="errors">
             <ul v-if="noteErrors.record">
@@ -109,7 +111,7 @@ export default {
                 record: '',
                 wake_uptime: '',
                 bedtime: '',
-                body: '',
+                body: null,
                 icons_1: {
                     1: '/images/absolute_upset_nimi.png',
                     2: '/images/upset_nimi.png',
@@ -145,16 +147,49 @@ export default {
         })
     },
     methods: {
+        reset() {
+            this.noteform = {
+                record: '',
+                wake_uptime: '',
+                bedtime: '',
+                body: null,
+                icons_1: {
+                    1: '/images/absolute_upset_nimi.png',
+                    2: '/images/upset_nimi.png',
+                    3: '/images/usually_nimi.png',
+                    4: '/images/smile_nimi.png',
+                    5: '/images/nice_smile_nimi.png'
+                },
+                iconId_1: 3,
+                icons_2: {
+                    1: '/images/absolute_upset_nimi.png',
+                    2: '/images/upset_nimi.png',
+                    3: '/images/usually_nimi.png',
+                    4: '/images/smile_nimi.png',
+                    5: '/images/nice_smile_nimi.png'
+                },
+                iconId_2: 3,
+                icons_3: {
+                    1: '/images/absolute_upset_nimi.png',
+                    2: '/images/upset_nimi.png',
+                    3: '/images/usually_nimi.png',
+                    4: '/images/smile_nimi.png',
+                    5: '/images/nice_smile_nimi.png'
+                },
+                iconId_3: 3,
+            }
+        },
         async note () {
             await this.$store.dispatch('create/note', this.noteform)
-
+            
             if (this.apiStatus) {
 
                 // メッセージ登録
                 this.$store.commit('message/setContent', {
                     content: '写真が投稿されました！',
-                    timeout: 6000
+                    timeout: 3000
                 })
+                this.reset()
                 this.$emit('input', false)
                 this.$router.push(`/notes/${this.noteStatus.id}`)
                 

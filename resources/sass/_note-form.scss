@@ -89,7 +89,7 @@ border: none;
   display: block;
   font-size: 16px;
   padding: 12px 15px;
-  width: 480px;
+  width:100%;
   transition: 0.8s;
   border-radius: 0;
 }
@@ -162,4 +162,25 @@ background:#fff;
 
 .note_item{
   display: flex;
+}
+
+
+.submit_button{
+  text-align: center;
+}
+
+@media screen and ( max-width:479px ) {
+  .note-form {
+    background: #fff;
+    border-radius: .25rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .3);
+    max-height: 75vh;
+    max-width: 600px;
+    overflow: scroll;
+    padding: 1.5rem;
+    position: absolute;
+    right: 5%;
+    top: 3.5rem;
+    width: 90%;
+  }
 }

@@ -37,10 +37,7 @@ class StoreNote extends FormRequest
             ],
             'wake_uptime' => 'required',
             'bedtime' => 'required',
-            //'am_image' => 'required',
-            //'pm_image' => 'required',
-            //'nigiht_image' => 'required',
-            'body' => 'string',
+            'body' => 'nullable|string',
         ];
     }
 }

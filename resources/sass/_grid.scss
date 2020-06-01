@@ -7,3 +7,15 @@
     margin-bottom: 2rem;
   }
 }
+
+@media screen and (max-width:479px) {
+  .grid {
+    display: inline;
+    grid-gap: 0 2%;
+    grid-template-columns: repeat(auto-fit, 32%);
+  
+    &__item {
+      margin-bottom: 2rem;
+    }
+  }
+}
