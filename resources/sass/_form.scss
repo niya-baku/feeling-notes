@@ -7,6 +7,10 @@
     padding: .5em .75em;
     width: 100%;
   }
+  &__hidden {
+    display:none;
+  }
+  
 
   label {
     display: block;

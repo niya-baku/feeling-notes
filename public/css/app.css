@@ -648,6 +648,34 @@ img {
   color: inherit;
 }
 
+.guest_login {
+  text-align: center;
+}
+
+.guest {
+  display: inline-block;
+  background-color: #02bcf5;
+  /*背景色*/
+  color: #FFF;
+  /*文字色*/
+  font-size: 1em;
+  /*文字サイズ*/
+  line-height: 1;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  /*字間*/
+  padding: 0.5em 1em;
+  /*ボタン内の余白*/
+  border-radius: 3px;
+  /*角の丸み*/
+  cursor: pointer;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  /*影*/
+  -webkit-tap-highlight-color: transparent;
+  transition: 0.3s ease-out;
+  /*変化を緩やかに*/
+}
+
 @media screen and (max-width: 479px) {
   .button_top {
     border: 3px solid #0196c4;
@@ -674,6 +702,10 @@ img {
   margin-bottom: 1rem;
   padding: 0.5em 0.75em;
   width: 100%;
+}
+
+.form__hidden {
+  display: none;
 }
 
 .form label {

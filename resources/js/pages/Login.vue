@@ -30,6 +30,13 @@
           <button type="submit" class="button button--inverse">login</button>
         </div>
       </form>
+        <form class="form" @submit.prevent="guestlogin">
+        <div class="guest_login">
+          <input type="text" class="form__hidden" id="login-email" v-model="guestloginForm.email">
+          <input type="password" class="form__hidden" id="login-password" v-model="guestloginForm.password">
+          <button type="submit" class="guest" >ゲストログイン</button>
+        </div>
+        </form>
     </div>
 
     <div class="panel" v-show="tab === 2">
@@ -71,6 +78,10 @@ export default {
         email: '',
         password: ''
       },
+      guestloginForm: {
+        email: 'guest@laravel.com',
+        password: 'guestuser'
+      },
       registerForm: {
         name: '',
         email: '',
@@ -89,6 +100,24 @@ export default {
       // authストアのloginアクションを呼び出す
       await this.$store.dispatch('auth/login', this.loginForm)
       if (this.apiStatus) {
+        // メッセージ登録
+        this.$store.commit('message/setContent', {
+            content: 'ようこそ！ログインができました。',
+            timeout: 3000
+        })
+        // トップページに移動する
+        this.$router.push('/')
+      }
+    },
+    async guestlogin () {
+      // authストアのloginアクションを呼び出す
+      await this.$store.dispatch('auth/login', this.guestloginForm)
+      if (this.apiStatus) {
+        // メッセージ登録
+        this.$store.commit('message/setContent', {
+            content: 'ゲストユーザーさん、ようこそ！！',
+            timeout: 3000
+        })
         // トップページに移動する
         this.$router.push('/')
       }
@@ -98,6 +127,11 @@ export default {
       await this.$store.dispatch('auth/register', this.registerForm)
 
       if (this.apiStatus) {
+        // メッセージ登録
+        this.$store.commit('message/setContent', {
+            content: 'Feeling-notesの世界へようこそ！！',
+            timeout: 3000
+        })
         // トップページに移動する
         this.$router.push('/')
       }

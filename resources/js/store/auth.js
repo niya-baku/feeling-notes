@@ -65,7 +65,26 @@ const state = {
         context.commit('error/setCode', response.status, { root: true })
       }
     },
-
+    
+    //ゲストログイン
+    async guestlogin (context, data) {
+      context.commit('setApiStatus', null)
+      const response = await axios.post('/api/login', data)
+        .catch(err => err.response || err)
+    
+      if (response.status === OK) {
+        context.commit('setApiStatus', true)
+        context.commit('setUser', response.data)
+        return false
+      }
+      context.commit('setApiStatus', false)
+      if (response.status === UNPROCESSABLE_ENTITY) {
+        context.commit('setLoginErrorMessages', response.data.errors)
+      } else {
+        context.commit('error/setCode', response.status, { root: true })
+      }
+    },
+    
     //ログアウト
     async logout (context) {
       context.commit('setApiStatus', null)

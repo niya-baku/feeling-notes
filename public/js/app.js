@@ -3152,6 +3152,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -3160,6 +3167,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       loginForm: {
         email: '',
         password: ''
+      },
+      guestloginForm: {
+        email: 'guest@laravel.com',
+        password: 'guestuser'
       },
       registerForm: {
         name: '',
@@ -3194,7 +3205,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 2:
                 if (_this.apiStatus) {
-                  // トップページに移動する
+                  // メッセージ登録
+                  _this.$store.commit('message/setContent', {
+                    content: 'ようこそ！ログインができました。',
+                    timeout: 3000
+                  }); // トップページに移動する
+
+
                   _this.$router.push('/');
                 }
 
@@ -3206,7 +3223,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
-    register: function register() {
+    guestlogin: function guestlogin() {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
@@ -3215,11 +3232,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return _this2.$store.dispatch('auth/register', _this2.registerForm);
+                return _this2.$store.dispatch('auth/login', _this2.guestloginForm);
 
               case 2:
                 if (_this2.apiStatus) {
-                  // トップページに移動する
+                  // メッセージ登録
+                  _this2.$store.commit('message/setContent', {
+                    content: 'ゲストユーザーさん、ようこそ！！',
+                    timeout: 3000
+                  }); // トップページに移動する
+
+
                   _this2.$router.push('/');
                 }
 
@@ -3229,6 +3252,37 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             }
           }
         }, _callee2);
+      }))();
+    },
+    register: function register() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return _this3.$store.dispatch('auth/register', _this3.registerForm);
+
+              case 2:
+                if (_this3.apiStatus) {
+                  // メッセージ登録
+                  _this3.$store.commit('message/setContent', {
+                    content: 'Feeling-notesの世界へようこそ！！',
+                    timeout: 3000
+                  }); // トップページに移動する
+
+
+                  _this3.$router.push('/');
+                }
+
+              case 3:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
       }))();
     },
     clearError: function clearError() {
@@ -6764,6 +6818,76 @@ var render = function() {
             }),
             _vm._v(" "),
             _vm._m(0)
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "form",
+          {
+            staticClass: "form",
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.guestlogin($event)
+              }
+            }
+          },
+          [
+            _c("div", { staticClass: "guest_login" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.guestloginForm.email,
+                    expression: "guestloginForm.email"
+                  }
+                ],
+                staticClass: "form__hidden",
+                attrs: { type: "text", id: "login-email" },
+                domProps: { value: _vm.guestloginForm.email },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.guestloginForm, "email", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.guestloginForm.password,
+                    expression: "guestloginForm.password"
+                  }
+                ],
+                staticClass: "form__hidden",
+                attrs: { type: "password", id: "login-password" },
+                domProps: { value: _vm.guestloginForm.password },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(
+                      _vm.guestloginForm,
+                      "password",
+                      $event.target.value
+                    )
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                { staticClass: "guest", attrs: { type: "submit" } },
+                [_vm._v("ゲストログイン")]
+              )
+            ])
           ]
         )
       ]
@@ -26192,8 +26316,8 @@ var actions = {
       }, _callee2);
     }))();
   },
-  //ログアウト
-  logout: function logout(context) {
+  //ゲストログイン
+  guestlogin: function guestlogin(context, data) {
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
       var response;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
@@ -26202,7 +26326,9 @@ var actions = {
             case 0:
               context.commit('setApiStatus', null);
               _context3.next = 3;
-              return axios.post('/api/logout');
+              return axios.post('/api/login', data)["catch"](function (err) {
+                return err.response || err;
+              });
 
             case 3:
               response = _context3.sent;
@@ -26213,14 +26339,19 @@ var actions = {
               }
 
               context.commit('setApiStatus', true);
-              context.commit('setUser', null);
+              context.commit('setUser', response.data);
               return _context3.abrupt("return", false);
 
             case 8:
               context.commit('setApiStatus', false);
-              context.commit('error/setCode', response.status, {
-                root: true
-              });
+
+              if (response.status === _util__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"]) {
+                context.commit('setLoginErrorMessages', response.data.errors);
+              } else {
+                context.commit('error/setCode', response.status, {
+                  root: true
+                });
+              }
 
             case 10:
             case "end":
@@ -26230,30 +26361,68 @@ var actions = {
       }, _callee3);
     }))();
   },
-  // ログインユーザーチェック
-  currentUser: function currentUser(context) {
+  //ログアウト
+  logout: function logout(context) {
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
-      var response, user;
+      var response;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
         while (1) {
           switch (_context4.prev = _context4.next) {
             case 0:
               context.commit('setApiStatus', null);
               _context4.next = 3;
-              return axios.get('/api/user');
+              return axios.post('/api/logout');
 
             case 3:
               response = _context4.sent;
+
+              if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+                _context4.next = 8;
+                break;
+              }
+
+              context.commit('setApiStatus', true);
+              context.commit('setUser', null);
+              return _context4.abrupt("return", false);
+
+            case 8:
+              context.commit('setApiStatus', false);
+              context.commit('error/setCode', response.status, {
+                root: true
+              });
+
+            case 10:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4);
+    }))();
+  },
+  // ログインユーザーチェック
+  currentUser: function currentUser(context) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5() {
+      var response, user;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              context.commit('setApiStatus', null);
+              _context5.next = 3;
+              return axios.get('/api/user');
+
+            case 3:
+              response = _context5.sent;
               user = response.data || null;
 
               if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
-                _context4.next = 9;
+                _context5.next = 9;
                 break;
               }
 
               context.commit('setApiStatus', true);
               context.commit('setUser', user);
-              return _context4.abrupt("return", false);
+              return _context5.abrupt("return", false);
 
             case 9:
               context.commit('setApiStatus', false);
@@ -26263,10 +26432,10 @@ var actions = {
 
             case 11:
             case "end":
-              return _context4.stop();
+              return _context5.stop();
           }
         }
-      }, _callee4);
+      }, _callee5);
     }))();
   }
 };
