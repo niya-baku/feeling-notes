@@ -626,6 +626,28 @@ img {
   text-align: center;
 }
 
+.button_top {
+  border: 3px solid #02bcf5;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1;
+  outline: none;
+  margin-bottom: 1em;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.button_top:hover {
+  border-color: #0196c4;
+  background-color: #02bcf5;
+  color: inherit;
+}
+
 .form__item {
   border: 1px solid #dedede;
   border-radius: 0.25rem;
@@ -1230,6 +1252,59 @@ button {
     overflow: hidden;
     width: 100%;
     height: 100%;
+  }
+}
+
+.top_page {
+  width: 100%;
+  postion: relative;
+  background-color: #000000;
+}
+
+.top_page img {
+  opacity: 0.7;
+}
+
+.top_page h1 {
+  font-size: 3em;
+  text-shadow: -1px -2px 3px #808080;
+}
+
+.top_page p {
+  font-size: 1.4em;
+  text-shadow: -1px -2px 3px #808080;
+}
+
+.top_page div.top_sentence {
+  position: absolute;
+  text-align: center;
+  top: 70%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+}
+
+.top_border {
+  border-top: solid 2px #fff;
+  border-bottom: solid 2px #fff;
+}
+
+@media screen and (max-width: 479px) {
+  .top_page h1 {
+    font-size: 1em;
+  }
+
+  .top_page p {
+    font-size: 0.7em;
+  }
+
+  .top_page div.top_sentence {
+    position: absolute;
+    text-align: center;
+    top: 33%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
   }
 }
 

@@ -1,0 +1,53 @@
+.top_page{
+    //background-image: url(./public/images/Green_Heart.jpg);
+    width: 100%;
+    postion: relative;
+    background-color: #000000;
+}
+
+.top_page img{
+   opacity: 0.7;
+}
+
+.top_page h1 {
+  font-size:3em;
+  text-shadow: -1px -2px 3px #808080; 
+}
+
+.top_page p {
+  font-size:1.4em;
+  text-shadow: -1px -2px 3px #808080; 
+}
+
+.top_page div.top_sentence{
+  position: absolute;
+  text-align: center;
+  top: 70%; 
+  left: 50%; 
+  transform: translateY(-50%) translateX(-50%); 
+  -webkit-transform: translateY(-50%) translateX(-50%)
+}
+
+.top_border{
+  border-top: solid 2px #fff;
+  border-bottom: solid 2px #fff;
+}
+
+@media screen and ( max-width:479px ) {
+  .top_page h1 {
+    font-size:1em;
+  }
+  .top_page p {
+    font-size:0.7em;
+  }
+  
+  .top_page div.top_sentence{
+  position: absolute;
+  text-align: center;
+  top: 33%; 
+  left: 50%; 
+  transform: translateY(-50%) translateX(-50%); 
+  -webkit-transform: translateY(-50%) translateX(-50%)
+}
+  
+}

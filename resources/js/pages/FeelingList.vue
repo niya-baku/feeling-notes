@@ -6,9 +6,24 @@
         v-for="note in notes"
         :key="note.id"
         :item="note"
+        v-if="isLogin"
       />
     </div>
     <Pagination v-if="isLogin" :current-page="currentPage" :last-page="lastPage" />
+    <div class="top_page" v-else>
+      <img src="images/Green_Heart.jpg" alt="image">
+      <div class="top_sentence">
+        <h1>Feeling-notesとは？</h1>
+        <div class="top_border">
+          <p>あなたのある日の<span style="font-weight: bold">「起床時間」「就寝時間」</span>朝から寝るまでの間の<span style="font-weight: bold">「調子の変化」</span>を記録することができるアプリです。</p>
+          <p><span style="font-weight: bold">「正しい生活リズム」</span>と<span style="font-weight: bold">「調子の波を知ること」</span>は心身の健康に繋がります。</p>
+          <p>毎日の<span style="font-weight: bold">「Feeling」</span>を知りましょう。</p>
+          <RouterLink class="button_top button_top--link" to="/login">
+              Login / Register
+          </RouterLink>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

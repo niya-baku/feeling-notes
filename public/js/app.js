@@ -2957,6 +2957,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -6517,11 +6532,13 @@ var render = function() {
           attrs: { media: "(min-width: 320px) and (max-width: 639px)" }
         },
         _vm._l(_vm.notes, function(note) {
-          return _c("Note", {
-            key: note.id,
-            staticClass: "grid__item",
-            attrs: { item: note }
-          })
+          return _vm.isLogin
+            ? _c("Note", {
+                key: note.id,
+                staticClass: "grid__item",
+                attrs: { item: note }
+              })
+            : _vm._e()
         }),
         1
       ),
@@ -6533,7 +6550,62 @@ var render = function() {
               "last-page": _vm.lastPage
             }
           })
-        : _vm._e()
+        : _c("div", { staticClass: "top_page" }, [
+            _c("img", {
+              attrs: { src: "images/Green_Heart.jpg", alt: "image" }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "top_sentence" }, [
+              _c("h1", [_vm._v("Feeling-notesとは？")]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "top_border" },
+                [
+                  _c("p", [
+                    _vm._v("あなたのある日の"),
+                    _c("span", { staticStyle: { "font-weight": "bold" } }, [
+                      _vm._v("「起床時間」「就寝時間」")
+                    ]),
+                    _vm._v("朝から寝るまでの間の"),
+                    _c("span", { staticStyle: { "font-weight": "bold" } }, [
+                      _vm._v("「調子の変化」")
+                    ]),
+                    _vm._v("を記録することができるアプリです。")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _c("span", { staticStyle: { "font-weight": "bold" } }, [
+                      _vm._v("「正しい生活リズム」")
+                    ]),
+                    _vm._v("と"),
+                    _c("span", { staticStyle: { "font-weight": "bold" } }, [
+                      _vm._v("「調子の波を知ること」")
+                    ]),
+                    _vm._v("は心身の健康に繋がります。")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v("毎日の"),
+                    _c("span", { staticStyle: { "font-weight": "bold" } }, [
+                      _vm._v("「Feeling」")
+                    ]),
+                    _vm._v("を知りましょう。")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "RouterLink",
+                    {
+                      staticClass: "button_top button_top--link",
+                      attrs: { to: "/login" }
+                    },
+                    [_vm._v("\n            Login / Register\n        ")]
+                  )
+                ],
+                1
+              )
+            ])
+          ])
     ],
     1
   )
