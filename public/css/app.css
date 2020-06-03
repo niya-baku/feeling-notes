@@ -660,8 +660,8 @@ img {
     font-size: 1rem;
     line-height: 1;
     outline: none;
-    margin-bottom: 1em;
-    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.5em;
+    padding: 0.25rem 0.5rem;
     text-decoration: none;
     transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
   }
@@ -1324,6 +1324,7 @@ button {
     text-align: center;
     top: 33%;
     left: 50%;
+    width: 75%;
     transform: translateY(-50%) translateX(-50%);
     -webkit-transform: translateY(-50%) translateX(-50%);
   }
