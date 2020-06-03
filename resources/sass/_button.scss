@@ -206,3 +206,25 @@
   }
 
 }
+
+@media screen and ( max-width:479px ) {
+.button_top {
+  border: 3px solid #0196c4;
+  background-color: #02bcf5;
+  border-radius: .25rem;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1;
+  outline: none;
+  margin-bottom: 1em;
+  padding: .5rem .75rem;
+  text-decoration: none;
+  transition:
+  border-color 300ms ease-in-out,
+  color 300ms ease-in-out;
+  }
+
+}

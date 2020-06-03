@@ -648,6 +648,25 @@ img {
   color: inherit;
 }
 
+@media screen and (max-width: 479px) {
+  .button_top {
+    border: 3px solid #0196c4;
+    background-color: #02bcf5;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1;
+    outline: none;
+    margin-bottom: 1em;
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
+  }
+}
+
 .form__item {
   border: 1px solid #dedede;
   border-radius: 0.25rem;
