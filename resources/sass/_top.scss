@@ -1,17 +1,18 @@
 .top_page{
-    //background-image: url(./public/images/Green_Heart.jpg);
     width: 100%;
     postion: relative;
     background-color: #000000;
+    display:inline-block;
 }
 
 .top_page img{
    opacity: 0.7;
+   display:block;
 }
 
 .top_page h1 {
   font-size:3em;
-  text-shadow: -1px -2px 3px #808080; 
+  text-shadow: 1px 2px 3px #808080; 
 }
 
 .top_page p {
