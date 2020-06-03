@@ -2380,9 +2380,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
@@ -5865,24 +5862,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "footer",
-    { staticClass: "footer" },
-    [
-      _vm.isLogin
-        ? _c(
-            "button",
-            { staticClass: "button button--link", on: { click: _vm.logout } },
-            [_vm._v("\n      Logout\n  ")]
-          )
-        : _c(
-            "RouterLink",
-            { staticClass: "button button--link", attrs: { to: "/login" } },
-            [_vm._v("\n    Login / Register\n  ")]
-          )
-    ],
-    1
-  )
+  return _c("footer", { staticClass: "footer" }, [
+    _vm.isLogin
+      ? _c(
+          "button",
+          { staticClass: "button button--link", on: { click: _vm.logout } },
+          [_vm._v("\n      Logout\n  ")]
+        )
+      : _vm._e()
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -5954,6 +5942,12 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "navbar__menu" }, [
         _vm.isLogin
+          ? _c("span", { staticClass: "navbar__item" }, [
+              _vm._v("\n          " + _vm._s(_vm.username) + "\n    ")
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.isLogin
           ? _c("div", { staticClass: "navbar__item" }, [
               _c(
                 "button",
@@ -5970,12 +5964,6 @@ var render = function() {
                   _vm._v("\n        Submit a notes\n      ")
                 ]
               )
-            ])
-          : _vm._e(),
-        _vm._v(" "),
-        _vm.isLogin
-          ? _c("span", { staticClass: "navbar__item" }, [
-              _vm._v("\n          " + _vm._s(_vm.username) + "\n      ")
             ])
           : _c(
               "div",

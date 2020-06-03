@@ -4,15 +4,15 @@
       Feeling-notes
     </RouterLink>
     <div class="navbar__menu">
-       <div v-if="isLogin" class="navbar__item">
+      <span v-if="isLogin" class="navbar__item">
+            {{ username }}
+      </span>
+      <div v-if="isLogin" class="navbar__item">
         <button class="button" @click="showForm = ! showForm">
           <i class="icon ion-md-add"></i>
           Submit a notes
         </button>
       </div>
-        <span v-if="isLogin" class="navbar__item">
-            {{ username }}
-        </span>
       <div v-else class="navbar__item">
         <RouterLink class="button button--link" to="/login">
           Login / Register
