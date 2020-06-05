@@ -1,9 +1,9 @@
 <template>
   <div class ="note">
     <figure class="note__wrapper">
-      <h3 class="note-title">日付 {{ item.record }}</h3>
-      <h3 class="note-item">起床時間{{ item.wake_uptime }}</h3>
-      <h3 class="note-item">就寝時間{{ item.bedtime }}</h3>
+      <h3 class="note-title">日付  {{ record() }}</h3>
+      <h3 class="note-item">起床時間 {{ wake_uptime() }}</h3>
+      <h3 class="note-item">就寝時間 {{ bed_time() }}</h3>
       <div class="icon_display">
         <div class="icon_side">
           <p class="icon_Vertical" >午前の気分</p>  
@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import moment from 'moment';
 export default {
   props: {
     item: {
@@ -74,6 +75,19 @@ export default {
         4: '/images/smile_nimi.png',
         5: '/images/nice_smile_nimi.png'
       },
+      record: function() {
+        moment.updateLocale('ja', {
+          weekdays: ["日曜日","月曜日","火曜日","水曜日","木曜日","金曜日","土曜日"],
+          weekdaysShort: ["日","月","火","水","木","金","土"],
+        }); 
+        return moment(this.item.record).format('YYYY年MM月DD日(ddd)');
+      },
+      wake_uptime: function() {
+        return moment(this.item.wake_uptime,'HH:mm:ss').format('HH時mm分');
+      },
+      bed_time: function() {
+        return moment(this.item.bedtime,'HH:mm:ss').format('HH時mm分');
+      }
     }
   },
   methods: {
