@@ -3,6 +3,9 @@
     <RouterLink class="navbar__brand" to="/">
       Feeling-notes
     </RouterLink>
+    <RouterLink v-if="isLogin" class="navbar__brand" to="/chart">
+      Chart
+    </RouterLink>
     <div class="navbar__menu">
       <span v-if="isLogin" class="navbar__item">
             {{ username }}

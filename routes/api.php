@@ -30,6 +30,9 @@ Route::get('/user', function () {
     return Auth::user();
 })->name('user');
 
+//チャート表示
+Route::get('/chart', 'NoteController@chart')->name('chart');
+
 // ノート投稿
 Route::post('/notes', 'NoteController@create')->name('note.create');
 
@@ -44,6 +47,8 @@ Route::put('/notes/{id}', 'NoteController@update')->name('note.update');
 
 //ノート削除
 Route::delete('/notes/{id}', 'NoteController@delete')->name('note.delete');
+
+
 
 // トークンリフレッシュ
 Route::get('/reflesh-token', function (Illuminate\Http\Request $request) {

@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css">
   
   <!-- Styles -->
-  <link href="{{ secure_asset('/css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
 </head>
 <body>

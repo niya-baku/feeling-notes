@@ -73,4 +73,10 @@ class NoteController extends Controller
 
         return response(200);
     }
+
+    public function chart(){
+        $user_id = Auth::id();
+        $charts = Note::where('user_id',$user_id)->orderBy('record', 'ASC')->get(['record','am_image','pm_image','night_image']);
+        return $charts;
+    }
 }

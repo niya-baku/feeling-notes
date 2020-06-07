@@ -1362,3 +1362,26 @@ button {
   }
 }
 
+.chart {
+  display: block;
+  width: 60%;
+  height: 60%;
+  margin: auto;
+}
+
+.chart__item {
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 479px) {
+  .chart {
+    display: inline;
+    grid-gap: 0 2%;
+    grid-template-columns: repeat(auto-fit, 32%);
+  }
+
+  .chart__item {
+    margin-bottom: 2rem;
+  }
+}
+
