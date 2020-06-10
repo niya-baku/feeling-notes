@@ -31,7 +31,7 @@ Route::get('/user', function () {
 })->name('user');
 
 //チャート表示
-Route::get('/chart', 'NoteController@chart')->name('chart');
+Route::post('/chart', 'NoteController@chart')->name('chart');
 
 // ノート投稿
 Route::post('/notes', 'NoteController@create')->name('note.create');

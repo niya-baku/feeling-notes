@@ -106,7 +106,9 @@ return [
     'attributes' => [
         'record' => '日付',
         'wake_uptime' => '起床時間',
-        'bedtime' => '就寝時間'
+        'bedtime' => '就寝時間',
+        'year' => '年度',
+        'month' => '月'
     ],
 
 ];

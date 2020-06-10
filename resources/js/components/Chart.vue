@@ -8,6 +8,16 @@ export default {
   props: ["chartData","options"],
   mounted () {
     this.renderChart(this.chartData, this.options);
+  },
+  watch: {
+    options () {
+      this.$data._chart.destroy();
+      this.renderChart(this.chartData, this.options);
+    },
+    chartData () {
+      this.$data._chart.destroy();
+      this.renderChart(this.chartData, this.options);
+    }
   }
 }
 </script>

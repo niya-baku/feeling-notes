@@ -26,3 +26,43 @@
     text-align: right;
   }
 }
+
+.form_chart{
+  display: flex;
+  justify-content: center;
+}
+
+.year_title{
+  height: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 3px; /*ボックス角の丸み*/
+  border: 2px solid #ddd; /*枠線*/
+  box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+}
+
+.year_letter{
+  margin-left: 0.5em;
+  margin-right: 2em;
+}
+
+.month_letter{
+  margin-left: 0.5em;
+  margin-right: 2em;
+}
+
+.month_title{
+  height: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 3px; /*ボックス角の丸み*/
+  border: 2px solid #ddd; /*枠線*/
+  box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+}
+
+.submit_button_chart{
+  height: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+
+}

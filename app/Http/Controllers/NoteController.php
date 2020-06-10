@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreNote;
+use App\Http\Requests\StoreChart;
 use Illuminate\Support\Facades\Auth;
 use App\Note;
 
@@ -74,9 +75,22 @@ class NoteController extends Controller
         return response(200);
     }
 
-    public function chart(){
+    public function chart(StoreChart $request){
+        $year = $request->year;
+        $month = $request->month;
+
+        //$year = 2020;
+        //$month = 06;
         $user_id = Auth::id();
-        $charts = Note::where('user_id',$user_id)->orderBy('record', 'ASC')->get(['record','am_image','pm_image','night_image']);
+
+        //全件取得
+        //$charts = Note::where('user_id',$user_id)->orderBy('record', 'ASC')->get(['record','am_image','pm_image','night_image']);
+
+        //年月検索用
+        $charts = Note::where('user_id',$user_id)
+                ->whereYear('record', $year)
+                ->whereMonth('record', $month)
+                ->orderBy('record', 'ASC')->get(['record','am_image','pm_image','night_image']);
         return $charts;
     }
 }

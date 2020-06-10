@@ -2046,6 +2046,18 @@ var reactiveProp = vue_chartjs__WEBPACK_IMPORTED_MODULE_1__["mixins"].reactivePr
   props: ["chartData", "options"],
   mounted: function mounted() {
     this.renderChart(this.chartData, this.options);
+  },
+  watch: {
+    options: function options() {
+      this.$data._chart.destroy();
+
+      this.renderChart(this.chartData, this.options);
+    },
+    chartData: function chartData() {
+      this.$data._chart.destroy();
+
+      this.renderChart(this.chartData, this.options);
+    }
   }
 });
 
@@ -2999,6 +3011,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3007,31 +3040,48 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   data: function data() {
     return {
+      year: '',
+      month: '',
       charts: [],
       chartData: null,
       options: null,
       chartrecord: [],
-      chartsum: []
+      chartsum: [],
+      show_chart: false,
+      errors: null
     };
   },
   methods: {
-    fetchCharts: function fetchCharts() {
+    onSubmit: function onSubmit() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var response, i;
+        var params, response, i;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
-                return axios.get("api/chart");
+                params = {
+                  year: _this.year,
+                  month: _this.month
+                };
+                _context.next = 3;
+                return axios.post('api/chart', params);
 
-              case 2:
+              case 3:
                 response = _context.sent;
 
+                if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"])) {
+                  _context.next = 7;
+                  break;
+                }
+
+                _this.errors = response.data.errors;
+                return _context.abrupt("return", false);
+
+              case 7:
                 if (!(response.status !== _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
-                  _context.next = 6;
+                  _context.next = 12;
                   break;
                 }
 
@@ -3039,9 +3089,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 return _context.abrupt("return", false);
 
-              case 6:
-                _this.charts = response.data; //console.log(this.charts)
-                //console.log(this.data.datasets[0].data)
+              case 12:
+                _this.errors = null;
+
+              case 13:
+                if (_this.charts.length > 0) {
+                  _this.chartData = null;
+
+                  _this.charts.splice(0, _this.charts.length);
+
+                  _this.chartsum.splice(0, _this.chartsum.length);
+
+                  _this.chartrecord.splice(0, _this.chartrecord.length);
+
+                  _this.charts = response.data;
+                  console.log("配列が入っていたのでリセットしました");
+                  console.log(_this.charts);
+                } else {
+                  _this.charts = response.data;
+                  console.log("配列が空なので、新しく設置しました");
+                  console.log(_this.charts);
+                }
 
                 for (i = 0; i < _this.charts.length; i++) {
                   //this.data.labels[i] = this.charts[i].record
@@ -3052,8 +3120,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 }
 
-                console.log(_this.chartrecord);
-                console.log(_this.chartsum);
                 _this.chartData = {
                   labels: _this.chartrecord,
                   datasets: [{
@@ -3079,9 +3145,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                       }
                     }]
                   }
-                };
+                }, _this.show_chart = true;
 
-              case 11:
+              case 16:
               case "end":
                 return _context.stop();
             }
@@ -3089,31 +3155,68 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     }
-  },
-  watch: {
-    $route: {
-      handler: function handler() {
-        var _this2 = this;
-
-        return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
-            while (1) {
-              switch (_context2.prev = _context2.next) {
-                case 0:
-                  _context2.next = 2;
-                  return _this2.fetchCharts();
-
-                case 2:
-                case "end":
-                  return _context2.stop();
+    /*async fetchCharts() {
+          //ローカル環境用
+        const response = await axios.post(`api/chart`)
+        
+        if (response.status !== OK) {
+          this.$store.commit('error/setCode', response.status)
+          return false
+        }
+          this.charts = response.data
+          //console.log(this.charts)
+        //console.log(this.data.datasets[0].data)
+        for(let i = 0; i < this.charts.length; i++){
+            //this.data.labels[i] = this.charts[i].record
+            this.$set(this.chartrecord, i, this.charts[i].record )
+            //this.data.datasets[0].data[i] = this.charts[i].am_image + this.charts[i].pm_image + this.charts[i].night_image
+            this.$set(this.chartsum, i, this.charts[i].am_image + this.charts[i].pm_image + this.charts[i].night_image)
+            //console.log(this.data.datasets[0].data) 
+        }
+        console.log(this.chartrecord)
+        console.log(this.chartsum)
+        this.chartData = {
+          labels: this.chartrecord,
+            datasets: [
+              {
+                label: '調子の波',
+                data: this.chartsum,
+                borderColor: '#66CCFF',
+                fill: false,
+                type: 'line',
+                lineTension: 0.3,
               }
+            ]
+        },
+        this.options = {
+          
+            scales: {
+              xAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString: 'day'
+                }
+              }],
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                  stepSize: 10,
+                }
+              }]
             }
-          }, _callee2);
-        }))();
+        }
+    }*/
+
+  }
+  /*watch: {
+    $route: {
+      async handler () {
+        await this.fetchCharts()
       },
       immediate: true
     }
-  }
+  },*/
+
 });
 
 /***/ }),
@@ -3205,7 +3308,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 if (!_this.$store.getters['auth/check']) {
-                  _context.next = 11;
+                  _context.next = 10;
                   break;
                 }
 
@@ -3214,10 +3317,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 3:
                 response = _context.sent;
-                console.log(response);
 
                 if (!(response.status !== _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
-                  _context.next = 8;
+                  _context.next = 7;
                   break;
                 }
 
@@ -3225,12 +3327,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 return _context.abrupt("return", false);
 
-              case 8:
+              case 7:
                 _this.notes = response.data.data;
                 _this.currentPage = response.data.current_page;
                 _this.lastPage = response.data.last_page;
 
-              case 11:
+              case 10:
               case "end":
                 return _context.stop();
             }
@@ -44266,20 +44368,125 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "photo-list" }, [
+    _vm.errors
+      ? _c("div", { staticClass: "errors" }, [
+          _vm.errors.year
+            ? _c(
+                "ul",
+                _vm._l(_vm.errors.year, function(msg) {
+                  return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
+                }),
+                0
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.errors.month
+            ? _c(
+                "ul",
+                _vm._l(_vm.errors.month, function(msg) {
+                  return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
+                }),
+                0
+              )
+            : _vm._e()
+        ])
+      : _c("div", [
+          _c("h2", { staticClass: "border" }, [
+            _vm._v("検索したい「年(4桁)」「月(2桁)」を入力してください")
+          ])
+        ]),
+    _vm._v(" "),
     _c(
       "div",
       { staticClass: "chart" },
       [
-        _c("Chart", {
-          staticClass: "chart__item",
-          attrs: { "chart-data": _vm.chartData, options: _vm.options }
-        })
+        _c(
+          "form",
+          {
+            staticClass: "form_chart",
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.onSubmit($event)
+              }
+            }
+          },
+          [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.year,
+                  expression: "year"
+                }
+              ],
+              staticClass: "year_title",
+              attrs: { type: "text", name: "year" },
+              domProps: { value: _vm.year },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.year = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("h3", { staticClass: "year_letter" }, [_vm._v("年")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.month,
+                  expression: "month"
+                }
+              ],
+              staticClass: "month_title",
+              attrs: { type: "text", name: "month" },
+              domProps: { value: _vm.month },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.month = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("h3", { staticClass: "month_letter" }, [_vm._v("月")]),
+            _vm._v(" "),
+            _vm._m(0)
+          ]
+        ),
+        _vm._v(" "),
+        _vm.show_chart
+          ? _c("Chart", {
+              staticClass: "chart__item",
+              attrs: { "chart-data": _vm.chartData, options: _vm.options }
+            })
+          : _vm._e()
       ],
       1
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "submit_button_chart" }, [
+      _c("button", { staticClass: "chart_isplay", attrs: { type: "submit" } }, [
+        _vm._v("表示する")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
