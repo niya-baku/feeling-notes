@@ -2601,7 +2601,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -43846,10 +43845,6 @@ var render = function() {
     { staticClass: "note" },
     [
       _c("figure", { staticClass: "note__wrapper" }, [
-        _c("h3", { staticClass: "note-title" }, [
-          _vm._v("調子合計  " + _vm._s(_vm.sum()))
-        ]),
-        _vm._v(" "),
         _c("h3", { staticClass: "note-title" }, [
           _vm._v("日付  " + _vm._s(_vm.record()))
         ]),

@@ -1,7 +1,6 @@
 <template>
   <div class ="note">
     <figure class="note__wrapper">
-      <h3 class="note-title">調子合計  {{ sum() }}</h3>
       <h3 class="note-title">日付  {{ record() }}</h3>
       <h3 class="note-item">起床時間 {{ wake_uptime() }}</h3>
       <h3 class="note-item">就寝時間 {{ bed_time() }}</h3>
