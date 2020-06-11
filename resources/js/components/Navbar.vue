@@ -3,8 +3,8 @@
     <RouterLink class="navbar__brand" to="/">
       Feeling-notes
     </RouterLink>
-    <RouterLink v-if="isLogin" class="navbar__brand" to="/chart">
-      Chart
+    <RouterLink v-if="isLogin" class="navbar__chart" to="/chart">
+      |<i class="icon ion-md-trending-up"></i> Chart
     </RouterLink>
     <div class="navbar__menu">
       <span v-if="isLogin" class="navbar__item">

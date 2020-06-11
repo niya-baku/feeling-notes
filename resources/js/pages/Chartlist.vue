@@ -9,7 +9,7 @@
       </ul>
     </div>
     <div v-else>
-      <h2 class="border">検索したい「年(4桁)」「月(2桁)」を入力してください</h2>
+      <h3 class="border_chart">検索したい「年(4桁)」「月(2桁)」を入力してください</h3>
     </div>
     <div class="chart">
       <form class="form_chart" @submit.prevent="onSubmit">
@@ -18,16 +18,25 @@
         <input type="text"  name="month" class="month_title" v-model="month" >
         <h3 class="month_letter">月</h3>
         <div class="submit_button_chart">
-          <button type="submit" class="chart_isplay" >表示する</button>
+          <button type="submit" class="chart_display" >表示する</button>
         </div>
       </form>
+       <p  class="chart_p" v-if="show_chart">午前・午後・夜の体調を5段階で評価しています。</p>
+      <div class="display" v-if="show_chart">
+        <div v-for="(icon,icon_id) in icons_image" class="image-chart">
+          <label>
+            {{icon_id}}
+            <img :src="icon">
+          </label>
+        </div>
+      </div>
       <Chart 
         v-if="show_chart"
-        class="chart__item"
         :chart-data="chartData"
         :options="options"
       />
     </div>
+
   </div>
 </template>
 
@@ -49,7 +58,14 @@ export default {
       chartrecord: [],
       chartsum: [],
       show_chart: false,
-      errors: null
+      errors: null,
+      icons_image: {
+        1: '/images/absolute_upset_nimi.png',
+        2: '/images/upset_nimi.png',
+        3: '/images/usually_nimi.png',
+        4: '/images/smile_nimi.png',
+        5: '/images/nice_smile_nimi.png'
+      }
     }
   },
   methods: {
@@ -109,7 +125,8 @@ export default {
             ]
         },
         this.options = {
-          
+          responsive: true,
+          maintainAspectRatio: false,
             scales: {
               xAxes: [{
                 scaleLabel: {
@@ -120,7 +137,9 @@ export default {
               yAxes: [{
                 ticks: {
                   beginAtZero: true,
-                  stepSize: 10,
+                  stepSize: 3,
+                  min: 3,
+                  max: 15
                 }
               }]
             }

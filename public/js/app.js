@@ -3032,6 +3032,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3048,7 +3057,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       chartrecord: [],
       chartsum: [],
       show_chart: false,
-      errors: null
+      errors: null,
+      icons_image: {
+        1: '/images/absolute_upset_nimi.png',
+        2: '/images/upset_nimi.png',
+        3: '/images/usually_nimi.png',
+        4: '/images/smile_nimi.png',
+        5: '/images/nice_smile_nimi.png'
+      }
     };
   },
   methods: {
@@ -3131,6 +3147,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     lineTension: 0.3
                   }]
                 }, _this.options = {
+                  responsive: true,
+                  maintainAspectRatio: false,
                   scales: {
                     xAxes: [{
                       scaleLabel: {
@@ -3141,7 +3159,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     yAxes: [{
                       ticks: {
                         beginAtZero: true,
-                        stepSize: 10
+                        stepSize: 3,
+                        min: 3,
+                        max: 15
                       }
                     }]
                   }
@@ -43735,8 +43755,12 @@ var render = function() {
       _vm.isLogin
         ? _c(
             "RouterLink",
-            { staticClass: "navbar__brand", attrs: { to: "/chart" } },
-            [_vm._v("\n    Chart\n  ")]
+            { staticClass: "navbar__chart", attrs: { to: "/chart" } },
+            [
+              _vm._v("\n    |"),
+              _c("i", { staticClass: "icon ion-md-trending-up" }),
+              _vm._v(" Chart\n  ")
+            ]
           )
         : _vm._e(),
       _vm._v(" "),
@@ -44391,7 +44415,7 @@ var render = function() {
             : _vm._e()
         ])
       : _c("div", [
-          _c("h2", { staticClass: "border" }, [
+          _c("h3", { staticClass: "border_chart" }, [
             _vm._v("検索したい「年(4桁)」「月(2桁)」を入力してください")
           ])
         ]),
@@ -44465,8 +44489,29 @@ var render = function() {
         ),
         _vm._v(" "),
         _vm.show_chart
+          ? _c("p", { staticClass: "chart_p" }, [
+              _vm._v("午前・午後・夜の体調を5段階で評価しています。")
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.show_chart
+          ? _c(
+              "div",
+              { staticClass: "display" },
+              _vm._l(_vm.icons_image, function(icon, icon_id) {
+                return _c("div", { staticClass: "image-chart" }, [
+                  _c("label", [
+                    _vm._v("\n          " + _vm._s(icon_id) + "\n          "),
+                    _c("img", { attrs: { src: icon } })
+                  ])
+                ])
+              }),
+              0
+            )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.show_chart
           ? _c("Chart", {
-              staticClass: "chart__item",
               attrs: { "chart-data": _vm.chartData, options: _vm.options }
             })
           : _vm._e()
@@ -44481,9 +44526,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "submit_button_chart" }, [
-      _c("button", { staticClass: "chart_isplay", attrs: { type: "submit" } }, [
-        _vm._v("表示する")
-      ])
+      _c(
+        "button",
+        { staticClass: "chart_display", attrs: { type: "submit" } },
+        [_vm._v("表示する")]
+      )
     ])
   }
 ]

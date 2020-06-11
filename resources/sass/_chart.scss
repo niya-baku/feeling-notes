@@ -1,23 +1,143 @@
 .chart {
     display: block;
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    height: 40%;
     margin: auto;
 
-  
-    &__item {
-      margin-bottom: 2rem;
-    }
+  }
+
+  .chart_p{
+    text-align: center;
+  }
+
+  .border_chart{
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+  }
+  .form_chart{
+    display: flex;
+    justify-content: center;
   }
   
+  .year_title{
+    height: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 3px; /*ボックス角の丸み*/
+    border: 2px solid #ddd; /*枠線*/
+    box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+  }
+  
+  .year_letter{
+    margin-left: 0.5em;
+    margin-right: 2em;
+  }
+  
+  .month_letter{
+    margin-left: 0.5em;
+    margin-right: 2em;
+  }
+  
+  .month_title{
+    height: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 3px; /*ボックス角の丸み*/
+    border: 2px solid #ddd; /*枠線*/
+    box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+  }
+  
+  .submit_button_chart{
+    height: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+  
+  }
+  
+  .chart_display{
+    display: inline-block;
+    background-color: #02bcf5;/*背景色*/
+    color: #FFF;/*文字色*/
+    font-size: 1em;/*文字サイズ*/
+    line-height: 1;
+    text-decoration: none;
+    letter-spacing: 0.05em;/*字間*/
+    padding: 0.5em 1em;/*ボタン内の余白*/
+    border-radius: 3px;/*角の丸み*/
+    cursor: pointer;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);/*影*/
+    -webkit-tap-highlight-color: transparent;
+    transition: .3s ease-out;/*変化を緩やかに*/
+  }
+  
+  .image-chart {
+    text-align: center;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 0.5em 2em 0;
+    padding: 10px;
+    float: left;
+    background-color: #fff;
+  }
+  
+
+
   @media screen and (max-width:479px) {
-    .chart {
-      display: inline;
-      grid-gap: 0 2%;
-      grid-template-columns: repeat(auto-fit, 32%);
+    .form_chart{
+      display: flex;
+      justify-content: center;
+    }
     
-      &__item {
-        margin-bottom: 2rem;
-      }
+    .year_title{
+      height: 100%;
+      width: 15%;
+      margin-top: auto;
+      margin-bottom: auto;
+      border-radius: 3px; /*ボックス角の丸み*/
+      border: 2px solid #ddd; /*枠線*/
+      box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+    }
+    
+    .year_letter{
+      margin-left: 0.5em;
+      margin-right: 2em;
+    }
+    
+    .month_letter{
+      margin-left: 0.5em;
+      margin-right: 2em;
+    }
+    
+    .month_title{
+      height: 100%;
+      width: 15%;
+      margin-top: auto;
+      margin-bottom: auto;
+      border-radius: 3px; /*ボックス角の丸み*/
+      border: 2px solid #ddd; /*枠線*/
+      box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+    }
+    
+    .submit_button_chart{
+      height: 100%;
+      margin-top: auto;
+      margin-bottom: auto;
+    
+    }
+  
+    .chart_display{
+      display: inline-block;
+      background-color: #02bcf5;/*背景色*/
+      color: #FFF;/*文字色*/
+      font-size: 1em;/*文字サイズ*/
+      line-height: 1;
+      text-decoration: none;
+      letter-spacing: 0.05em;/*字間*/
+      padding: 0.5em 0.5em;/*ボタン内の余白*/
+      border-radius: 3px;/*角の丸み*/
+      cursor: pointer;
+      box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);/*影*/
+      -webkit-tap-highlight-color: transparent;
+      transition: .3s ease-out;/*変化を緩やかに*/
     }
   }
