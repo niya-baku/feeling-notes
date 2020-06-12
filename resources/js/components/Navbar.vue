@@ -10,7 +10,7 @@
     <a  class="navbar__chart" href="/chart">
       <span>|<i class="icon ion-md-trending-up"></i> Chart</span>
     </a>
-    <a class="navbar__chart" href="YATTA">
+    <a class="navbar__chart" href="/YATTA">
       <span><i class="icon ion-md-sunny"></i> YATTA!</span>
     </a>
   </slide>

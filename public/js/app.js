@@ -47027,7 +47027,7 @@ var render = function() {
             _vm._v(" "),
             _c(
               "a",
-              { staticClass: "navbar__chart", attrs: { href: "YATTA" } },
+              { staticClass: "navbar__chart", attrs: { href: "/YATTA" } },
               [
                 _c("span", [
                   _c("i", { staticClass: "icon ion-md-sunny" }),

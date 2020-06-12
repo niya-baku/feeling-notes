@@ -7,6 +7,7 @@
 # Feeling-notesとは
 
 自分のその日の体調を記録し、一覧表示で管理することができるアプリです。
+また、「午前・午後・夜」の体調を値として集計を行い、チャート化することで月の体調の変化を知ることができます。
 
 ## 🌐 App URL 
 ### https://feeling-notes.site
@@ -27,7 +28,8 @@
     <li>体調投稿削除</li>
     <li>ログイン / 会員登録</li>
     <li>ゲストユーザー用ログイン</li>
-    <li>レスポンシブ対応</li>
+    <li>チャート機能</li>
+    <li>レスポンシブ</li>
 </ul>
 
 ## 使用ツール(本番環境)
@@ -45,6 +47,13 @@
     <li>vue-router 3.1.6</li>
     <li>vuex 3.3.0</li>
     <li>git 2.17.1</li>
+    <li>chart.js ^2.9.3</li>
+    <li>moment ^2.26.0</li>
+    <li>vue-chartjs ^3.5.0</li>
+    <li>vue-js-modal ^2.0.0-rc.3</li>
+    <li>vue-scrollto ^2.18.1</li>
+    <li>vue2-perfect-scrollbar ^1.5.0</li>
+    <li>yargs-parser ^13.1.2</li>
 </ul>
 
 ## 使用ツール(検証環境)
