@@ -83,6 +83,7 @@ img {
   font-weight: bold;
   font-size: 1.2rem;
   text-decoration: none;
+  margin-left: 2em;
 }
 
 .navbar__brand:visited {
@@ -91,6 +92,85 @@ img {
 
 .navbar__brand:hover {
   opacity: 0.6;
+}
+
+.navbar .bm-burger-button {
+  position: fixed;
+  width: 2.5em;
+  height: 2em;
+  left: 1.2em;
+  top: 1.2em;
+  cursor: pointer;
+}
+
+.navbar .bm-burger-bars {
+  background-color: #373a47;
+}
+
+.navbar .line-style {
+  position: absolute;
+  height: 20%;
+  left: 0;
+  right: 0;
+}
+
+.navbar .cross-style {
+  position: absolute;
+  top: 12px;
+  right: 2px;
+  cursor: pointer;
+}
+
+.navbar .bm-cross {
+  background: #bdc3c7;
+}
+
+.navbar .bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.navbar .bm-menu {
+  height: 100%;
+  /* 100% Full-height */
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1000;
+  /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #3f3f41;
+  /* Black*/
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 60px;
+  /* Place content 60px from the top */
+  transition: 0.5s;
+  /*0.5 second transition effect to slide in the sidenav*/
+}
+
+.navbar .bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.navbar .bm-item-list {
+  color: #b8b7ad;
+  margin-left: 10%;
+  font-size: 20px;
+}
+
+.navbar .bm-item-list > * {
+  display: flex;
+  text-decoration: none;
+  padding: 0.7em;
+}
+
+.navbar .bm-item-list > * > span {
+  margin-left: 10px;
+  font-weight: 700;
+  color: white;
 }
 
 .navbar__chart {
@@ -137,8 +217,9 @@ img {
     color: inherit;
     font-family: Merriweather, serif;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-decoration: none;
+    margin-left: 3.5em;
   }
 
   .navbar__brand:visited {
@@ -167,6 +248,86 @@ img {
   .navbar__menu {
     align-items: center;
     display: flex;
+  }
+
+  .navbar .bm-burger-button {
+    position: fixed;
+    width: 2em;
+    height: 1.5em;
+    left: 1.2em;
+    top: 1.2em;
+    cursor: pointer;
+  }
+
+  .navbar .bm-burger-bars {
+    background-color: #373a47;
+  }
+
+  .navbar .line-style {
+    position: absolute;
+    height: 20%;
+    left: 0;
+    right: 0;
+  }
+
+  .navbar .cross-style {
+    position: absolute;
+    top: 12px;
+    right: 2px;
+    cursor: pointer;
+  }
+
+  .navbar .bm-cross {
+    background: #bdc3c7;
+  }
+
+  .navbar .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+
+  .navbar .bm-menu {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1000;
+    /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #3f3f41;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /*0.5 second transition effect to slide in the sidenav*/
+  }
+
+  .navbar .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .navbar .bm-item-list {
+    color: #b8b7ad;
+    margin-left: 10%;
+    font-size: 20px;
+  }
+
+  .navbar .bm-item-list > * {
+    display: flex;
+    text-decoration: none;
+    padding: 0.7em;
+    font-size: 1.5rem;
+  }
+
+  .navbar .bm-item-list > * > span {
+    margin-left: 10px;
+    font-weight: 700;
+    color: white;
   }
 }
 

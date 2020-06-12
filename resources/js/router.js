@@ -9,6 +9,7 @@ import store from './store'
 import SystemError from './pages/errors/System.vue'
 import NoteDetail from './pages/NoteDetail.vue'
 import Chartlist from './pages/Chartlist.vue'
+import Yattalist from './pages/Yattalist.vue'
 import NotFound from './pages/errors/NotFound.vue'
 
 // VueRouterプラグインを使用する
@@ -40,6 +41,18 @@ const routes = [
   {
     path: '/chart',
     component: Chartlist,
+    props: true,
+    beforeEnter (to, from, next) {
+      if (store.getters['auth/check']) {
+        next()
+      } else {
+        next('/login')
+      }
+    }
+  },
+  {
+    path: '/YATTA',
+    component: Yattalist,
     props: true,
     beforeEnter (to, from, next) {
       if (store.getters['auth/check']) {

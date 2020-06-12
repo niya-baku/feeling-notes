@@ -3,9 +3,20 @@
     <RouterLink class="navbar__brand" to="/">
       Feeling-notes
     </RouterLink>
-    <RouterLink v-if="isLogin" class="navbar__chart" to="/chart">
-      |<i class="icon ion-md-trending-up"></i> Chart
-    </RouterLink>
+    <slide v-if="isLogin">
+    <a class="navbar__chart" href="/">
+      <span><i class="icon ion-md-home"></i> Home</span>
+    </a>
+    <a  class="navbar__chart" href="/chart">
+      <span>|<i class="icon ion-md-trending-up"></i> Chart</span>
+    </a>
+    <a class="navbar__chart" href="YATTA">
+      <span><i class="icon ion-md-sunny"></i> YATTA!</span>
+    </a>
+  </slide>
+  <div id="page-wrap"></div>
+
+
     <div class="navbar__menu">
       <span v-if="isLogin" class="navbar__item">
             {{ username }}
@@ -27,11 +38,13 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import NoteForm from './NoteForm.vue'
-
+import { Slide } from 'vue-burger-menu'
 export default {
   components: {
-    NoteForm
+    NoteForm,
+    Slide
   },
   data () {
     return {
