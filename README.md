@@ -4,6 +4,8 @@
 
 ![20200613004055](https://user-images.githubusercontent.com/40636920/84520836-1e23d180-ad0f-11ea-9056-df95e0aaafa2.png)
 
+![20200613004021](https://user-images.githubusercontent.com/40636920/84520968-4f040680-ad0f-11ea-9a89-7a90925bd1fe.png)
+
 # Feeling-notesとは
 
 自分のその日の体調を記録し、一覧表示で管理することができるアプリです。
