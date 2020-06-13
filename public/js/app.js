@@ -2537,11 +2537,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -47065,21 +47060,7 @@ var render = function() {
                 ]
               )
             ])
-          : _c(
-              "div",
-              { staticClass: "navbar__item" },
-              [
-                _c(
-                  "RouterLink",
-                  {
-                    staticClass: "button button--link",
-                    attrs: { to: "/login" }
-                  },
-                  [_vm._v("\n        Login / Register\n      ")]
-                )
-              ],
-              1
-            )
+          : _vm._e()
       ]),
       _vm._v(" "),
       _c("NoteForm", {

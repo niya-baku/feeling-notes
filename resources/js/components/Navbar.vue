@@ -27,11 +27,6 @@
           Submit a notes
         </button>
       </div>
-      <div v-else class="navbar__item">
-        <RouterLink class="button button--link" to="/login">
-          Login / Register
-        </RouterLink>
-      </div>
     </div>
     <NoteForm v-model="showForm" />
   </nav>
