@@ -21,6 +21,16 @@
   <link href="{{ secure_asset('/css/app.css') }}" rel="stylesheet">
   @endif
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130860559-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-130860559-3');
+  </script>
+
 </head>
 <body>
   <div id="app"></div>
