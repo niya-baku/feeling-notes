@@ -30,6 +30,12 @@ Route::get('/user', function () {
     return Auth::user();
 })->name('user');
 
+// 写真投稿
+Route::post('/columns', 'ColumnController@create')->name('column.create');
+
+// 写真投稿
+Route::get('/columns', 'ColumnController@index')->name('column.index');
+
 //チャート表示
 Route::post('/chart', 'NoteController@chart')->name('chart');
 
@@ -47,7 +53,6 @@ Route::put('/notes/{id}', 'NoteController@update')->name('note.update');
 
 //ノート削除
 Route::delete('/notes/{id}', 'NoteController@delete')->name('note.delete');
-
 
 
 // トークンリフレッシュ

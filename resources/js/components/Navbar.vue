@@ -10,18 +10,24 @@
     <a  class="navbar__chart" href="/chart">
       <span>|<i class="icon ion-md-trending-up"></i> Chart</span>
     </a>
-    <a class="navbar__chart" href="/YATTA">
-      <span><i class="icon ion-md-sunny"></i> YATTA!</span>
+    <a class="navbar__chart" href="/column">
+      <span><i class="icon ion-md-paper"></i> Column</span>
     </a>
   </slide>
   <div id="page-wrap"></div>
-
+{{ispath}}
 
     <div class="navbar__menu">
       <span v-if="isLogin" class="navbar__item">
             {{ username }}
       </span>
-      <div v-if="isLogin" class="navbar__item">
+      <div v-if="isLogin && ispath == '/column'" class="navbar__item">
+        <button class="button" @click="showForm_column = ! showForm_column">
+          <i class="icon ion-md-add"></i>
+          Submit a columns
+        </button>
+      </div>
+      <div v-else="isLogin" class="navbar__item">
         <button class="button" @click="showForm = ! showForm">
           <i class="icon ion-md-add"></i>
           Submit a notes
@@ -29,21 +35,25 @@
       </div>
     </div>
     <NoteForm v-model="showForm" />
+    <ColumnForm v-model="showForm_column" />
   </nav>
 </template>
 
 <script>
 import Vue from 'vue'
 import NoteForm from './NoteForm.vue'
+import ColumnForm from './ColumnForm.vue'
 import { Slide } from 'vue-burger-menu'
 export default {
   components: {
     NoteForm,
+    ColumnForm,
     Slide
   },
   data () {
     return {
-      showForm: false
+      showForm: false,
+      showForm_column: false
     }
   },
   computed: {
@@ -53,6 +63,9 @@ export default {
     username () {
       return this.$store.getters['auth/username']
     },
+    ispath (){
+      return this.$route.path
+    }
   }
 }
 </script>

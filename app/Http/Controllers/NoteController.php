@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Note;
 
 
+
 class NoteController extends Controller
 {
     public function __construct()
@@ -17,7 +18,7 @@ class NoteController extends Controller
     }
 
     /**
-     * 写真一覧
+     * ノート一覧
      */
     public function index()
     {
@@ -79,8 +80,6 @@ class NoteController extends Controller
         $year = $request->year;
         $month = $request->month;
 
-        //$year = 2020;
-        //$month = 06;
         $user_id = Auth::id();
 
         //全件取得
