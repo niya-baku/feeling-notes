@@ -15,14 +15,13 @@
     </a>
   </slide>
   <div id="page-wrap"></div>
-{{ispath}}
 
     <div class="navbar__menu">
       <span v-if="isLogin" class="navbar__item">
             {{ username }}
       </span>
       <div v-if="isLogin && ispath == '/column'" class="navbar__item">
-        <button class="button" @click="showForm_column = ! showForm_column">
+        <button class="button" >
           <i class="icon ion-md-add"></i>
           Submit a columns
         </button>

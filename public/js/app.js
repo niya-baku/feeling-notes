@@ -2697,7 +2697,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -47572,7 +47571,7 @@ var render = function() {
     { staticClass: "navbar" },
     [
       _c("RouterLink", { staticClass: "navbar__brand", attrs: { to: "/" } }, [
-        _vm._v("\n      Feeling-notes\n    ")
+        _vm._v("\n    Feeling-notes\n  ")
       ]),
       _vm._v(" "),
       _vm.isLogin
@@ -47610,32 +47609,16 @@ var render = function() {
         : _vm._e(),
       _vm._v(" "),
       _c("div", { attrs: { id: "page-wrap" } }),
-      _vm._v("\n" + _vm._s(_vm.ispath) + "\n\n    "),
+      _vm._v(" "),
       _c("div", { staticClass: "navbar__menu" }, [
         _vm.isLogin
           ? _c("span", { staticClass: "navbar__item" }, [
-              _vm._v("\n            " + _vm._s(_vm.username) + "\n      ")
+              _vm._v("\n          " + _vm._s(_vm.username) + "\n    ")
             ])
           : _vm._e(),
         _vm._v(" "),
         _vm.isLogin && _vm.ispath == "/column"
-          ? _c("div", { staticClass: "navbar__item" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "button",
-                  on: {
-                    click: function($event) {
-                      _vm.showForm_column = !_vm.showForm_column
-                    }
-                  }
-                },
-                [
-                  _c("i", { staticClass: "icon ion-md-add" }),
-                  _vm._v("\n          Submit a columns\n        ")
-                ]
-              )
-            ])
+          ? _c("div", { staticClass: "navbar__item" }, [_vm._m(0)])
           : _c("div", { staticClass: "navbar__item" }, [
               _c(
                 "button",
@@ -47649,7 +47632,7 @@ var render = function() {
                 },
                 [
                   _c("i", { staticClass: "icon ion-md-add" }),
-                  _vm._v("\n          Submit a notes\n        ")
+                  _vm._v("\n        Submit a notes\n      ")
                 ]
               )
             ])
@@ -47678,7 +47661,17 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "button" }, [
+      _c("i", { staticClass: "icon ion-md-add" }),
+      _vm._v("\n        Submit a columns\n      ")
+    ])
+  }
+]
 render._withStripped = true
 
 
