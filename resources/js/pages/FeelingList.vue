@@ -98,6 +98,7 @@ export default {
             timeout: 3000
         })
         const response = await axios.get(`api/notes/?page=${this.page}`)
+        this.notes = response.data.data
         this.currentPage = response.data.current_page
         this.lastPage = response.data.last_page
         // トップページに移動する

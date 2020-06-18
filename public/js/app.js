@@ -3514,7 +3514,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
               case 2:
                 if (!_this2.apiStatus) {
-                  _context2.next = 10;
+                  _context2.next = 11;
                   break;
                 }
 
@@ -3529,12 +3529,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
               case 6:
                 response = _context2.sent;
+                _this2.notes = response.data.data;
                 _this2.currentPage = response.data.current_page;
                 _this2.lastPage = response.data.last_page; // トップページに移動する
 
                 _this2.$router.push('/')["catch"](function (err) {});
 
-              case 10:
+              case 11:
               case "end":
                 return _context2.stop();
             }
