@@ -14,29 +14,54 @@
         </div>
         <div id="app">
 
-        <div class="" >
-            <h3 class="column_item"><span class="required">必須</span>どんな状況・出来事があなたを悩ますのか？</h3>
-            <textarea name="body" class="text_form" v-model="columnform.situation" cols="30" rows="10" placeholder="(例)早く起きれた、投稿できたとか何か褒めてみよう！"></textarea>
-        </div>
-        <div class="">
-            <h3 class="column_item"><span class="required">必須</span>その時のあなたの気分・感情は？</h3>
-            <textarea name="body" class="text_form" v-model="columnform.feeling" cols="30" rows="10" placeholder="(例)早く起きれた、投稿できたとか何か褒めてみよう！"></textarea>
-        </div>
-        <div class="">
-            <h3 class="column_item"><span class="required">必須</span>その時、あなたが浮かんだ考え方・思いは？</h3>
-            <textarea name="body" class="text_form" v-model="columnform.think" cols="30" rows="10" placeholder="(例)早く起きれた、投稿できたとか何か褒めてみよう！"></textarea>
-        </div>
-        <div class="">
-            <h3 class="column_item">別の考え方・行動はあなたの中に存在するか？</h3>
-            <textarea name="body" class="text_form" v-model="columnform.another_think" cols="30" rows="10" placeholder="(例)早く起きれた、投稿できたとか何か褒めてみよう！"></textarea>
-        </div>
-        <div class="">
-            <h3 class="column_item">別の考えや行動をあなた自身が実施した場合の気分・感情はどうなりますか？</h3>
-            <textarea name="body" class="text_form" v-model="columnform.another_feeling" cols="30" rows="10" placeholder="(例)早く起きれた、投稿できたとか何か褒めてみよう！"></textarea>
-        </div>    
+            <div class="situation_form" >
+                <h3 class="column_item column_item--situation "><span class="required">必須</span>1.どんな状況・出来事があなたを悩ますのか？</h3>
+                <textarea name="body" class="text_form text_form--situation" v-model="columnform.situation" rows="5" ></textarea>
+            </div>
+
+            <div class="arrow_middle">
+                <img src="/images/arrow_buttom.png" >
+            </div>
         
-        <h2 class="border">悩んでいた状況・出来事に再度遭遇した場合、あなたはどうする？</h2>
-        <textarea name="body" class="text_form" v-model="columnform.another_situation" cols="30" rows="10" placeholder="(例)早く起きれた、投稿できたとか何か褒めてみよう！"></textarea>
+            <div class="feeling_form">
+                <h3 class="column_item column_item--feeling"><span class="required">必須</span>2.その時のあなたの気分・感情は？</h3>
+                <textarea name="body" class="text_form text_form--feeling" v-model="columnform.feeling" rows="5" ></textarea>
+            </div>
+            <div class="arrow_middle">
+                <img src="/images/arrow_buttom.png" >
+            </div>
+            <div class="think_form">
+                <h3 class="column_item column_item--think"><span class="required">必須</span>3.その時、あなたの中で浮かんだ考え方・思いは？</h3>
+                <textarea name="body" class="text_form text_form--think" v-model="columnform.think" rows="5" ></textarea>
+            </div>
+            <div class="arrow_middle">
+                <img src="/images/arrow_buttom.png" >
+            </div> 
+            <div class="roop_word">
+                <h2 class="column_item column_item--sad">悲観的な考えがループするとさらに気分や体調が悪くなってしまう...</h2>
+            </div>
+            <div class="arrow_middle">
+                <img src="/images/arrow_buttom.png" >
+            </div>         
+            <div class="another_think_form">
+                <h3 class="column_item column_item--another_think">4.別の考え方・行動があなたの中にありますか？</h3>
+                <textarea name="body" class="text_form text_form--another_think" v-model="columnform.another_think" rows="5"></textarea>
+            </div>
+            <div class="arrow_middle">
+                <img src="/images/arrow_buttom.png" >
+            </div>
+            <div class="another_feeling_form">
+                <h3 class="column_item column_item--another_feeling">5.別の方法を実施した時の気分・感情は？</h3>
+                <textarea name="body" class="text_form text_form--another_feeling" v-model="columnform.another_feeling" rows="5"></textarea>
+            </div>    
+        
+            <div class="arrow_middle">
+                <img src="/images/arrow_buttom.png" >
+            </div>
+            <div class="another_situation">
+                <h3 class="column_item column_item--another_situation">6.悩んでいた状況・出来事に再度遭遇した場合、あなたはどうする？</h3>
+                <textarea name="body" class="text_form text_form--another_situation" v-model="columnform.another_situation"  rows="5" ></textarea>
+            </div>    
             <div class="submit_button">
                 <button type="submit" class="raised" >投稿する</button>
             </div>

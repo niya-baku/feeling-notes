@@ -21,7 +21,7 @@
             {{ username }}
       </span>
       <div v-if="isLogin && ispath == '/column'" class="navbar__item">
-        <button class="button" >
+        <button class="button" @click="showForm_column = ! showForm_column">
           <i class="icon ion-md-add"></i>
           Submit a columns
         </button>

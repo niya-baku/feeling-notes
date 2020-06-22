@@ -1788,13 +1788,13 @@ button {
   background: #fff;
   border-radius: 0.25rem;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  max-height: 75vh;
+  max-height: 80vh;
   overflow: scroll;
   padding: 1.5rem;
   position: absolute;
   right: 2%;
   top: 3.5rem;
-  width: 90%;
+  width: 70%;
 }
 
 li {
@@ -1869,13 +1869,37 @@ button {
 }
 
 .text_form {
-  background: #f8f8f8;
+  background: #807c7c88;
   display: block;
   font-size: 16px;
   padding: 12px 15px;
   width: 100%;
   transition: 0.8s;
   border-radius: 0;
+}
+
+.text_form--situation {
+  background-color: #C2EEFF;
+}
+
+.text_form--feeling {
+  background-color: #BAD3FF;
+}
+
+.text_form--think {
+  background-color: #DCC2FF;
+}
+
+.text_form--another_think {
+  background-color: #FFBEDA;
+}
+
+.text_form--another_feeling {
+  background-color: #FFC7AF;
+}
+
+.text_form--another_situation {
+  background-color: #B1F9D0;
 }
 
 .overlay {
@@ -1962,8 +1986,131 @@ button {
   display: flex;
 }
 
+.column_item--situation {
+  background-color: #60EEFF;
+  margin: 0;
+  padding: 0.5em;
+}
+
+.column_item--feeling {
+  background-color: #5D99FF;
+  margin-bottom: 0;
+  padding: 0.5em;
+}
+
+.column_item--think {
+  background-color: #B384FF;
+  margin-bottom: 0;
+  padding: 0.5em;
+}
+
+.column_item--another_think {
+  background-color: #FF69A3;
+  margin-bottom: 0;
+  padding: 0.5em;
+}
+
+.column_item--another_feeling {
+  background-color: #FF773E;
+  margin-bottom: 0;
+  padding: 0.5em;
+}
+
+.column_item--another_situation {
+  background-color: #64F9C1;
+  margin-bottom: 0;
+  padding: 0.5em;
+}
+
+.column_item--sad {
+  background-color: #EAD9FF;
+  border-radius: 100px/50px;
+  padding: 1em;
+  white-space: nowrap;
+}
+
 .submit_button {
   text-align: center;
+}
+
+.arrow_top {
+  width: 4%;
+  height: 4%;
+  margin-left: 25%;
+  margin-top: 1em;
+}
+
+.arrow_middle {
+  width: 4%;
+  height: 4%;
+  margin: auto;
+  margin-top: 1em;
+}
+
+.arrow_bottom {
+  width: 4%;
+  height: 4%;
+  margin-left: 75%;
+  margin-top: 1em;
+}
+
+.arrow_right {
+  width: 4%;
+  height: 4%;
+  margin: auto;
+}
+
+.situation_form {
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feeling_form {
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.think_form {
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.another_think_form {
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.another_feeling_form {
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.another_situation {
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.roop_word {
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex_width {
+  display: flex;
 }
 
 @media screen and (max-width: 479px) {

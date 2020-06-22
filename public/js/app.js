@@ -2134,6 +2134,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -46790,7 +46815,7 @@ var render = function() {
             : _vm._e(),
           _vm._v(" "),
           _c("div", { attrs: { id: "app" } }, [
-            _c("div", {}, [
+            _c("div", { staticClass: "situation_form" }, [
               _vm._m(0),
               _vm._v(" "),
               _c("textarea", {
@@ -46802,14 +46827,8 @@ var render = function() {
                     expression: "columnform.situation"
                   }
                 ],
-                staticClass: "text_form",
-                attrs: {
-                  name: "body",
-                  cols: "30",
-                  rows: "10",
-                  placeholder:
-                    "(例)早く起きれた、投稿できたとか何か褒めてみよう！"
-                },
+                staticClass: "text_form text_form--situation",
+                attrs: { name: "body", rows: "5" },
                 domProps: { value: _vm.columnform.situation },
                 on: {
                   input: function($event) {
@@ -46822,8 +46841,10 @@ var render = function() {
               })
             ]),
             _vm._v(" "),
-            _c("div", {}, [
-              _vm._m(1),
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "feeling_form" }, [
+              _vm._m(2),
               _vm._v(" "),
               _c("textarea", {
                 directives: [
@@ -46834,14 +46855,8 @@ var render = function() {
                     expression: "columnform.feeling"
                   }
                 ],
-                staticClass: "text_form",
-                attrs: {
-                  name: "body",
-                  cols: "30",
-                  rows: "10",
-                  placeholder:
-                    "(例)早く起きれた、投稿できたとか何か褒めてみよう！"
-                },
+                staticClass: "text_form text_form--feeling",
+                attrs: { name: "body", rows: "5" },
                 domProps: { value: _vm.columnform.feeling },
                 on: {
                   input: function($event) {
@@ -46854,8 +46869,10 @@ var render = function() {
               })
             ]),
             _vm._v(" "),
-            _c("div", {}, [
-              _vm._m(2),
+            _vm._m(3),
+            _vm._v(" "),
+            _c("div", { staticClass: "think_form" }, [
+              _vm._m(4),
               _vm._v(" "),
               _c("textarea", {
                 directives: [
@@ -46866,14 +46883,8 @@ var render = function() {
                     expression: "columnform.think"
                   }
                 ],
-                staticClass: "text_form",
-                attrs: {
-                  name: "body",
-                  cols: "30",
-                  rows: "10",
-                  placeholder:
-                    "(例)早く起きれた、投稿できたとか何か褒めてみよう！"
-                },
+                staticClass: "text_form text_form--think",
+                attrs: { name: "body", rows: "5" },
                 domProps: { value: _vm.columnform.think },
                 on: {
                   input: function($event) {
@@ -46886,10 +46897,18 @@ var render = function() {
               })
             ]),
             _vm._v(" "),
-            _c("div", {}, [
-              _c("h3", { staticClass: "column_item" }, [
-                _vm._v("別の考え方・行動はあなたの中に存在するか？")
-              ]),
+            _vm._m(5),
+            _vm._v(" "),
+            _vm._m(6),
+            _vm._v(" "),
+            _vm._m(7),
+            _vm._v(" "),
+            _c("div", { staticClass: "another_think_form" }, [
+              _c(
+                "h3",
+                { staticClass: "column_item column_item--another_think" },
+                [_vm._v("4.別の考え方・行動があなたの中にありますか？")]
+              ),
               _vm._v(" "),
               _c("textarea", {
                 directives: [
@@ -46900,14 +46919,8 @@ var render = function() {
                     expression: "columnform.another_think"
                   }
                 ],
-                staticClass: "text_form",
-                attrs: {
-                  name: "body",
-                  cols: "30",
-                  rows: "10",
-                  placeholder:
-                    "(例)早く起きれた、投稿できたとか何か褒めてみよう！"
-                },
+                staticClass: "text_form text_form--another_think",
+                attrs: { name: "body", rows: "5" },
                 domProps: { value: _vm.columnform.another_think },
                 on: {
                   input: function($event) {
@@ -46924,12 +46937,14 @@ var render = function() {
               })
             ]),
             _vm._v(" "),
-            _c("div", {}, [
-              _c("h3", { staticClass: "column_item" }, [
-                _vm._v(
-                  "別の考えや行動をあなた自身が実施した場合の気分・感情はどうなりますか？"
-                )
-              ]),
+            _vm._m(8),
+            _vm._v(" "),
+            _c("div", { staticClass: "another_feeling_form" }, [
+              _c(
+                "h3",
+                { staticClass: "column_item column_item--another_feeling" },
+                [_vm._v("5.別の方法を実施した時の気分・感情は？")]
+              ),
               _vm._v(" "),
               _c("textarea", {
                 directives: [
@@ -46940,14 +46955,8 @@ var render = function() {
                     expression: "columnform.another_feeling"
                   }
                 ],
-                staticClass: "text_form",
-                attrs: {
-                  name: "body",
-                  cols: "30",
-                  rows: "10",
-                  placeholder:
-                    "(例)早く起きれた、投稿できたとか何か褒めてみよう！"
-                },
+                staticClass: "text_form text_form--another_feeling",
+                attrs: { name: "body", rows: "5" },
                 domProps: { value: _vm.columnform.another_feeling },
                 on: {
                   input: function($event) {
@@ -46964,45 +46973,47 @@ var render = function() {
               })
             ]),
             _vm._v(" "),
-            _c("h2", { staticClass: "border" }, [
-              _vm._v(
-                "悩んでいた状況・出来事に再度遭遇した場合、あなたはどうする？"
-              )
+            _vm._m(9),
+            _vm._v(" "),
+            _c("div", { staticClass: "another_situation" }, [
+              _c(
+                "h3",
+                { staticClass: "column_item column_item--another_situation" },
+                [
+                  _vm._v(
+                    "6.悩んでいた状況・出来事に再度遭遇した場合、あなたはどうする？"
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.columnform.another_situation,
+                    expression: "columnform.another_situation"
+                  }
+                ],
+                staticClass: "text_form text_form--another_situation",
+                attrs: { name: "body", rows: "5" },
+                domProps: { value: _vm.columnform.another_situation },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(
+                      _vm.columnform,
+                      "another_situation",
+                      $event.target.value
+                    )
+                  }
+                }
+              })
             ]),
             _vm._v(" "),
-            _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.columnform.another_situation,
-                  expression: "columnform.another_situation"
-                }
-              ],
-              staticClass: "text_form",
-              attrs: {
-                name: "body",
-                cols: "30",
-                rows: "10",
-                placeholder:
-                  "(例)早く起きれた、投稿できたとか何か褒めてみよう！"
-              },
-              domProps: { value: _vm.columnform.another_situation },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(
-                    _vm.columnform,
-                    "another_situation",
-                    $event.target.value
-                  )
-                }
-              }
-            }),
-            _vm._v(" "),
-            _vm._m(3)
+            _vm._m(10)
           ])
         ]
       )
@@ -47014,27 +47025,87 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h3", { staticClass: "column_item" }, [
+    return _c("h3", { staticClass: "column_item column_item--situation " }, [
       _c("span", { staticClass: "required" }, [_vm._v("必須")]),
-      _vm._v("どんな状況・出来事があなたを悩ますのか？")
+      _vm._v("1.どんな状況・出来事があなたを悩ますのか？")
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h3", { staticClass: "column_item" }, [
-      _c("span", { staticClass: "required" }, [_vm._v("必須")]),
-      _vm._v("その時のあなたの気分・感情は？")
+    return _c("div", { staticClass: "arrow_middle" }, [
+      _c("img", { attrs: { src: "/images/arrow_buttom.png" } })
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h3", { staticClass: "column_item" }, [
+    return _c("h3", { staticClass: "column_item column_item--feeling" }, [
       _c("span", { staticClass: "required" }, [_vm._v("必須")]),
-      _vm._v("その時、あなたが浮かんだ考え方・思いは？")
+      _vm._v("2.その時のあなたの気分・感情は？")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "arrow_middle" }, [
+      _c("img", { attrs: { src: "/images/arrow_buttom.png" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h3", { staticClass: "column_item column_item--think" }, [
+      _c("span", { staticClass: "required" }, [_vm._v("必須")]),
+      _vm._v("3.その時、あなたの中で浮かんだ考え方・思いは？")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "arrow_middle" }, [
+      _c("img", { attrs: { src: "/images/arrow_buttom.png" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "roop_word" }, [
+      _c("h2", { staticClass: "column_item column_item--sad" }, [
+        _vm._v(
+          "悲観的な考えがループするとさらに気分や体調が悪くなってしまう..."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "arrow_middle" }, [
+      _c("img", { attrs: { src: "/images/arrow_buttom.png" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "arrow_middle" }, [
+      _c("img", { attrs: { src: "/images/arrow_buttom.png" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "arrow_middle" }, [
+      _c("img", { attrs: { src: "/images/arrow_buttom.png" } })
     ])
   },
   function() {
@@ -47619,7 +47690,23 @@ var render = function() {
           : _vm._e(),
         _vm._v(" "),
         _vm.isLogin && _vm.ispath == "/column"
-          ? _c("div", { staticClass: "navbar__item" }, [_vm._m(0)])
+          ? _c("div", { staticClass: "navbar__item" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "button",
+                  on: {
+                    click: function($event) {
+                      _vm.showForm_column = !_vm.showForm_column
+                    }
+                  }
+                },
+                [
+                  _c("i", { staticClass: "icon ion-md-add" }),
+                  _vm._v("\n        Submit a columns\n      ")
+                ]
+              )
+            ])
           : _c("div", { staticClass: "navbar__item" }, [
               _c(
                 "button",
@@ -47662,17 +47749,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("button", { staticClass: "button" }, [
-      _c("i", { staticClass: "icon ion-md-add" }),
-      _vm._v("\n        Submit a columns\n      ")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -67996,15 +68073,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************!*\
   !*** ./resources/js/pages/FeelingList.vue ***!
   \********************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FeelingList_vue_vue_type_template_id_2527eb41___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FeelingList.vue?vue&type=template&id=2527eb41& */ "./resources/js/pages/FeelingList.vue?vue&type=template&id=2527eb41&");
 /* harmony import */ var _FeelingList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FeelingList.vue?vue&type=script&lang=js& */ "./resources/js/pages/FeelingList.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _FeelingList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _FeelingList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -68034,7 +68110,7 @@ component.options.__file = "resources/js/pages/FeelingList.vue"
 /*!*********************************************************************!*\
   !*** ./resources/js/pages/FeelingList.vue?vue&type=script&lang=js& ***!
   \*********************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
