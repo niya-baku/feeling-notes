@@ -702,6 +702,142 @@ img {
   opacity: 0.8;
 }
 
+.button_column {
+  border: 1px solid #FF367F;
+  background-color: #FFBEDA;
+  border-radius: 0.25rem;
+  color: #8a8a8a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  outline: none;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.button_column:hover {
+  border-color: #333;
+  color: inherit;
+}
+
+.button_column .icon {
+  margin-right: 0.5em;
+}
+
+.button_column--link {
+  border: 0;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.2rem;
+}
+
+.button_column--inverse {
+  background: #222;
+  border-color: #222;
+  color: #fff;
+  transition: opacity 300ms ease-in-out;
+}
+
+.button_column--inverse:hover {
+  background: #222;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.button_column--fluid {
+  width: 100%;
+}
+
+.button_column--like .icon {
+  color: #e4406f;
+}
+
+.button_column--liked {
+  background: #e4406f;
+  border-color: #e4406f;
+  color: #fff;
+}
+
+.button_column--liked .icon {
+  color: #fff;
+}
+
+.button_column--liked:hover {
+  border-color: #e4406f;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.button_notes {
+  border: 1px solid #2DFF57;
+  background-color: #CBFFD3;
+  border-radius: 0.25rem;
+  color: #8a8a8a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  outline: none;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.button_notes:hover {
+  border-color: #333;
+  color: inherit;
+}
+
+.button_notes .icon {
+  margin-right: 0.5em;
+}
+
+.button_notes--link {
+  border: 0;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.2rem;
+}
+
+.button_notes--inverse {
+  background: #222;
+  border-color: #222;
+  color: #fff;
+  transition: opacity 300ms ease-in-out;
+}
+
+.button_notes--inverse:hover {
+  background: #222;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.button_notes--fluid {
+  width: 100%;
+}
+
+.button_notes--like .icon {
+  color: #e4406f;
+}
+
+.button_notes--liked {
+  background: #e4406f;
+  border-color: #e4406f;
+  color: #fff;
+}
+
+.button_notes--liked .icon {
+  color: #fff;
+}
+
+.button_notes--liked:hover {
+  border-color: #e4406f;
+  color: #fff;
+  opacity: 0.8;
+}
+
 .change {
   display: inline-block;
   background-color: #02bcf5;
@@ -1869,7 +2005,7 @@ button {
 }
 
 .text_form {
-  background: #807c7c88;
+  background: #f8f8f8;
   display: block;
   font-size: 16px;
   padding: 12px 15px;

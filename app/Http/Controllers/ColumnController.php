@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Column;
+use App\Http\Requests\StoreColum;
 
 class ColumnController extends Controller
 {
@@ -19,12 +20,11 @@ class ColumnController extends Controller
     public function index()
     {
         $user_id = Auth::id();
-        //$notes = Note::with(['user'])->orderBy(Note::CREATED_AT, 'desc')->paginate();
-        $notes = Column::where('user_id',$user_id)->orderBy('id', 'desc')->paginate();
-        return $notes;
+        $columns = Column::where('user_id',$user_id)->orderBy('id', 'desc')->paginate();
+        return $columns;
     }
 
-    public function create(Request $request){
+    public function create(StoreColum $request){
 
         $column = new Column();
 
@@ -33,10 +33,11 @@ class ColumnController extends Controller
         $column->think = $request->think; //就寝時間の取得
         $column->another_think = $request->another_think; //午前の調子値 
         $column->another_feeling = $request->another_feeling; //午後の調子値
+        $column->another_situation = $request->another_situation;
         $column->user_id = $request->user()->id;
         
         $column->save();
         
-        return response($note, 201);
+        return response($column, 201);
     }
 }

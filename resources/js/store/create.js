@@ -3,8 +3,10 @@ import { OK, CREATED, UNPROCESSABLE_ENTITY } from '../util'
 const state = {
     notes: [],
     note: null,
+    columns:[],
     apiStatus: null,
-    noteErrorMessages: null
+    noteErrorMessages: null,
+    columnErrorMessages: null
 }
 
 const getters = {
@@ -20,6 +22,12 @@ const mutations = {
     },
     setnoteErrorMessages (state, messages) {
         state.noteErrorMessages = messages
+    },
+    setColumn (state, columns) {
+        state.columns = columns
+    },
+    setcolumnErrorMessages (state, messages) {
+        state.columnErrorMessages = messages
     }
 }
 
@@ -77,6 +85,24 @@ const actions = {
             context.commit('error/setCode', response.status, { root: true })
         }
         
+    },
+    //コラム作成
+    async column (context, data) {
+        context.commit('setApiStatus', null)
+        const response = await axios.post('/api/columns', data)
+            .catch(err => err.response || err)
+
+        if (response.status === CREATED) {
+            context.commit('setApiStatus', true)
+            context.commit('setColumn', response.data)
+            return false
+        }
+        context.commit('setApiStatus', false)
+        if (response.status === UNPROCESSABLE_ENTITY) {
+            context.commit('setcolumnErrorMessages', response.data.errors)
+            } else {
+            context.commit('error/setCode', response.status, { root: true })
+        }       
     }
 }
 

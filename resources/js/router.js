@@ -51,7 +51,7 @@ const routes = [
     }
   },
   {
-    path: '/column',
+    path: '/columns',
     component: Columnlist,
     props: true,
     beforeEnter (to, from, next) {

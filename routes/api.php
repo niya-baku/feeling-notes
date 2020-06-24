@@ -30,14 +30,20 @@ Route::get('/user', function () {
     return Auth::user();
 })->name('user');
 
-// 写真投稿
+// コラム投稿
 Route::post('/columns', 'ColumnController@create')->name('column.create');
 
-// 写真投稿
+// コラム一覧
 Route::get('/columns', 'ColumnController@index')->name('column.index');
 
-//チャート表示
-Route::post('/chart', 'NoteController@chart')->name('chart');
+// コラム詳細
+Route::get('/columns/{id}', 'ColumnController@show')->name('column.show');
+
+//コラム更新
+//Route::put('/columns/{id}', 'ColumnController@update')->name('column.update');
+
+//コラム削除
+//Route::delete('/columns/{id}', 'ColumnController@delete')->name('column.delete');
 
 // ノート投稿
 Route::post('/notes', 'NoteController@create')->name('note.create');
@@ -54,6 +60,8 @@ Route::put('/notes/{id}', 'NoteController@update')->name('note.update');
 //ノート削除
 Route::delete('/notes/{id}', 'NoteController@delete')->name('note.delete');
 
+//チャート表示
+Route::post('/chart', 'NoteController@chart')->name('chart');
 
 // トークンリフレッシュ
 Route::get('/reflesh-token', function (Illuminate\Http\Request $request) {

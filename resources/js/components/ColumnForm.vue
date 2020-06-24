@@ -1,15 +1,15 @@
 <template>
     <div v-show="value" class="column-form">
-    <form class="form" @submit.prevent="note">
-        <div v-if="noteErrors" class="errors">
-            <ul v-if="noteErrors.record">
-            <li v-for="msg in noteErrors.record" :key="msg">{{ msg }}</li>
+    <form class="form" @submit.prevent="column">
+        <div v-if="columnErrors" class="errors">
+            <ul v-if="columnErrors.situation">
+            <li v-for="msg in columnErrors.situation" :key="msg">{{ msg }}</li>
             </ul>
-            <ul v-if="noteErrors.wake_uptime">
-            <li v-for="msg in noteErrors.wake_uptime" :key="msg">{{ msg }}</li>
+            <ul v-if="columnErrors.feeling">
+            <li v-for="msg in columnErrors.feeling" :key="msg">{{ msg }}</li>
             </ul>
-            <ul v-if="noteErrors.bedtime">
-            <li v-for="msg in noteErrors.bedtime" :key="msg">{{ msg }}</li>
+            <ul v-if="columnErrors.think">
+            <li v-for="msg in columnErrors.think" :key="msg">{{ msg }}</li>
             </ul>
         </div>
         <div id="app">
@@ -67,6 +67,7 @@
             </div>
         </div>
     </form>
+    
     </div>
 </template>
 
@@ -93,9 +94,9 @@ export default {
     },
     computed: {
         ...mapState({
-            noteStatus: state => state.create.notes,
+            columnStatus: state => state.create.columns,
             apiStatus: state => state.create.apiStatus,
-            noteErrors: state => state.create.noteErrorMessages
+            columnErrors: state => state.create.columnErrorMessages
         })
     },
     methods: {
@@ -109,19 +110,19 @@ export default {
                 another_situation: null
             }
         },
-        async note () {
-            await this.$store.dispatch('create/note', this.noteform)
+        async column () {
+            await this.$store.dispatch('create/column', this.columnform)
             
             if (this.apiStatus) {
 
                 // メッセージ登録
                 this.$store.commit('message/setContent', {
-                    content: '写真が投稿されました！',
+                    content: 'コラムが投稿されました！',
                     timeout: 3000
                 })
-                //this.reset()
+                this.reset()
                 this.$emit('input', false)
-                this.$router.push(`/notes/${this.noteStatus.id}`)
+                this.$router.push(`/columns`)
                 
             }else{
                 console.log('send NG')

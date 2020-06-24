@@ -108,7 +108,10 @@ return [
         'wake_uptime' => '起床時間',
         'bedtime' => '就寝時間',
         'year' => '年度(4桁)',
-        'month' => '月(2桁)'
+        'month' => '月(2桁)',
+        'situation' => '第一項目',
+        'feeling' => '第二項目',
+        'think' => '第三項目',
     ],
 
 ];

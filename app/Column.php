@@ -8,7 +8,7 @@ class Column extends Model
 {
     /** JSONに含める属性 */
     protected $visible = [
-        'id', 'situation', 'feeling','think','another_think','another_feeling',
+        'id', 'situation', 'feeling','think','another_think','another_feeling','another_situation'
     ];
 
     protected $perPage = 6;
