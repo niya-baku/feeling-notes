@@ -1,6 +1,9 @@
 <template>
-  <nav class="navbar">
-    <RouterLink class="navbar__brand" to="/">
+  <nav :class="{'navbar': isnotes, 'navbar_column': isActive_column}">
+    <RouterLink class="navbar__brand" to="/columns" v-if="ispath == '/columns' || ispath == `/columns/${this.$route.params.id}`">
+      Feeling-columns
+    </RouterLink>
+    <RouterLink class="navbar__brand" to="/" v-else>
       Feeling-notes
     </RouterLink>
     <slide v-if="isLogin">
@@ -20,14 +23,14 @@
       <span v-if="isLogin" class="navbar__item">
             {{ username }}
       </span>
-      <div v-if="isLogin && ispath == '/columns'" class="navbar__item">
-        <button class="button_column" v-click-outside="column_toggle" @click="column_toggle">
+      <div v-if="isLogin && ispath == '/columns' || ispath == `/columns/${this.$route.params.id}` " class="navbar__item">
+        <button class="button_column" v-click-outside="column_colse_toggle" @click="column_toggle">
           <i class="icon ion-md-add"></i>
           Submit a Columns
         </button>
       </div>
-      <div v-else="isLogin" class="navbar__item">
-        <button class="button_notes" v-click-outside="note_toggle" @click="note_toggle">
+      <div v-else-if="isLogin" class="navbar__item">
+        <button class="button_notes" v-click-outside="note_colse_toggle" @click="note_toggle">
           <i class="icon ion-md-add"></i>
           Submit a Notes
         </button>
@@ -54,14 +57,22 @@ export default {
     return {
       showForm: false,
       showForm_column: false,
+      isnotes: true,
+      iscolumns: false
     }
   },
   methods: {
     note_toggle () {
       this.showForm = !this.showForm
     },
+    note_colse_toggle () {
+      this.showForm = false
+    },
     column_toggle () {
       this.showForm_column = !this.showForm_column
+    },
+    column_colse_toggle () {
+      this.showForm_column = false
     }
   },
   mounted () {
@@ -82,6 +93,16 @@ export default {
     },
     ispath (){
       return this.$route.path
+    },
+    isparams (){
+      return this.$route.params.id
+    },
+    isActive_column(){
+      if (this.$route.path == "/columns" || this.$route.path == `/columns/${this.$route.params.id}`){
+        this.iscolumns =  true
+        this.isnotes =  false
+        return this.iscolumns
+      }
     }
   }
 }

@@ -197,6 +197,141 @@ img {
   margin-left: 1rem;
 }
 
+.navbar_column {
+  align-items: center;
+  background: #FF367F;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  height: 4rem;
+  justify-content: space-between;
+  left: 0;
+  padding: 2%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.navbar_column__brand {
+  color: inherit;
+  font-family: Merriweather, serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin-left: 2em;
+}
+
+.navbar_column__brand:visited {
+  color: inherit;
+}
+
+.navbar_column__brand:hover {
+  opacity: 0.6;
+}
+
+.navbar_column .bm-burger-button {
+  position: fixed;
+  width: 2.5em;
+  height: 2em;
+  left: 1.2em;
+  top: 1.2em;
+  cursor: pointer;
+}
+
+.navbar_column .bm-burger-bars {
+  background-color: #373a47;
+}
+
+.navbar_column .line-style {
+  position: absolute;
+  height: 20%;
+  left: 0;
+  right: 0;
+}
+
+.navbar_column .cross-style {
+  position: absolute;
+  top: 12px;
+  right: 2px;
+  cursor: pointer;
+}
+
+.navbar_column .bm-cross {
+  background: #bdc3c7;
+}
+
+.navbar_column .bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.navbar_column .bm-menu {
+  height: 100%;
+  /* 100% Full-height */
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1000;
+  /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #3f3f41;
+  /* Black*/
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 60px;
+  /* Place content 60px from the top */
+  transition: 0.5s;
+  /*0.5 second transition effect to slide in the sidenav*/
+}
+
+.navbar_column .bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.navbar_column .bm-item-list {
+  color: #b8b7ad;
+  margin-left: 10%;
+  font-size: 20px;
+}
+
+.navbar_column .bm-item-list > * {
+  display: flex;
+  text-decoration: none;
+  padding: 0.7em;
+}
+
+.navbar_column .bm-item-list > * > span {
+  margin-left: 10px;
+  font-weight: 700;
+  color: white;
+}
+
+.navbar_column__chart {
+  color: inherit;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.navbar_column__chart:visited {
+  color: inherit;
+}
+
+.navbar_column__chart:hover {
+  opacity: 0.6;
+}
+
+.navbar_column__menu {
+  align-items: center;
+  display: flex;
+}
+
+.navbar_column__item {
+  margin-left: 1rem;
+}
+
 @media screen and (max-width: 479px) {
   .navbar {
     align-items: center;
@@ -703,8 +838,7 @@ img {
 }
 
 .button_column {
-  border: 1px solid #FF367F;
-  background-color: #FFBEDA;
+  border: 1px solid #dedede;
   border-radius: 0.25rem;
   color: #8a8a8a;
   cursor: pointer;
@@ -771,8 +905,7 @@ img {
 }
 
 .button_notes {
-  border: 1px solid #2DFF57;
-  background-color: #CBFFD3;
+  border: 1px solid #dedede;
   border-radius: 0.25rem;
   color: #8a8a8a;
   cursor: pointer;

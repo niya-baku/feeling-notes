@@ -71,8 +71,7 @@
 }
 
 .button_column {
-  border: 1px solid #FF367F;
-  background-color: #FFBEDA;
+  border: 1px solid $grey-3;
   border-radius: .25rem;
   color: $grey-2;
   cursor: pointer;
@@ -144,8 +143,7 @@
 }
 
 .button_notes {
-  border: 1px solid #2DFF57;
-  background-color: #CBFFD3;
+  border: 1px solid $grey-3;
   border-radius: .25rem;
   color: $grey-2;
   cursor: pointer;
