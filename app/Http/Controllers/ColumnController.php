@@ -24,6 +24,13 @@ class ColumnController extends Controller
         return $columns;
     }
 
+    public function show($id)
+    {
+        $column = Column::where('id', $id)->with(['user'])->first();
+
+        return $column ?? abort(404);
+    }
+
     public function create(StoreColum $request){
 
         $column = new Column();

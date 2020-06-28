@@ -80,7 +80,6 @@ export default {
   },
   data () {
     return {
-      //showContent: false,
       showEdit: false,
       showDelete: false,
       note: null,
@@ -113,6 +112,7 @@ export default {
   methods: {
     async fetchNote () {
       const response = await axios.get(`/api/notes/${this.id}`)
+     
       
       if (response.status !== OK) {
         this.$store.commit('error/setCode', response.status)
@@ -120,6 +120,7 @@ export default {
       }
 
       this.note = response.data
+
     },
     am_icon_display: function() {
       this.am_icon_id = this.note.am_image;
