@@ -8,6 +8,17 @@
   }
 }
 
+.grid_column {
+  display: grid;
+  grid-gap: 0 10%;
+  grid-template-columns: repeat(auto-fit, 45%);
+
+  &__item {
+    margin-bottom: 2rem;
+    border: solid;
+  }
+}
+
 @media screen and (max-width:479px) {
   .grid {
     display: inline;

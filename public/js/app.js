@@ -2127,14 +2127,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     item: {
       type: Object,
       required: true
+    }
+  },
+  filters: {
+    capitalize: function capitalize(value, length, omission) {
+      var length = length ? parseInt(length, 10) : 20;
+      var ommision = omission ? omission.toString() : '...';
+
+      if (value == null || value.length <= length) {
+        return value;
+      }
+
+      return value.substring(0, length) + ommision;
     }
   }
 });
@@ -47102,101 +47111,105 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "note" },
+    { staticClass: "column" },
     [
-      _c("div", { staticClass: "situation_form" }, [
-        _c("h3", { staticClass: "column_item column_item--situation " }, [
+      _c("div", { staticClass: "situation_form_list" }, [
+        _c("h3", { staticClass: "column_item column_item--situation_list " }, [
           _vm._v("1.どんな状況・出来事があなたを悩ますのか？")
         ]),
         _vm._v(" "),
         _c(
           "p",
           {
-            staticClass: "text_form text_form--situation",
+            staticClass: "column_textform column_textform--situation",
             attrs: { name: "body" }
           },
-          [_vm._v(_vm._s(_vm.item.situation))]
+          [_vm._v(_vm._s(_vm._f("capitalize")(_vm.item.situation, 68)))]
         )
       ]),
       _vm._v(" "),
       _vm._m(0),
       _vm._v(" "),
-      _c("div", { staticClass: "feeling_form" }, [
-        _c("h3", { staticClass: "column_item column_item--feeling" }, [
-          _vm._v("2.その時のあなたの気分・感情は？")
+      _c("div", { staticClass: "flex_width" }, [
+        _c("div", { staticClass: "feeling_form_list" }, [
+          _c("h3", { staticClass: "column_item column_item--feeling_list" }, [
+            _vm._v("2.その時のあなたの気分・感情は？")
+          ]),
+          _vm._v(" "),
+          _c(
+            "p",
+            {
+              staticClass: "column_textform column_textform--feeling",
+              attrs: { name: "body" }
+            },
+            [_vm._v(_vm._s(_vm._f("capitalize")(_vm.item.feeling, 38)))]
+          )
         ]),
         _vm._v(" "),
-        _c(
-          "p",
-          {
-            staticClass: "text_form text_form--feeling",
-            attrs: { name: "body" }
-          },
-          [_vm._v(_vm._s(_vm.item.feeling))]
-        )
+        _c("div", { staticClass: "think_form_list" }, [
+          _c("h3", { staticClass: "column_item column_item--think_list" }, [
+            _vm._v("3.その時、あなたの中で浮かんだ考え方・思いは？")
+          ]),
+          _vm._v(" "),
+          _c(
+            "p",
+            {
+              staticClass: "column_textform column_textform--think",
+              attrs: { name: "body" }
+            },
+            [_vm._v(_vm._s(_vm._f("capitalize")(_vm.item.think, 38)))]
+          )
+        ])
       ]),
       _vm._v(" "),
       _vm._m(1),
-      _vm._v(" "),
-      _c("div", { staticClass: "think_form" }, [
-        _c("h3", { staticClass: "column_item column_item--think" }, [
-          _vm._v("3.その時、あなたの中で浮かんだ考え方・思いは？")
-        ]),
-        _vm._v(" "),
-        _c(
-          "p",
-          {
-            staticClass: "text_form text_form--think",
-            attrs: { name: "body" }
-          },
-          [_vm._v(_vm._s(_vm.item.think))]
-        )
-      ]),
       _vm._v(" "),
       _vm._m(2),
       _vm._v(" "),
       _vm._m(3),
       _vm._v(" "),
+      _c("div", { staticClass: "flex_width" }, [
+        _c("div", { staticClass: "another_think_form_list" }, [
+          _c(
+            "h3",
+            { staticClass: "column_item column_item--another_think_list" },
+            [_vm._v("4.別の考え方・行動があなたの中にありますか？")]
+          ),
+          _vm._v(" "),
+          _c(
+            "p",
+            {
+              staticClass: "column_textform column_textform--another_think",
+              attrs: { name: "body" }
+            },
+            [_vm._v(_vm._s(_vm._f("capitalize")(_vm.item.another_think, 38)))]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "another_feeling_form_list" }, [
+          _c(
+            "h3",
+            { staticClass: "column_item column_item--another_feeling_list" },
+            [_vm._v("5.別の方法を実施した時の気分・感情は？")]
+          ),
+          _vm._v(" "),
+          _c(
+            "p",
+            {
+              staticClass: "column_textform column_textform--another_feeling",
+              attrs: { name: "body" }
+            },
+            [_vm._v(_vm._s(_vm._f("capitalize")(_vm.item.another_feeling, 38)))]
+          )
+        ])
+      ]),
+      _vm._v(" "),
       _vm._m(4),
       _vm._v(" "),
-      _c("div", { staticClass: "another_think_form" }, [
-        _c("h3", { staticClass: "column_item column_item--another_think" }, [
-          _vm._v("4.別の考え方・行動があなたの中にありますか？")
-        ]),
-        _vm._v(" "),
-        _c(
-          "p",
-          {
-            staticClass: "text_form text_form--another_think",
-            attrs: { name: "body" }
-          },
-          [_vm._v(_vm._s(_vm.item.another_think))]
-        )
-      ]),
-      _vm._v(" "),
-      _vm._m(5),
-      _vm._v(" "),
-      _c("div", { staticClass: "another_feeling_form" }, [
-        _c("h3", { staticClass: "column_item column_item--another_feeling" }, [
-          _vm._v("5.別の方法を実施した時の気分・感情は？")
-        ]),
-        _vm._v(" "),
-        _c(
-          "p",
-          {
-            staticClass: "text_form text_form--another_feeling",
-            attrs: { name: "body" }
-          },
-          [_vm._v(_vm._s(_vm.item.another_feeling))]
-        )
-      ]),
-      _vm._v(" "),
-      _vm._m(6),
-      _vm._v(" "),
-      _c("div", { staticClass: "another_situation" }, [
+      _c("div", { staticClass: "another_situation_list" }, [
         _c(
           "h3",
-          { staticClass: "column_item column_item--another_situation" },
+          { staticClass: "column_item column_item--another_situation_list" },
           [
             _vm._v(
               "6.悩んでいた状況・出来事に再度遭遇した場合、あなたはどうする？"
@@ -47207,10 +47220,10 @@ var render = function() {
         _c(
           "p",
           {
-            staticClass: "text_form text_form--another_situation",
+            staticClass: "column_textform column_textform--another_situation",
             attrs: { name: "body" }
           },
-          [_vm._v(_vm._s(_vm.item.another_situation))]
+          [_vm._v(_vm._s(_vm._f("capitalize")(_vm.item.another_situation, 68)))]
         )
       ]),
       _vm._v(" "),
@@ -47243,28 +47256,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "arrow_middle" }, [
-      _c("img", { attrs: { src: "/images/arrow_buttom.png" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "roop_word" }, [
-      _c("h2", { staticClass: "column_item column_item--sad" }, [
+    return _c("div", { staticClass: "roop_word_list" }, [
+      _c("h2", { staticClass: "column_item column_item--sad_list" }, [
         _vm._v(
           "悲観的な考えがループするとさらに気分や体調が悪くなってしまう..."
         )
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "arrow_middle" }, [
-      _c("img", { attrs: { src: "/images/arrow_buttom.png" } })
     ])
   },
   function() {
@@ -49083,14 +49080,14 @@ var render = function() {
       _c(
         "div",
         {
-          staticClass: "grid",
+          staticClass: "grid_column",
           attrs: { media: "(min-width: 320px) and (max-width: 639px)" }
         },
         _vm._l(_vm.columns, function(column) {
           return _vm.isLogin
             ? _c("Column", {
                 key: column.id,
-                staticClass: "grid__item",
+                staticClass: "grid_column__item",
                 attrs: { item: column }
               })
             : _vm._e()

@@ -1,8 +1,8 @@
 <template>
   <div class="photo-list">
-    <div class="grid" media="(min-width: 320px) and (max-width: 639px)">
+    <div class="grid_column" media="(min-width: 320px) and (max-width: 639px)">
       <Column 
-        class="grid__item"
+        class="grid_column__item"
         v-for="column in columns"
         :key="column.id"
         :item="column"

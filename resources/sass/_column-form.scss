@@ -84,11 +84,52 @@ outline: none;
 border: none;
 }
 
+.column_textform {
+  background: #f8f8f8;
+  display: block;
+  font-size: 1em;
+  padding: 12px 15px;
+  margin: auto;
+  width:100%;
+  transition: 0.8s;
+  border-radius: 0;
+
+  &--situation {
+    background-color: #C2EEFF;
+    
+  }
+
+  &--feeling {
+    background-color: #BAD3FF;
+  }
+
+  &--think {
+    background-color: #DCC2FF;
+    
+  }
+
+  &--another_think {
+    background-color: #FFBEDA;
+    
+  }
+
+  &--another_feeling {
+    background-color: #FFC7AF;
+    
+  }
+
+  &--another_situation {
+    background-color: #B1F9D0;
+    
+  }
+}
+
 .text_form {
   background: #f8f8f8;
   display: block;
   font-size: 16px;
   padding: 12px 15px;
+  margin: auto;
   width:100%;
   transition: 0.8s;
   border-radius: 0;
@@ -201,11 +242,24 @@ background:#fff;
     margin: 0;
     padding: 0.5em;
   }
+  &--situation_list {
+    background-color: #60EEFF;
+    margin: 0;
+    padding: 0.5em;
+    font-size: 1em;
+  }
 
   &--feeling {
     background-color: #5D99FF;
     margin-bottom: 0;
     padding: 0.5em;
+  }
+
+  &--feeling_list {
+    background-color: #5D99FF;
+    margin-bottom: 0;
+    padding: 0.5em;
+    font-size: 1em;
   }
 
   &--think {
@@ -214,10 +268,24 @@ background:#fff;
     padding: 0.5em;
   }
 
+  &--think_list {
+    background-color:#B384FF;
+    margin-bottom: 0;
+    padding: 0.5em;
+    font-size: 1em;
+  }
+
   &--another_think {
     background-color: #FF69A3;
     margin-bottom: 0;
     padding: 0.5em;
+  }
+
+  &--another_think_list {
+    background-color: #FF69A3;
+    margin-bottom: 0;
+    padding: 0.5em;
+    font-size: 1em;
   }
 
   &--another_feeling {
@@ -226,16 +294,36 @@ background:#fff;
     padding: 0.5em;
   }
 
+  &--another_feeling_list {
+    background-color:#FF773E;
+    margin-bottom: 0;
+    padding: 0.5em;
+    font-size: 1em;
+  }
+
   &--another_situation {
     background-color: #64F9C1;
     margin-bottom: 0;
     padding: 0.5em;
   }
+  &--another_situation_list {
+    background-color: #64F9C1;
+    margin-bottom: 0;
+    padding: 0.5em;
+    font-size: 1em;
+  }
+
   &--sad{
     background-color:#EAD9FF;
     border-radius: 100px / 50px;
     padding: 1em;
     white-space: nowrap;
+  }
+  &--sad_list{
+    background-color:#EAD9FF;
+    border-radius: 100px / 50px;
+    padding: 1em;
+    font-size: 1em;;
   }
 }
 
@@ -282,7 +370,6 @@ background:#fff;
   width: 70%;
   margin-left: auto;
   margin-right: auto;
-  
 }
 
 .think_form{
@@ -321,6 +408,63 @@ background:#fff;
   margin-right: auto;
 }
 
+.situation_form_list{
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  word-break: break-all;
+}
+
+.feeling_form_list{
+  text-align: center;
+  width: 70%;
+  margin-left: 1em;
+  margin-right: 1em;
+  word-break: break-all;
+}
+
+.think_form_list{
+  text-align: center;
+  width: 70%;
+  margin-left: 1em;
+  margin-right: 1em;
+  word-break: break-all;
+}
+
+.another_think_form_list{
+  text-align: center;
+  width: 70%;
+  margin-left: 1em;
+  margin-right: 1em;
+  word-break: break-all;
+}
+
+.another_feeling_form_list{
+  text-align: center;
+  width: 70%;
+  margin-left: 1em;
+  margin-right: 1em;
+  word-break: break-all;
+}
+
+.another_situation_list{
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  word-break: break-all;
+  margin-bottom: 2em;
+}
+
+.roop_word_list{
+  text-align: center;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  word-break: break-all;
+}
 .flex_width{
   display: flex;
 }

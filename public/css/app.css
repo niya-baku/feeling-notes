@@ -50,6 +50,17 @@ img {
   margin-bottom: 2rem;
 }
 
+.grid_column {
+  display: grid;
+  grid-gap: 0 10%;
+  grid-template-columns: repeat(auto-fit, 45%);
+}
+
+.grid_column__item {
+  margin-bottom: 2rem;
+  border: solid;
+}
+
 @media screen and (max-width: 479px) {
   .grid {
     display: inline;
@@ -2137,11 +2148,47 @@ button {
   border: none;
 }
 
+.column_textform {
+  background: #f8f8f8;
+  display: block;
+  font-size: 1em;
+  padding: 12px 15px;
+  margin: auto;
+  width: 100%;
+  transition: 0.8s;
+  border-radius: 0;
+}
+
+.column_textform--situation {
+  background-color: #C2EEFF;
+}
+
+.column_textform--feeling {
+  background-color: #BAD3FF;
+}
+
+.column_textform--think {
+  background-color: #DCC2FF;
+}
+
+.column_textform--another_think {
+  background-color: #FFBEDA;
+}
+
+.column_textform--another_feeling {
+  background-color: #FFC7AF;
+}
+
+.column_textform--another_situation {
+  background-color: #B1F9D0;
+}
+
 .text_form {
   background: #f8f8f8;
   display: block;
   font-size: 16px;
   padding: 12px 15px;
+  margin: auto;
   width: 100%;
   transition: 0.8s;
   border-radius: 0;
@@ -2261,10 +2308,24 @@ button {
   padding: 0.5em;
 }
 
+.column_item--situation_list {
+  background-color: #60EEFF;
+  margin: 0;
+  padding: 0.5em;
+  font-size: 1em;
+}
+
 .column_item--feeling {
   background-color: #5D99FF;
   margin-bottom: 0;
   padding: 0.5em;
+}
+
+.column_item--feeling_list {
+  background-color: #5D99FF;
+  margin-bottom: 0;
+  padding: 0.5em;
+  font-size: 1em;
 }
 
 .column_item--think {
@@ -2273,10 +2334,24 @@ button {
   padding: 0.5em;
 }
 
+.column_item--think_list {
+  background-color: #B384FF;
+  margin-bottom: 0;
+  padding: 0.5em;
+  font-size: 1em;
+}
+
 .column_item--another_think {
   background-color: #FF69A3;
   margin-bottom: 0;
   padding: 0.5em;
+}
+
+.column_item--another_think_list {
+  background-color: #FF69A3;
+  margin-bottom: 0;
+  padding: 0.5em;
+  font-size: 1em;
 }
 
 .column_item--another_feeling {
@@ -2285,10 +2360,24 @@ button {
   padding: 0.5em;
 }
 
+.column_item--another_feeling_list {
+  background-color: #FF773E;
+  margin-bottom: 0;
+  padding: 0.5em;
+  font-size: 1em;
+}
+
 .column_item--another_situation {
   background-color: #64F9C1;
   margin-bottom: 0;
   padding: 0.5em;
+}
+
+.column_item--another_situation_list {
+  background-color: #64F9C1;
+  margin-bottom: 0;
+  padding: 0.5em;
+  font-size: 1em;
 }
 
 .column_item--sad {
@@ -2296,6 +2385,13 @@ button {
   border-radius: 100px/50px;
   padding: 1em;
   white-space: nowrap;
+}
+
+.column_item--sad_list {
+  background-color: #EAD9FF;
+  border-radius: 100px/50px;
+  padding: 1em;
+  font-size: 1em;
 }
 
 .submit_button {
@@ -2376,6 +2472,64 @@ button {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.situation_form_list {
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  word-break: break-all;
+}
+
+.feeling_form_list {
+  text-align: center;
+  width: 70%;
+  margin-left: 1em;
+  margin-right: 1em;
+  word-break: break-all;
+}
+
+.think_form_list {
+  text-align: center;
+  width: 70%;
+  margin-left: 1em;
+  margin-right: 1em;
+  word-break: break-all;
+}
+
+.another_think_form_list {
+  text-align: center;
+  width: 70%;
+  margin-left: 1em;
+  margin-right: 1em;
+  word-break: break-all;
+}
+
+.another_feeling_form_list {
+  text-align: center;
+  width: 70%;
+  margin-left: 1em;
+  margin-right: 1em;
+  word-break: break-all;
+}
+
+.another_situation_list {
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  word-break: break-all;
+  margin-bottom: 2em;
+}
+
+.roop_word_list {
+  text-align: center;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  word-break: break-all;
 }
 
 .flex_width {
