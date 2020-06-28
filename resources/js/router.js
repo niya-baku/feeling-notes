@@ -54,7 +54,10 @@ const routes = [
   {
     path: '/columns',
     component: Columnlist,
-    props: true,
+    props: route => {
+      const page = route.query.page
+      return { page: /^[1-9][0-9]*$/.test(page) ? page * 1 : 1 }
+    },
     beforeEnter (to, from, next) {
       if (store.getters['auth/check']) {
         next()

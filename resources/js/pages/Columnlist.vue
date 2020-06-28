@@ -9,26 +9,26 @@
         v-if="isLogin"
       />
     </div>
-    <Pagination v-if="isLogin " :current-page="currentPage" :last-page="lastPage" />
+    <ColumnPagination v-if="isLogin " :column_current-page="column_currentPage" :column_last-page="column_lastPage" />
   </div>
 </template>
 
 <script>
 import { OK } from '../util'
 import Column from '../components/Column.vue'
-import Pagination from '../components/Pagination.vue'
+import ColumnPagination from '../components/ColumnPagination.vue'
 import { mapState } from 'vuex'
 
 export default {
   components: {
     Column,
-    Pagination
+    ColumnPagination
   },
   data () {
     return {
       columns: [],
-      currentPage: 0,
-      lastPage: 0,
+      column_currentPage: 0,
+      column_lastPage: 0,
     }
   },
   computed: {
@@ -41,20 +41,27 @@ export default {
       return this.$store.getters['auth/check']
     }
   },
+  props: {
+    page: {
+      type: Number,
+      required: false,
+      default: 1
+    }
+  },
   methods: {
       async fetchColumns() {
         if(this.$store.getters['auth/check']){
 
           //ローカル環境用
-          const response = await axios.get(`api/columns`)
+          const response = await axios.get(`api/columns/?page=${this.page}`)
           
           if (response.status !== OK) {
             this.$store.commit('error/setCode', response.status)
             return false
           }
           this.columns = response.data.data
-          this.currentPage = response.data.current_page
-          this.lastPage = response.data.last_page
+          this.column_currentPage = response.data.current_page
+          this.column_lastPage = response.data.last_page
         }
       },
   },

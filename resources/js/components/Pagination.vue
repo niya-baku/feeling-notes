@@ -10,6 +10,7 @@
       :to="`/?page=${currentPage + 1}`"
       class="button"
     >next &raquo;</RouterLink>
+    {{currentPage}}
   </div>
 </template>
 
@@ -27,9 +28,13 @@ export default {
   },
   computed: {
     isFirstPage () {
+      console.log("currentPage")
+      console.log(this.currentPage)
       return this.currentPage === 1
     },
     isLastPage () {
+      console.log("this.lastPage")
+      console.log(this.lastPage)
       return this.currentPage === this.lastPage
     }
   }

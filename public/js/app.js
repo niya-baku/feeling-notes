@@ -2330,6 +2330,53 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ColumnPagination.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ColumnPagination.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    column_currentPage: {
+      type: Number,
+      required: true
+    },
+    column_lastPage: {
+      type: Number,
+      required: true
+    }
+  },
+  computed: {
+    column_isFirstPage: function column_isFirstPage() {
+      return this.column_currentPage === 1;
+    },
+    column_isLastPage: function column_isLastPage() {
+      return this.column_currentPage === this.column_lastPage;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DeleteForm.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DeleteForm.vue?vue&type=script&lang=js& ***!
@@ -3289,6 +3336,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     currentPage: {
@@ -3302,9 +3350,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     isFirstPage: function isFirstPage() {
+      console.log("currentPage");
+      console.log(this.currentPage);
       return this.currentPage === 1;
     },
     isLastPage: function isLastPage() {
+      console.log("this.lastPage");
+      console.log(this.lastPage);
       return this.currentPage === this.lastPage;
     }
   }
@@ -3521,7 +3573,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util */ "./resources/js/util.js");
 /* harmony import */ var _components_Column_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Column.vue */ "./resources/js/components/Column.vue");
-/* harmony import */ var _components_Pagination_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Pagination.vue */ "./resources/js/components/Pagination.vue");
+/* harmony import */ var _components_ColumnPagination_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ColumnPagination.vue */ "./resources/js/components/ColumnPagination.vue");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 
 
@@ -3557,13 +3609,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Column: _components_Column_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    Pagination: _components_Pagination_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    ColumnPagination: _components_ColumnPagination_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   data: function data() {
     return {
       columns: [],
-      currentPage: 0,
-      lastPage: 0
+      column_currentPage: 0,
+      column_lastPage: 0
     };
   },
   computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__["mapState"])({
@@ -3581,6 +3633,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return this.$store.getters['auth/check'];
     }
   }),
+  props: {
+    page: {
+      type: Number,
+      required: false,
+      "default": 1
+    }
+  },
   methods: {
     fetchColumns: function fetchColumns() {
       var _this = this;
@@ -3597,7 +3656,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 }
 
                 _context.next = 3;
-                return axios.get("api/columns");
+                return axios.get("api/columns/?page=".concat(_this.page));
 
               case 3:
                 response = _context.sent;
@@ -3613,8 +3672,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
               case 7:
                 _this.columns = response.data.data;
-                _this.currentPage = response.data.current_page;
-                _this.lastPage = response.data.last_page;
+                _this.column_currentPage = response.data.current_page;
+                _this.column_lastPage = response.data.last_page;
 
               case 10:
               case "end":
@@ -47673,6 +47732,57 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ColumnPagination.vue?vue&type=template&id=40ea7dfb&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ColumnPagination.vue?vue&type=template&id=40ea7dfb& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "pagination" },
+    [
+      !_vm.column_isFirstPage
+        ? _c(
+            "RouterLink",
+            {
+              staticClass: "button",
+              attrs: { to: "?page=" + (_vm.column_currentPage - 1) }
+            },
+            [_vm._v("« prev")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      !_vm.column_isLastPage
+        ? _c(
+            "RouterLink",
+            {
+              staticClass: "button",
+              attrs: { to: "?page=" + (_vm.column_currentPage + 1) }
+            },
+            [_vm._v("next »")]
+          )
+        : _vm._e()
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DeleteForm.vue?vue&type=template&id=2d7fc63a&":
 /*!*************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DeleteForm.vue?vue&type=template&id=2d7fc63a& ***!
@@ -48858,7 +48968,8 @@ var render = function() {
             },
             [_vm._v("next »")]
           )
-        : _vm._e()
+        : _vm._e(),
+      _vm._v("\n  " + _vm._s(_vm.currentPage) + "\n")
     ],
     1
   )
@@ -49096,10 +49207,10 @@ var render = function() {
       ),
       _vm._v(" "),
       _vm.isLogin
-        ? _c("Pagination", {
+        ? _c("ColumnPagination", {
             attrs: {
-              "current-page": _vm.currentPage,
-              "last-page": _vm.lastPage
+              "column_current-page": _vm.column_currentPage,
+              "column_last-page": _vm.column_lastPage
             }
           })
         : _vm._e()
@@ -68013,6 +68124,76 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/ColumnPagination.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/ColumnPagination.vue ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ColumnPagination_vue_vue_type_template_id_40ea7dfb___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ColumnPagination.vue?vue&type=template&id=40ea7dfb& */ "./resources/js/components/ColumnPagination.vue?vue&type=template&id=40ea7dfb&");
+/* harmony import */ var _ColumnPagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ColumnPagination.vue?vue&type=script&lang=js& */ "./resources/js/components/ColumnPagination.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _ColumnPagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _ColumnPagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ColumnPagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ColumnPagination_vue_vue_type_template_id_40ea7dfb___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ColumnPagination_vue_vue_type_template_id_40ea7dfb___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ColumnPagination.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/ColumnPagination.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/ColumnPagination.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ColumnPagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ColumnPagination.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ColumnPagination.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ColumnPagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ColumnPagination.vue?vue&type=template&id=40ea7dfb&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/ColumnPagination.vue?vue&type=template&id=40ea7dfb& ***!
+  \*************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ColumnPagination_vue_vue_type_template_id_40ea7dfb___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ColumnPagination.vue?vue&type=template&id=40ea7dfb& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ColumnPagination.vue?vue&type=template&id=40ea7dfb&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ColumnPagination_vue_vue_type_template_id_40ea7dfb___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ColumnPagination_vue_vue_type_template_id_40ea7dfb___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/DeleteForm.vue":
 /*!************************************************!*\
   !*** ./resources/js/components/DeleteForm.vue ***!
@@ -69211,7 +69392,12 @@ var routes = [{
 }, {
   path: '/columns',
   component: _pages_Columnlist_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
-  props: true,
+  props: function props(route) {
+    var page = route.query.page;
+    return {
+      page: /^[1-9][0-9]*$/.test(page) ? page * 1 : 1
+    };
+  },
   beforeEnter: function beforeEnter(to, from, next) {
     if (_store__WEBPACK_IMPORTED_MODULE_4__["default"].getters['auth/check']) {
       next();
