@@ -46,7 +46,7 @@
         <p name="body" class="column_textform column_textform--another_situation">{{item.another_situation | capitalize(68)}}</p>
     </div>    
     <RouterLink
-      class="note__overlay"
+      class="column__overlay"
       :to="`/columns/${item.id}`"
     >
     </RouterLink>

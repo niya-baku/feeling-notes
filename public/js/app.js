@@ -3350,13 +3350,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     isFirstPage: function isFirstPage() {
-      console.log("currentPage");
-      console.log(this.currentPage);
       return this.currentPage === 1;
     },
     isLastPage: function isLastPage() {
-      console.log("this.lastPage");
-      console.log(this.lastPage);
       return this.currentPage === this.lastPage;
     }
   }
@@ -47287,7 +47283,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("RouterLink", {
-        staticClass: "note__overlay",
+        staticClass: "column__overlay",
         attrs: { to: "/columns/" + _vm.item.id }
       })
     ],
