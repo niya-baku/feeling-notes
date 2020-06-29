@@ -40,10 +40,10 @@ Route::get('/columns', 'ColumnController@index')->name('column.index');
 Route::get('/columns/{id}', 'ColumnController@show')->name('column.show');
 
 //コラム更新
-//Route::put('/columns/{id}', 'ColumnController@update')->name('column.update');
+Route::put('/columns/{id}', 'ColumnController@update')->name('column.update');
 
 //コラム削除
-//Route::delete('/columns/{id}', 'ColumnController@delete')->name('column.delete');
+Route::delete('/columns/{id}', 'ColumnController@delete')->name('column.delete');
 
 // ノート投稿
 Route::post('/notes', 'NoteController@create')->name('note.create');

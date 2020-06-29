@@ -323,7 +323,7 @@ background:#fff;
     background-color:#EAD9FF;
     border-radius: 100px / 50px;
     padding: 1em;
-    font-size: 1em;;
+    font-size: 1em;
   }
 }
 
@@ -467,6 +467,64 @@ background:#fff;
 }
 .flex_width{
   display: flex;
+}
+
+.situation_form_detail{
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  word-break: break-all;
+}
+
+.feeling_form_detail{
+  text-align: center;
+  width: 40%;
+  margin-left: auto;
+  margin-right: 1em;
+  word-break: break-all;
+}
+
+.think_form_detail{
+  text-align: center;
+  width: 40%;
+  margin-left: 1em;
+  margin-right: auto;
+  word-break: break-all;
+}
+
+.another_think_form_detail{
+  text-align: center;
+  width: 40%;
+  margin-left: auto;
+  margin-right: 1em;
+  word-break: break-all;
+}
+
+.another_feeling_form_detail{
+  text-align: center;
+  width: 40%;
+  margin-left: 1em;
+  margin-right: auto;
+  word-break: break-all;
+}
+
+.another_situation_detail{
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  word-break: break-all;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+}
+
+.roop_word_detail{
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  word-break: break-all;
 }
 
 @media screen and ( max-width:479px ) {

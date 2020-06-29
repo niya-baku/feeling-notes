@@ -56,7 +56,7 @@
             </div>
             </div>
         <div class="button-submit">
-          <button @click="clickEvent" class="cancel">キャンセル</button>
+          <button @click.prevent="clickEvent" class="cancel">キャンセル</button>
           <button type="submit" class="change" >変更する</button>
         </div>
       </form>

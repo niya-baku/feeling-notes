@@ -2150,6 +2150,288 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ColumnDeleteForm.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ColumnDeleteForm.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    item: {
+      type: Object,
+      required: true
+    },
+    value: {
+      type: Boolean,
+      required: true
+    }
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
+    apiStatus: function apiStatus(state) {
+      return state.create.apiStatus;
+    },
+    columnErrors: function columnErrors(state) {
+      return state.create.columnErrorMessages;
+    }
+  })),
+  methods: {
+    delete_column: function delete_column() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return _this.$store.dispatch('create/columndelete', _this.item);
+
+              case 2:
+                if (_this.apiStatus) {
+                  // 削除メッセージ
+                  _this.$store.commit('deletemessage/deletecontent', {
+                    content: 'コラムが削除されました！',
+                    timeout: 3000
+                  });
+
+                  _this.$emit('input', false);
+
+                  _this.$router.push("/columns");
+                } else {
+                  console.log('delete NG');
+                }
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    clickEvent: function clickEvent() {
+      this.$emit('from-delete');
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ColumnEditForm.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ColumnEditForm.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue2_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue2-perfect-scrollbar */ "./node_modules/vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.umd.js");
+/* harmony import */ var vue2_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue2_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    PerfectScrollbar: vue2_perfect_scrollbar__WEBPACK_IMPORTED_MODULE_1__["PerfectScrollbar"]
+  },
+  data: function data() {
+    return {
+      msg: ""
+    };
+  },
+  props: {
+    item: {
+      type: Object,
+      required: true
+    },
+    value: {
+      type: Boolean,
+      required: true
+    }
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_2__["mapState"])({
+    columnStatus: function columnStatus(state) {
+      return state.create.columns;
+    },
+    apiStatus: function apiStatus(state) {
+      return state.create.apiStatus;
+    },
+    columnErrors: function columnErrors(state) {
+      return state.create.columnErrorMessages;
+    }
+  })),
+  methods: {
+    clickEvent: function clickEvent() {
+      this.$emit('from-edit');
+    },
+    update: function update() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return _this.$store.dispatch('create/columnupdate', _this.item);
+
+              case 2:
+                if (_this.apiStatus) {
+                  _this.$store.commit('message/setEditcontent', {
+                    content: 'コラム情報が更新されました！',
+                    timeout: 3000
+                  });
+
+                  _this.$emit('input', false);
+                } else {
+                  console.log('update NG');
+                }
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ColumnForm.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ColumnForm.vue?vue&type=script&lang=js& ***!
@@ -3568,6 +3850,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util */ "./resources/js/util.js");
+/* harmony import */ var _components_ColumnEditForm_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/ColumnEditForm.vue */ "./resources/js/components/ColumnEditForm.vue");
+/* harmony import */ var _components_ColumnDeleteForm_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/ColumnDeleteForm.vue */ "./resources/js/components/ColumnDeleteForm.vue");
+/* harmony import */ var vue_click_outside__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-click-outside */ "./node_modules/vue-click-outside/index.js");
+/* harmony import */ var vue_click_outside__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_click_outside__WEBPACK_IMPORTED_MODULE_4__);
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -3624,11 +3910,39 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    ColumnEditForm: _components_ColumnEditForm_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    ColumnDeleteForm: _components_ColumnDeleteForm_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   data: function data() {
     return {
-      column: ""
+      column: null,
+      showEdit: false,
+      showDelete: false
     };
   },
   props: {
@@ -3672,6 +3986,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
+    },
+    colse_editToggle: function colse_editToggle() {
+      this.showEdit = false;
+    },
+    close_editModal: function close_editModal() {
+      this.showEdit = false;
+    },
+    colse_deleteToggle: function colse_deleteToggle() {
+      this.showDelete = false;
+    },
+    close_deleteModal: function close_deleteModal() {
+      this.showDelete = false;
     }
   },
   watch: {
@@ -3697,6 +4023,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       },
       immediate: true
     }
+  },
+  mounted: function mounted() {
+    // prevent click outside event with popupItem.
+    this.popupItem = this.$el;
+  },
+  // do not forget this section
+  directives: {
+    ClickOutside: vue_click_outside__WEBPACK_IMPORTED_MODULE_4___default.a
   }
 });
 
@@ -47487,6 +47821,435 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ColumnDeleteForm.vue?vue&type=template&id=4b7e8620&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ColumnDeleteForm.vue?vue&type=template&id=4b7e8620& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.value,
+          expression: "value"
+        }
+      ],
+      staticClass: "overlay"
+    },
+    [
+      _c("div", { staticClass: "modal-delete" }, [
+        _c(
+          "button",
+          {
+            staticClass: "buttonBack buttonBack--back",
+            attrs: { title: "戻る" },
+            on: { click: _vm.clickEvent }
+          },
+          [_c("i", { staticClass: "icon ion-md-close" })]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-edit" }, [
+          _c("p", [_vm._v("本当に削除しますか?")]),
+          _vm._v(" "),
+          _c(
+            "form",
+            {
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.delete_column($event)
+                }
+              }
+            },
+            [
+              _c("div", { staticClass: "button-submit" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "cancel",
+                    attrs: { type: "button" },
+                    on: { click: _vm.clickEvent }
+                  },
+                  [_vm._v("キャンセル")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "change", attrs: { type: "submit" } },
+                  [_vm._v("削除")]
+                )
+              ])
+            ]
+          )
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ColumnEditForm.vue?vue&type=template&id=76a316e2&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ColumnEditForm.vue?vue&type=template&id=76a316e2& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.value,
+          expression: "value"
+        }
+      ],
+      staticClass: "overlay"
+    },
+    [
+      _c("perfect-scrollbar", [
+        _c("div", { staticClass: "modal-content" }, [
+          _vm.columnErrors
+            ? _c("div", { staticClass: "errors" }, [
+                _vm.columnErrors.situation
+                  ? _c(
+                      "ul",
+                      _vm._l(_vm.columnErrors.situation, function(msg) {
+                        return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
+                      }),
+                      0
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.columnErrors.feeling
+                  ? _c(
+                      "ul",
+                      _vm._l(_vm.columnErrors.feeling, function(msg) {
+                        return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
+                      }),
+                      0
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.columnErrors.think
+                  ? _c(
+                      "ul",
+                      _vm._l(_vm.columnErrors.think, function(msg) {
+                        return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
+                      }),
+                      0
+                    )
+                  : _vm._e()
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "buttonBack buttonBack--back",
+              attrs: { title: "戻る" },
+              on: { click: _vm.clickEvent }
+            },
+            [_c("i", { staticClass: "icon ion-md-close" })]
+          ),
+          _vm._v(" "),
+          _c(
+            "form",
+            {
+              staticClass: "form",
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.update($event)
+                }
+              }
+            },
+            [
+              _c("div", { staticClass: "situation_form" }, [
+                _c(
+                  "h3",
+                  { staticClass: "column_item column_item--situation " },
+                  [
+                    _c("span", { staticClass: "required" }, [_vm._v("必須")]),
+                    _vm._v("1.どんな状況・出来事があなたを悩ますのか？")
+                  ]
+                ),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.item.situation,
+                      expression: "item.situation"
+                    }
+                  ],
+                  staticClass: "text_form text_form--situation",
+                  attrs: { name: "body", rows: "5" },
+                  domProps: { value: _vm.item.situation },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.item, "situation", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "arrow_middle" }, [
+                _c("img", { attrs: { src: "/images/arrow_buttom.png" } })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "feeling_form" }, [
+                _c("h3", { staticClass: "column_item column_item--feeling" }, [
+                  _c("span", { staticClass: "required" }, [_vm._v("必須")]),
+                  _vm._v("2.その時のあなたの気分・感情は？")
+                ]),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.item.feeling,
+                      expression: "item.feeling"
+                    }
+                  ],
+                  staticClass: "text_form text_form--feeling",
+                  attrs: { name: "body", rows: "5" },
+                  domProps: { value: _vm.item.feeling },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.item, "feeling", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "arrow_middle" }, [
+                _c("img", { attrs: { src: "/images/arrow_buttom.png" } })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "think_form" }, [
+                _c("h3", { staticClass: "column_item column_item--think" }, [
+                  _c("span", { staticClass: "required" }, [_vm._v("必須")]),
+                  _vm._v("3.その時、あなたの中で浮かんだ考え方・思いは？")
+                ]),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.item.think,
+                      expression: "item.think"
+                    }
+                  ],
+                  staticClass: "text_form text_form--think",
+                  attrs: { name: "body", rows: "5" },
+                  domProps: { value: _vm.item.think },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.item, "think", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "arrow_middle" }, [
+                _c("img", { attrs: { src: "/images/arrow_buttom.png" } })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "roop_word" }, [
+                _c("h2", { staticClass: "column_item column_item--sad_list" }, [
+                  _vm._v(
+                    "悲観的な考えがループするとさらに気分や体調が悪くなってしまう..."
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "arrow_middle" }, [
+                _c("img", { attrs: { src: "/images/arrow_buttom.png" } })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "another_think_form" }, [
+                _c(
+                  "h3",
+                  { staticClass: "column_item column_item--another_think" },
+                  [_vm._v("4.別の考え方・行動があなたの中にありますか？")]
+                ),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.item.another_think,
+                      expression: "item.another_think"
+                    }
+                  ],
+                  staticClass: "text_form text_form--another_think",
+                  attrs: { name: "body", rows: "5" },
+                  domProps: { value: _vm.item.another_think },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.item, "another_think", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "arrow_middle" }, [
+                _c("img", { attrs: { src: "/images/arrow_buttom.png" } })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "another_feeling_form" }, [
+                _c(
+                  "h3",
+                  { staticClass: "column_item column_item--another_feeling" },
+                  [_vm._v("5.別の方法を実施した時の気分・感情は？")]
+                ),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.item.another_feeling,
+                      expression: "item.another_feeling"
+                    }
+                  ],
+                  staticClass: "text_form text_form--another_feeling",
+                  attrs: { name: "body", rows: "5" },
+                  domProps: { value: _vm.item.another_feeling },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.item, "another_feeling", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "arrow_middle" }, [
+                _c("img", { attrs: { src: "/images/arrow_buttom.png" } })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "another_situation" }, [
+                _c(
+                  "h3",
+                  { staticClass: "column_item column_item--another_situation" },
+                  [
+                    _vm._v(
+                      "6.悩んでいた状況・出来事に再度遭遇した場合、あなたはどうする？"
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.item.another_situation,
+                      expression: "item.another_situation"
+                    }
+                  ],
+                  staticClass: "text_form text_form--another_situation",
+                  attrs: { name: "body", rows: "5" },
+                  domProps: { value: _vm.item.another_situation },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.item,
+                        "another_situation",
+                        $event.target.value
+                      )
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "button-submit" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "cancel",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.clickEvent($event)
+                      }
+                    }
+                  },
+                  [_vm._v("キャンセル")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "change", attrs: { type: "submit" } },
+                  [_vm._v("変更する")]
+                )
+              ])
+            ]
+          )
+        ])
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ColumnForm.vue?vue&type=template&id=737138e5&":
 /*!*************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ColumnForm.vue?vue&type=template&id=737138e5& ***!
@@ -48327,7 +49090,15 @@ var render = function() {
               _c("div", { staticClass: "button-submit" }, [
                 _c(
                   "button",
-                  { staticClass: "cancel", on: { click: _vm.clickEvent } },
+                  {
+                    staticClass: "cancel",
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.clickEvent($event)
+                      }
+                    }
+                  },
                   [_vm._v("キャンセル")]
                 ),
                 _vm._v(" "),
@@ -49301,121 +50072,199 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "column" }, [
-    _c("div", { staticClass: "situation_form_list" }, [
-      _c("h3", { staticClass: "column_item column_item--situation_list " }, [
-        _vm._v("1.どんな状況・出来事があなたを悩ますのか？")
-      ]),
-      _vm._v(" "),
-      _c(
-        "p",
-        {
-          staticClass: "column_textform column_textform--situation",
-          attrs: { name: "body" }
-        },
-        [_vm._v(_vm._s(_vm.column.situation))]
-      )
-    ]),
-    _vm._v(" "),
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "flex_width" }, [
-      _c("div", { staticClass: "feeling_form_list" }, [
-        _c("h3", { staticClass: "column_item column_item--feeling_list" }, [
-          _vm._v("2.その時のあなたの気分・感情は？")
-        ]),
-        _vm._v(" "),
-        _c(
-          "p",
-          {
-            staticClass: "column_textform column_textform--feeling",
-            attrs: { name: "body" }
-          },
-          [_vm._v(_vm._s(_vm.column.feeling))]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "think_form_list" }, [
-        _c("h3", { staticClass: "column_item column_item--think_list" }, [
-          _vm._v("3.その時、あなたの中で浮かんだ考え方・思いは？")
-        ]),
-        _vm._v(" "),
-        _c(
-          "p",
-          {
-            staticClass: "column_textform column_textform--think",
-            attrs: { name: "body" }
-          },
-          [_vm._v(_vm._s(_vm.column.think))]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(1),
-    _vm._v(" "),
-    _vm._m(2),
-    _vm._v(" "),
-    _vm._m(3),
-    _vm._v(" "),
-    _c("div", { staticClass: "flex_width" }, [
-      _c("div", { staticClass: "another_think_form_list" }, [
-        _c(
-          "h3",
-          { staticClass: "column_item column_item--another_think_list" },
-          [_vm._v("4.別の考え方・行動があなたの中にありますか？")]
-        ),
-        _vm._v(" "),
-        _c(
-          "p",
-          {
-            staticClass: "column_textform column_textform--another_think",
-            attrs: { name: "body" }
-          },
-          [_vm._v(_vm._s(_vm.column.another_think))]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "another_feeling_form_list" }, [
-        _c(
-          "h3",
-          { staticClass: "column_item column_item--another_feeling_list" },
-          [_vm._v("5.別の方法を実施した時の気分・感情は？")]
-        ),
-        _vm._v(" "),
-        _c(
-          "p",
-          {
-            staticClass: "column_textform column_textform--another_feeling",
-            attrs: { name: "body" }
-          },
-          [_vm._v(_vm._s(_vm.column.another_feeling))]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _vm._m(4),
-    _vm._v(" "),
-    _c("div", { staticClass: "another_situation_list" }, [
-      _c(
-        "h3",
-        { staticClass: "column_item column_item--another_situation_list" },
+  return _vm.column
+    ? _c(
+        "div",
+        { staticClass: "column_detail" },
         [
-          _vm._v(
-            "6.悩んでいた状況・出来事に再度遭遇した場合、あなたはどうする？"
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "p",
-        {
-          staticClass: "column_textform column_textform--another_situation",
-          attrs: { name: "body" }
-        },
-        [_vm._v(_vm._s(_vm.column.another_situation))]
+          _c(
+            "RouterLink",
+            { staticClass: "detail-back__brand", attrs: { to: "/columns" } },
+            [
+              _c("i", { staticClass: "icon ion-ios-arrow-back" }),
+              _vm._v(" トップに戻る\n  ")
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "button2 button2--info",
+              attrs: { title: "更新・編集" },
+              on: {
+                click: function($event) {
+                  _vm.showEdit = !_vm.showEdit
+                }
+              }
+            },
+            [_c("i", { staticClass: "icon ion-md-information-circle" })]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "button2 button2--delete",
+              attrs: { title: "削除" },
+              on: {
+                click: function($event) {
+                  _vm.showDelete = !_vm.showDelete
+                }
+              }
+            },
+            [_c("i", { staticClass: "icon ion-ios-trash" })]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "situation_form_detail" }, [
+            _c(
+              "h3",
+              { staticClass: "column_item column_item--situation_list " },
+              [_vm._v("1.どんな状況・出来事があなたを悩ますのか？")]
+            ),
+            _vm._v(" "),
+            _c(
+              "p",
+              {
+                staticClass: "column_textform column_textform--situation",
+                attrs: { name: "body" }
+              },
+              [_vm._v(_vm._s(_vm.column.situation))]
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex_width" }, [
+            _c("div", { staticClass: "feeling_form_detail" }, [
+              _c(
+                "h3",
+                { staticClass: "column_item column_item--feeling_list" },
+                [_vm._v("2.その時のあなたの気分・感情は？")]
+              ),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  staticClass: "column_textform column_textform--feeling",
+                  attrs: { name: "body" }
+                },
+                [_vm._v(_vm._s(_vm.column.feeling))]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "think_form_detail" }, [
+              _c("h3", { staticClass: "column_item column_item--think_list" }, [
+                _vm._v("3.その時、あなたの中で浮かんだ考え方・思いは？")
+              ]),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  staticClass: "column_textform column_textform--think",
+                  attrs: { name: "body" }
+                },
+                [_vm._v(_vm._s(_vm.column.think))]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _vm._m(2),
+          _vm._v(" "),
+          _vm._m(3),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex_width" }, [
+            _c("div", { staticClass: "another_think_form_detail" }, [
+              _c(
+                "h3",
+                { staticClass: "column_item column_item--another_think_list" },
+                [_vm._v("4.別の考え方・行動があなたの中にありますか？")]
+              ),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  staticClass: "column_textform column_textform--another_think",
+                  attrs: { name: "body" }
+                },
+                [_vm._v(_vm._s(_vm.column.another_think))]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "another_feeling_form_detail" }, [
+              _c(
+                "h3",
+                {
+                  staticClass: "column_item column_item--another_feeling_list"
+                },
+                [_vm._v("5.別の方法を実施した時の気分・感情は？")]
+              ),
+              _vm._v(" "),
+              _c(
+                "p",
+                {
+                  staticClass:
+                    "column_textform column_textform--another_feeling",
+                  attrs: { name: "body" }
+                },
+                [_vm._v(_vm._s(_vm.column.another_feeling))]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(4),
+          _vm._v(" "),
+          _c("div", { staticClass: "another_situation_detail" }, [
+            _c(
+              "h3",
+              {
+                staticClass: "column_item column_item--another_situation_list"
+              },
+              [
+                _vm._v(
+                  "6.悩んでいた状況・出来事に再度遭遇した場合、あなたはどうする？"
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "p",
+              {
+                staticClass:
+                  "column_textform column_textform--another_situation",
+                attrs: { name: "body" }
+              },
+              [_vm._v(_vm._s(_vm.column.another_situation))]
+            )
+          ]),
+          _vm._v(" "),
+          _c("ColumnEditForm", {
+            attrs: { item: _vm.column },
+            on: { "from-edit": _vm.close_editModal },
+            model: {
+              value: _vm.showEdit,
+              callback: function($$v) {
+                _vm.showEdit = $$v
+              },
+              expression: "showEdit"
+            }
+          }),
+          _vm._v(" "),
+          _c("ColumnDeleteForm", {
+            attrs: { item: _vm.column },
+            on: { "from-delete": _vm.close_deleteModal },
+            model: {
+              value: _vm.showDelete,
+              callback: function($$v) {
+                _vm.showDelete = $$v
+              },
+              expression: "showDelete"
+            }
+          })
+        ],
+        1
       )
-    ])
-  ])
+    : _vm._e()
 }
 var staticRenderFns = [
   function() {
@@ -49438,7 +50287,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "roop_word_list" }, [
+    return _c("div", { staticClass: "roop_word_detail" }, [
       _c("h2", { staticClass: "column_item column_item--sad_list" }, [
         _vm._v(
           "悲観的な考えがループするとさらに気分や体調が悪くなってしまう..."
@@ -68355,6 +69204,146 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/ColumnDeleteForm.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/ColumnDeleteForm.vue ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ColumnDeleteForm_vue_vue_type_template_id_4b7e8620___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ColumnDeleteForm.vue?vue&type=template&id=4b7e8620& */ "./resources/js/components/ColumnDeleteForm.vue?vue&type=template&id=4b7e8620&");
+/* harmony import */ var _ColumnDeleteForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ColumnDeleteForm.vue?vue&type=script&lang=js& */ "./resources/js/components/ColumnDeleteForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ColumnDeleteForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ColumnDeleteForm_vue_vue_type_template_id_4b7e8620___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ColumnDeleteForm_vue_vue_type_template_id_4b7e8620___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ColumnDeleteForm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/ColumnDeleteForm.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/ColumnDeleteForm.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ColumnDeleteForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ColumnDeleteForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ColumnDeleteForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ColumnDeleteForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ColumnDeleteForm.vue?vue&type=template&id=4b7e8620&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/ColumnDeleteForm.vue?vue&type=template&id=4b7e8620& ***!
+  \*************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ColumnDeleteForm_vue_vue_type_template_id_4b7e8620___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ColumnDeleteForm.vue?vue&type=template&id=4b7e8620& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ColumnDeleteForm.vue?vue&type=template&id=4b7e8620&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ColumnDeleteForm_vue_vue_type_template_id_4b7e8620___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ColumnDeleteForm_vue_vue_type_template_id_4b7e8620___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/ColumnEditForm.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/components/ColumnEditForm.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ColumnEditForm_vue_vue_type_template_id_76a316e2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ColumnEditForm.vue?vue&type=template&id=76a316e2& */ "./resources/js/components/ColumnEditForm.vue?vue&type=template&id=76a316e2&");
+/* harmony import */ var _ColumnEditForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ColumnEditForm.vue?vue&type=script&lang=js& */ "./resources/js/components/ColumnEditForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var vue2_perfect_scrollbar_dist_vue2_perfect_scrollbar_css_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css?vue&type=style&index=0&lang=css& */ "./node_modules/vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _ColumnEditForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ColumnEditForm_vue_vue_type_template_id_76a316e2___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ColumnEditForm_vue_vue_type_template_id_76a316e2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ColumnEditForm.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/ColumnEditForm.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/ColumnEditForm.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ColumnEditForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ColumnEditForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ColumnEditForm.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ColumnEditForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ColumnEditForm.vue?vue&type=template&id=76a316e2&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/ColumnEditForm.vue?vue&type=template&id=76a316e2& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ColumnEditForm_vue_vue_type_template_id_76a316e2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ColumnEditForm.vue?vue&type=template&id=76a316e2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ColumnEditForm.vue?vue&type=template&id=76a316e2&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ColumnEditForm_vue_vue_type_template_id_76a316e2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ColumnEditForm_vue_vue_type_template_id_76a316e2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/ColumnForm.vue":
 /*!************************************************!*\
   !*** ./resources/js/components/ColumnForm.vue ***!
@@ -70260,6 +71249,94 @@ var actions = {
           }
         }
       }, _callee4);
+    }))();
+  },
+  columnupdate: function columnupdate(context, data) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5() {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              context.commit('setApiStatus', null);
+              _context5.next = 3;
+              return axios.put('/api/columns/' + data.id, data)["catch"](function (err) {
+                return err.response || err;
+              });
+
+            case 3:
+              response = _context5.sent;
+
+              if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+                _context5.next = 8;
+                break;
+              }
+
+              context.commit('setApiStatus', true);
+              context.commit('setColumn', response.data);
+              return _context5.abrupt("return", false);
+
+            case 8:
+              context.commit('setApiStatus', false);
+
+              if (response.status === _util__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"]) {
+                context.commit('setcolumnErrorMessages', response.data.errors);
+              } else {
+                context.commit('error/setCode', response.status, {
+                  root: true
+                });
+              }
+
+            case 10:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5);
+    }))();
+  },
+  columndelete: function columndelete(context, data) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6() {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              context.commit('setApiStatus', null);
+              _context6.next = 3;
+              return axios["delete"]('/api/columns/' + data.id, data)["catch"](function (err) {
+                return err.response || err;
+              });
+
+            case 3:
+              response = _context6.sent;
+
+              if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+                _context6.next = 8;
+                break;
+              }
+
+              context.commit('setApiStatus', true);
+              context.commit('setColumn', response.data);
+              return _context6.abrupt("return", false);
+
+            case 8:
+              context.commit('setApiStatus', false);
+
+              if (response.status === _util__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"]) {
+                context.commit('setcolumnErrorMessages', response.data.errors);
+              } else {
+                context.commit('error/setCode', response.status, {
+                  root: true
+                });
+              }
+
+            case 10:
+            case "end":
+              return _context6.stop();
+          }
+        }
+      }, _callee6);
     }))();
   }
 };

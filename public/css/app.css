@@ -994,7 +994,7 @@ img {
   text-decoration: none;
   letter-spacing: 0.05em;
   /*字間*/
-  padding: 0.2em 1em;
+  padding: 0.5em 1em;
   /*ボタン内の余白*/
   border-radius: 3px;
   /*角の丸み*/
@@ -1023,7 +1023,7 @@ img {
   text-decoration: none;
   letter-spacing: 0.05em;
   /*字間*/
-  padding: 0.2em 1em;
+  padding: 0.5em 1em;
   /*ボタン内の余白*/
   margin-right: 1em;
   border-radius: 3px;
@@ -2536,6 +2536,64 @@ button {
   display: flex;
 }
 
+.situation_form_detail {
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  word-break: break-all;
+}
+
+.feeling_form_detail {
+  text-align: center;
+  width: 40%;
+  margin-left: auto;
+  margin-right: 1em;
+  word-break: break-all;
+}
+
+.think_form_detail {
+  text-align: center;
+  width: 40%;
+  margin-left: 1em;
+  margin-right: auto;
+  word-break: break-all;
+}
+
+.another_think_form_detail {
+  text-align: center;
+  width: 40%;
+  margin-left: auto;
+  margin-right: 1em;
+  word-break: break-all;
+}
+
+.another_feeling_form_detail {
+  text-align: center;
+  width: 40%;
+  margin-left: 1em;
+  margin-right: auto;
+  word-break: break-all;
+}
+
+.another_situation_detail {
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  word-break: break-all;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+}
+
+.roop_word_detail {
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  word-break: break-all;
+}
+
 @media screen and (max-width: 479px) {
   .column-form {
     background: #fff;
@@ -2648,6 +2706,103 @@ button {
   color: #fff;
 }
 
+.column_detail {
+  position: relative;
+  background-color: #EEEEEE;
+  border: solid 1px;
+}
+
+.column_detail:hover .column_detail__overlay {
+  visibility: visible;
+}
+
+.column_detail:nth-child(4n+1) .column_detail__wrapper {
+  background: #DBBCD5;
+}
+
+.column_detail:nth-child(4n+2) .column_detail__wrapper {
+  background: #DBDBBC;
+}
+
+.column_detail:nth-child(4n+3) .column_detail__wrapper {
+  background: #BCDBC8;
+}
+
+.column_detail:nth-child(4n) .column_detail__wrapper {
+  background: #BCC8DB;
+}
+
+.column_detail__wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.column_detail__image {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.column_detail__overlay {
+  background: rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  color: #fff;
+  cursor: zoom-in;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  left: 0;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+  top: 0;
+  visibility: hidden;
+}
+
+.column_detail__controls {
+  text-align: right;
+}
+
+.column_detail__action {
+  background: #fff;
+  border: 0;
+  border-radius: 0.25rem;
+  color: #222;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  margin-left: 0.25rem;
+  opacity: 0.8;
+  outline: none;
+  padding: 0.5em 0.75em;
+}
+
+.column_detail__action:hover {
+  opacity: 1;
+}
+
+.column_detail__action--like .icon {
+  color: #e4406f;
+  margin-right: 0.5em;
+}
+
+.column_detail__action--liked {
+  background: #e4406f;
+  color: #fff;
+}
+
+.column_detail__action--liked .icon {
+  color: #fff;
+}
+
 .condition_display {
   padding-bottom: 50px;
 }
@@ -2671,5 +2826,10 @@ button {
 
 .small-icon {
   width: 50%;
+}
+
+.column_edit {
+  background-color: #fff;
+  padding-top: 2em;
 }
 

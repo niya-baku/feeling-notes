@@ -103,7 +103,43 @@ const actions = {
             } else {
             context.commit('error/setCode', response.status, { root: true })
         }       
-    }
+    },
+    async columnupdate (context, data) {
+        context.commit('setApiStatus', null)
+        const response = await axios.put('/api/columns/' + data.id, data)
+            .catch(err => err.response || err)
+
+        if (response.status === OK) {
+            context.commit('setApiStatus', true)
+            context.commit('setColumn', response.data)
+            return false
+        }
+        context.commit('setApiStatus', false)
+        if (response.status === UNPROCESSABLE_ENTITY) {
+            context.commit('setcolumnErrorMessages', response.data.errors)
+          } else {
+            context.commit('error/setCode', response.status, { root: true })
+        }
+        
+    },
+    async columndelete (context, data) {
+        context.commit('setApiStatus', null)
+        const response = await axios.delete('/api/columns/'+ data.id, data)
+            .catch(err => err.response || err)
+
+        if (response.status === OK) {
+            context.commit('setApiStatus', true)
+            context.commit('setColumn', response.data)
+            return false
+        }
+        context.commit('setApiStatus', false)
+        if (response.status === UNPROCESSABLE_ENTITY) {
+            context.commit('setcolumnErrorMessages', response.data.errors)
+          } else {
+            context.commit('error/setCode', response.status, { root: true })
+        }
+        
+    },
 }
 
 export default {

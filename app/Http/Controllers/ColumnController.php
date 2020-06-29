@@ -31,6 +31,27 @@ class ColumnController extends Controller
         return $column ?? abort(404);
     }
 
+    public function update(StoreColum $request, $id){
+        $column = Column::find($id);
+    
+        $column->situation = $request->situation; //日付取得
+        $column->feeling = $request->feeling; //起床時間の取得
+        $column->think = $request->think; //就寝時間の取得
+        $column->another_think = $request->another_think; //午前の調子値 
+        $column->another_feeling = $request->another_feeling; //午後の調子値
+        $column->another_situation = $request->another_situation;
+            
+        $column->save();
+        return $column ?? abort(404);
+    }
+
+    public function delete(Request $request, $id)
+    {
+        Column::find($id)->delete();
+
+        return response(200);
+    }
+
     public function create(StoreColum $request){
 
         $column = new Column();
