@@ -2594,7 +2594,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
                   _this.$emit('input', false);
 
-                  _this.$router.push("/columns");
+                  _this.$router.push("/columns/".concat(_this.columnStatus.id));
                 } else {
                   console.log('send NG');
                 }
@@ -3860,6 +3860,8 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
 //
 //
 //
@@ -50114,153 +50116,167 @@ var render = function() {
             [_c("i", { staticClass: "icon ion-ios-trash" })]
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "situation_form_detail" }, [
-            _c(
-              "h3",
-              { staticClass: "column_item column_item--situation_list " },
-              [_vm._v("1.どんな状況・出来事があなたを悩ますのか？")]
-            ),
-            _vm._v(" "),
-            _c(
-              "p",
-              {
-                staticClass: "column_textform column_textform--situation",
-                attrs: { name: "body" }
-              },
-              [_vm._v(_vm._s(_vm.column.situation))]
-            )
-          ]),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "flex_width" }, [
-            _c("div", { staticClass: "feeling_form_detail" }, [
-              _c(
-                "h3",
-                { staticClass: "column_item column_item--feeling_list" },
-                [_vm._v("2.その時のあなたの気分・感情は？")]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass: "column_textform column_textform--feeling",
-                  attrs: { name: "body" }
-                },
-                [_vm._v(_vm._s(_vm.column.feeling))]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "think_form_detail" }, [
-              _c("h3", { staticClass: "column_item column_item--think_list" }, [
-                _vm._v("3.その時、あなたの中で浮かんだ考え方・思いは？")
+          _c(
+            "div",
+            { staticClass: "solid_column" },
+            [
+              _c("div", { staticClass: "situation_form_detail" }, [
+                _c(
+                  "h3",
+                  { staticClass: "column_item column_item--situation_list " },
+                  [_vm._v("1.どんな状況・出来事があなたを悩ますのか？")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  {
+                    staticClass: "column_textform column_textform--situation",
+                    attrs: { name: "body" }
+                  },
+                  [_vm._v(_vm._s(_vm.column.situation))]
+                )
               ]),
               _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass: "column_textform column_textform--think",
-                  attrs: { name: "body" }
-                },
-                [_vm._v(_vm._s(_vm.column.think))]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _vm._m(1),
-          _vm._v(" "),
-          _vm._m(2),
-          _vm._v(" "),
-          _vm._m(3),
-          _vm._v(" "),
-          _c("div", { staticClass: "flex_width" }, [
-            _c("div", { staticClass: "another_think_form_detail" }, [
-              _c(
-                "h3",
-                { staticClass: "column_item column_item--another_think_list" },
-                [_vm._v("4.別の考え方・行動があなたの中にありますか？")]
-              ),
+              _vm._m(0),
               _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass: "column_textform column_textform--another_think",
-                  attrs: { name: "body" }
-                },
-                [_vm._v(_vm._s(_vm.column.another_think))]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "another_feeling_form_detail" }, [
-              _c(
-                "h3",
-                {
-                  staticClass: "column_item column_item--another_feeling_list"
-                },
-                [_vm._v("5.別の方法を実施した時の気分・感情は？")]
-              ),
+              _c("div", { staticClass: "flex_width" }, [
+                _c("div", { staticClass: "feeling_form_detail" }, [
+                  _c(
+                    "h3",
+                    { staticClass: "column_item column_item--feeling_list" },
+                    [_vm._v("2.その時のあなたの気分・感情は？")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass: "column_textform column_textform--feeling",
+                      attrs: { name: "body" }
+                    },
+                    [_vm._v(_vm._s(_vm.column.feeling))]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "think_form_detail" }, [
+                  _c(
+                    "h3",
+                    { staticClass: "column_item column_item--think_list" },
+                    [_vm._v("3.その時、あなたの中で浮かんだ考え方・思いは？")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass: "column_textform column_textform--think",
+                      attrs: { name: "body" }
+                    },
+                    [_vm._v(_vm._s(_vm.column.think))]
+                  )
+                ])
+              ]),
               _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass:
-                    "column_textform column_textform--another_feeling",
-                  attrs: { name: "body" }
-                },
-                [_vm._v(_vm._s(_vm.column.another_feeling))]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _vm._m(4),
-          _vm._v(" "),
-          _c("div", { staticClass: "another_situation_detail" }, [
-            _c(
-              "h3",
-              {
-                staticClass: "column_item column_item--another_situation_list"
-              },
-              [
-                _vm._v(
-                  "6.悩んでいた状況・出来事に再度遭遇した場合、あなたはどうする？"
+              _vm._m(1),
+              _vm._v(" "),
+              _vm._m(2),
+              _vm._v(" "),
+              _vm._m(3),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex_width" }, [
+                _c("div", { staticClass: "another_think_form_detail" }, [
+                  _c(
+                    "h3",
+                    {
+                      staticClass: "column_item column_item--another_think_list"
+                    },
+                    [_vm._v("4.別の考え方・行動があなたの中にありますか？")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "column_textform column_textform--another_think",
+                      attrs: { name: "body" }
+                    },
+                    [_vm._v(_vm._s(_vm.column.another_think))]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "another_feeling_form_detail" }, [
+                  _c(
+                    "h3",
+                    {
+                      staticClass:
+                        "column_item column_item--another_feeling_list"
+                    },
+                    [_vm._v("5.別の方法を実施した時の気分・感情は？")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "column_textform column_textform--another_feeling",
+                      attrs: { name: "body" }
+                    },
+                    [_vm._v(_vm._s(_vm.column.another_feeling))]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._m(4),
+              _vm._v(" "),
+              _c("div", { staticClass: "another_situation_detail" }, [
+                _c(
+                  "h3",
+                  {
+                    staticClass:
+                      "column_item column_item--another_situation_list"
+                  },
+                  [
+                    _vm._v(
+                      "6.悩んでいた状況・出来事に再度遭遇した場合、あなたはどうする？"
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "column_textform column_textform--another_situation",
+                    attrs: { name: "body" }
+                  },
+                  [_vm._v(_vm._s(_vm.column.another_situation))]
                 )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "p",
-              {
-                staticClass:
-                  "column_textform column_textform--another_situation",
-                attrs: { name: "body" }
-              },
-              [_vm._v(_vm._s(_vm.column.another_situation))]
-            )
-          ]),
-          _vm._v(" "),
-          _c("ColumnEditForm", {
-            attrs: { item: _vm.column },
-            on: { "from-edit": _vm.close_editModal },
-            model: {
-              value: _vm.showEdit,
-              callback: function($$v) {
-                _vm.showEdit = $$v
-              },
-              expression: "showEdit"
-            }
-          }),
-          _vm._v(" "),
-          _c("ColumnDeleteForm", {
-            attrs: { item: _vm.column },
-            on: { "from-delete": _vm.close_deleteModal },
-            model: {
-              value: _vm.showDelete,
-              callback: function($$v) {
-                _vm.showDelete = $$v
-              },
-              expression: "showDelete"
-            }
-          })
+              ]),
+              _vm._v(" "),
+              _c("ColumnEditForm", {
+                attrs: { item: _vm.column },
+                on: { "from-edit": _vm.close_editModal },
+                model: {
+                  value: _vm.showEdit,
+                  callback: function($$v) {
+                    _vm.showEdit = $$v
+                  },
+                  expression: "showEdit"
+                }
+              }),
+              _vm._v(" "),
+              _c("ColumnDeleteForm", {
+                attrs: { item: _vm.column },
+                on: { "from-delete": _vm.close_deleteModal },
+                model: {
+                  value: _vm.showDelete,
+                  callback: function($$v) {
+                    _vm.showDelete = $$v
+                  },
+                  expression: "showDelete"
+                }
+              })
+            ],
+            1
+          )
         ],
         1
       )

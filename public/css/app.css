@@ -58,7 +58,7 @@ img {
 
 .grid_column__item {
   margin-bottom: 2rem;
-  border: solid;
+  border: solid 1px;
 }
 
 @media screen and (max-width: 479px) {
@@ -70,6 +70,15 @@ img {
 
   .grid__item {
     margin-bottom: 2rem;
+  }
+
+  .grid_column {
+    display: inline;
+  }
+
+  .grid_column__item {
+    margin-bottom: 2rem;
+    border: solid 1px;
   }
 }
 
@@ -1548,7 +1557,7 @@ button {
   text-decoration: none;
   letter-spacing: 0.05em;
   /*字間*/
-  padding: 0.2em 1em;
+  padding: 0.5em 1em;
   /*ボタン内の余白*/
   margin-top: 2em;
   border-radius: 3px;
@@ -2234,31 +2243,6 @@ button {
   justify-content: center;
 }
 
-.raised {
-  display: inline-block;
-  background-color: #26a69b;
-  /*背景色*/
-  color: #FFF;
-  /*文字色*/
-  font-size: 1em;
-  /*文字サイズ*/
-  line-height: 1;
-  text-decoration: none;
-  letter-spacing: 0.05em;
-  /*字間*/
-  padding: 0.2em 1em;
-  /*ボタン内の余白*/
-  margin-top: 2em;
-  border-radius: 3px;
-  /*角の丸み*/
-  cursor: pointer;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  /*影*/
-  -webkit-tap-highlight-color: transparent;
-  transition: 0.3s ease-out;
-  /*変化を緩やかに*/
-}
-
 .modal-content {
   z-index: 2;
   margin-top: 5em;
@@ -2271,35 +2255,6 @@ button {
   margin-top: 5em;
   padding: 2em;
   background: #fff;
-}
-
-.required {
-  display: inline-block;
-  background-color: #ff0000;
-  /*背景色*/
-  color: #FFF;
-  /*文字色*/
-  font-size: 0.8em;
-  /*文字サイズ*/
-  line-height: 1;
-  text-decoration: none;
-  letter-spacing: 0.05em;
-  /*字間*/
-  padding: 0.2em 0.4em;
-  /*ボタン内の余白*/
-  margin-right: 0.5em;
-  border-radius: 3px;
-  /*角の丸み*/
-  cursor: pointer;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  /*影*/
-  -webkit-tap-highlight-color: transparent;
-  transition: 0.3s ease-out;
-  /*変化を緩やかに*/
-}
-
-.note_item {
-  display: flex;
 }
 
 .column_item--situation {
@@ -2539,6 +2494,7 @@ button {
 .situation_form_detail {
   text-align: center;
   width: 50%;
+  margin-top: 2em;
   margin-left: auto;
   margin-right: auto;
   word-break: break-all;
@@ -2582,7 +2538,6 @@ button {
   margin-left: auto;
   margin-right: auto;
   word-break: break-all;
-  margin-bottom: 2em;
   padding-bottom: 2em;
 }
 
@@ -2607,6 +2562,121 @@ button {
     right: 5%;
     top: 3.5rem;
     width: 90%;
+  }
+
+  .situation_form {
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .feeling_form {
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .think_form {
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .another_think_form {
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .another_feeling_form {
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .another_situation {
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .roop_word {
+    text-align: center;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .situation_form_detail {
+    text-align: center;
+    width: 70%;
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    word-break: break-all;
+  }
+
+  .feeling_form_detail {
+    text-align: center;
+    width: 40%;
+    margin-left: auto;
+    margin-right: 1em;
+    word-break: break-all;
+  }
+
+  .think_form_detail {
+    text-align: center;
+    width: 40%;
+    margin-left: 1em;
+    margin-right: auto;
+    word-break: break-all;
+  }
+
+  .another_think_form_detail {
+    text-align: center;
+    width: 40%;
+    margin-left: auto;
+    margin-right: 1em;
+    word-break: break-all;
+  }
+
+  .another_feeling_form_detail {
+    text-align: center;
+    width: 40%;
+    margin-left: 1em;
+    margin-right: auto;
+    word-break: break-all;
+  }
+
+  .another_situation_detail {
+    text-align: center;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    word-break: break-all;
+    padding-bottom: 2em;
+  }
+
+  .roop_word_detail {
+    text-align: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    word-break: break-all;
+  }
+
+  .column_item--sad {
+    background-color: #EAD9FF;
+    border-radius: 100px/50px;
+    padding: 1em;
+    font-size: 1em;
+    white-space: normal;
   }
 }
 
@@ -2708,8 +2778,6 @@ button {
 
 .column_detail {
   position: relative;
-  background-color: #EEEEEE;
-  border: solid 1px;
 }
 
 .column_detail:hover .column_detail__overlay {
@@ -2828,8 +2896,8 @@ button {
   width: 50%;
 }
 
-.column_edit {
-  background-color: #fff;
-  padding-top: 2em;
+.solid_column {
+  background-color: #EEEEEE;
+  border: solid 1px;
 }
 

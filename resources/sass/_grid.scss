@@ -15,7 +15,7 @@
 
   &__item {
     margin-bottom: 2rem;
-    border: solid;
+    border: solid 1px;
   }
 }
 
@@ -27,6 +27,14 @@
   
     &__item {
       margin-bottom: 2rem;
+    }
+  }
+  .grid_column {
+    display: inline;
+  
+    &__item {
+      margin-bottom: 2rem;
+      border: solid 1px;
     }
   }
 }

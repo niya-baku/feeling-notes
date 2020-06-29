@@ -108,8 +108,7 @@
   .column_detail {
     $component: &;
     position: relative;
-    background-color: #EEEEEE;
-    border: solid 1px;
+
   
     &:hover {
       #{$component}__overlay {

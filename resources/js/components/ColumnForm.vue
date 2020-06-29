@@ -122,7 +122,7 @@ export default {
                 })
                 this.reset()
                 this.$emit('input', false)
-                this.$router.push(`/columns`)
+                this.$router.push(`/columns/${this.columnStatus.id}`)
                 
             }else{
                 console.log('send NG')
