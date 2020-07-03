@@ -1,7 +1,17 @@
 <template>
     <div v-show="value" class="note-form">
     <form class="form" @submit.prevent="note">
-    
+        <div v-if="noteErrors" class="errors">
+            <ul v-if="noteErrors.record">
+                <li v-for="msg in noteErrors.record" :key="msg">{{ msg }}</li>
+            </ul>
+            <ul v-if="noteErrors.wake_uptime">
+                <li v-for="msg in noteErrors.wake_uptime" :key="msg">{{ msg }}</li>
+            </ul>
+            <ul v-if="noteErrors.bedtime">
+                <li v-for="msg in noteErrors.bedtime" :key="msg">{{ msg }}</li>
+            </ul>
+        </div>
 
         <div class="display-item" v-model="noteform.id">
             <h3 class="note_title"><span class="required">必須</span>記録日</h3>
@@ -80,17 +90,6 @@
             <div class="submit_button">
                 <button type="submit" class="raised" >投稿する</button>
             </div>
-        </div>
-            <div v-if="noteErrors" class="errors">
-            <ul v-if="noteErrors.record">
-            <li v-for="msg in noteErrors.record" :key="msg">{{ msg }}</li>
-            </ul>
-            <ul v-if="noteErrors.wake_uptime">
-            <li v-for="msg in noteErrors.wake_uptime" :key="msg">{{ msg }}</li>
-            </ul>
-            <ul v-if="noteErrors.bedtime">
-            <li v-for="msg in noteErrors.bedtime" :key="msg">{{ msg }}</li>
-            </ul>
         </div>
     </form>
     </div>

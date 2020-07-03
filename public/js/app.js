@@ -3466,7 +3466,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -3603,7 +3602,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -49496,6 +49494,40 @@ var render = function() {
           }
         },
         [
+          _vm.noteErrors
+            ? _c("div", { staticClass: "errors" }, [
+                _vm.noteErrors.record
+                  ? _c(
+                      "ul",
+                      _vm._l(_vm.noteErrors.record, function(msg) {
+                        return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
+                      }),
+                      0
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.noteErrors.wake_uptime
+                  ? _c(
+                      "ul",
+                      _vm._l(_vm.noteErrors.wake_uptime, function(msg) {
+                        return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
+                      }),
+                      0
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.noteErrors.bedtime
+                  ? _c(
+                      "ul",
+                      _vm._l(_vm.noteErrors.bedtime, function(msg) {
+                        return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
+                      }),
+                      0
+                    )
+                  : _vm._e()
+              ])
+            : _vm._e(),
+          _vm._v(" "),
           _c(
             "div",
             {
@@ -49758,41 +49790,7 @@ var render = function() {
             }),
             _vm._v(" "),
             _vm._m(3)
-          ]),
-          _vm._v(" "),
-          _vm.noteErrors
-            ? _c("div", { staticClass: "errors" }, [
-                _vm.noteErrors.record
-                  ? _c(
-                      "ul",
-                      _vm._l(_vm.noteErrors.record, function(msg) {
-                        return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
-                      }),
-                      0
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.noteErrors.wake_uptime
-                  ? _c(
-                      "ul",
-                      _vm._l(_vm.noteErrors.wake_uptime, function(msg) {
-                        return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
-                      }),
-                      0
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.noteErrors.bedtime
-                  ? _c(
-                      "ul",
-                      _vm._l(_vm.noteErrors.bedtime, function(msg) {
-                        return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
-                      }),
-                      0
-                    )
-                  : _vm._e()
-              ])
-            : _vm._e()
+          ])
         ]
       )
     ]
@@ -49882,8 +49880,7 @@ var render = function() {
             },
             [_vm._v("next »")]
           )
-        : _vm._e(),
-      _vm._v("\n  " + _vm._s(_vm.currentPage) + "\n")
+        : _vm._e()
     ],
     1
   )

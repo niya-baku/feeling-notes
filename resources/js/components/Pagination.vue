@@ -10,7 +10,6 @@
       :to="`/?page=${currentPage + 1}`"
       class="button"
     >next &raquo;</RouterLink>
-    {{currentPage}}
   </div>
 </template>
 
