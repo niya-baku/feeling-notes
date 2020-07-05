@@ -123,8 +123,18 @@ export default {
                 this.reset()
                 this.$emit('input', false)
                 this.$router.push(`/columns/${this.columnStatus.id}`)
+                var divElement = document.getElementsByClassName( "column-form" )
+                var scrollTop = Array.prototype.slice.call(divElement)
+                scrollTop.forEach(function(item) {
+                    item.scrollTop = 0
+                });
                 
             }else{
+                var divElement = document.getElementsByClassName( "column-form" )
+                var scrollTop = Array.prototype.slice.call(divElement)
+                scrollTop.forEach(function(item) {
+                    item.scrollTop = 0
+                });
                 console.log('send NG')
             }
             

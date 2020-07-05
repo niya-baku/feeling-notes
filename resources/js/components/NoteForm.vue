@@ -106,6 +106,8 @@ export default {
     },
     data(){
         return{
+            scrollX: 0,
+            scrollY: 0,
             noteform: {
                 record: '',
                 wake_uptime: '',
@@ -135,7 +137,7 @@ export default {
                     5: '/images/nice_smile_nimi.png'
                 },
                 iconId_3: 3,
-            }
+            },
         }
     },
     computed: {
@@ -188,11 +190,22 @@ export default {
                     content: '写真が投稿されました！',
                     timeout: 3000
                 })
+                
                 this.reset()
                 this.$emit('input', false)
                 this.$router.push(`/notes/${this.noteStatus.id}`)
+                var divElement = document.getElementsByClassName( "note-form" )
+                var scrollTop = Array.prototype.slice.call(divElement)
+                scrollTop.forEach(function(item) {
+                    item.scrollTop = 0
+                });
                 
             }else{
+                var divElement = document.getElementsByClassName( "note-form" )
+                var scrollTop = Array.prototype.slice.call(divElement)
+                scrollTop.forEach(function(item) {
+                    item.scrollTop = 0
+                });
                 console.log('send NG')
             }
             

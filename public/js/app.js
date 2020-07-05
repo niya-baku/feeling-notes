@@ -2575,6 +2575,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var divElement, scrollTop;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -2595,7 +2596,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   _this.$emit('input', false);
 
                   _this.$router.push("/columns/".concat(_this.columnStatus.id));
+
+                  divElement = document.getElementsByClassName("column-form");
+                  scrollTop = Array.prototype.slice.call(divElement);
+                  scrollTop.forEach(function (item) {
+                    item.scrollTop = 0;
+                  });
                 } else {
+                  divElement = document.getElementsByClassName("column-form");
+                  scrollTop = Array.prototype.slice.call(divElement);
+                  scrollTop.forEach(function (item) {
+                    item.scrollTop = 0;
+                  });
                   console.log('send NG');
                 }
 
@@ -3476,6 +3488,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   data: function data() {
     return {
+      scrollX: 0,
+      scrollY: 0,
       noteform: {
         record: '',
         wake_uptime: '',
@@ -3556,6 +3570,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var divElement, scrollTop;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -3576,7 +3591,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   _this.$emit('input', false);
 
                   _this.$router.push("/notes/".concat(_this.noteStatus.id));
+
+                  divElement = document.getElementsByClassName("note-form");
+                  scrollTop = Array.prototype.slice.call(divElement);
+                  scrollTop.forEach(function (item) {
+                    item.scrollTop = 0;
+                  });
                 } else {
+                  divElement = document.getElementsByClassName("note-form");
+                  scrollTop = Array.prototype.slice.call(divElement);
+                  scrollTop.forEach(function (item) {
+                    item.scrollTop = 0;
+                  });
                   console.log('send NG');
                 }
 
@@ -71104,15 +71130,16 @@ var actions = {
               response = _context.sent;
 
               if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["CREATED"])) {
-                _context.next = 8;
+                _context.next = 9;
                 break;
               }
 
               context.commit('setApiStatus', true);
               context.commit('setNote', response.data);
+              context.commit('setnoteErrorMessages', null);
               return _context.abrupt("return", false);
 
-            case 8:
+            case 9:
               context.commit('setApiStatus', false);
 
               if (response.status === _util__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"]) {
@@ -71123,7 +71150,7 @@ var actions = {
                 });
               }
 
-            case 10:
+            case 11:
             case "end":
               return _context.stop();
           }
@@ -71237,15 +71264,16 @@ var actions = {
               response = _context4.sent;
 
               if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["CREATED"])) {
-                _context4.next = 8;
+                _context4.next = 9;
                 break;
               }
 
               context.commit('setApiStatus', true);
               context.commit('setColumn', response.data);
+              context.commit('setcolumnErrorMessages', null);
               return _context4.abrupt("return", false);
 
-            case 8:
+            case 9:
               context.commit('setApiStatus', false);
 
               if (response.status === _util__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"]) {
@@ -71256,7 +71284,7 @@ var actions = {
                 });
               }
 
-            case 10:
+            case 11:
             case "end":
               return _context4.stop();
           }

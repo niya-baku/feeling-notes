@@ -41,6 +41,7 @@ const actions = {
         if (response.status === CREATED) {
             context.commit('setApiStatus', true)
             context.commit('setNote', response.data)
+            context.commit('setnoteErrorMessages', null)
             return false
         }
         context.commit('setApiStatus', false)
@@ -95,6 +96,7 @@ const actions = {
         if (response.status === CREATED) {
             context.commit('setApiStatus', true)
             context.commit('setColumn', response.data)
+            context.commit('setcolumnErrorMessages', null)
             return false
         }
         context.commit('setApiStatus', false)
