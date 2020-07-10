@@ -272,9 +272,13 @@ Vue.config.productionTip = false
 </script>
 
 <style>
+/*vuetity_CSS*/ 
 [role=button], [type=button], [type=reset], [type=submit], button {
   cursor: pointer;
   color: #FFF;
+}
+.v-application p {
+    margin-bottom: 0.5em;
 }
 @media screen and ( max-width:479px ) {
   .v-menu__content {

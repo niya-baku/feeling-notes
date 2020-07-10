@@ -1859,7 +1859,6 @@ button {
 
 .top_page {
   width: 100%;
-  postion: relative;
   background-color: #000000;
   display: inline-block;
 }
@@ -1882,7 +1881,7 @@ button {
 .top_page div.top_sentence {
   position: absolute;
   text-align: center;
-  top: 70%;
+  top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
   -webkit-transform: translateY(-50%) translateX(-50%);
@@ -1905,7 +1904,7 @@ button {
   .top_page div.top_sentence {
     position: absolute;
     text-align: center;
-    top: 33%;
+    top: 17%;
     left: 50%;
     width: 75%;
     transform: translateY(-50%) translateX(-50%);
