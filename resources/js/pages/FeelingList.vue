@@ -276,4 +276,17 @@ Vue.config.productionTip = false
   cursor: pointer;
   color: #FFF;
 }
+@media screen and ( max-width:479px ) {
+  .v-menu__content {
+      position: absolute;
+      display: inline-block;
+      max-width: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      contain: content;
+      will-change: transform;
+      box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+      border-radius: 4px;
+  }
+}
 </style>
