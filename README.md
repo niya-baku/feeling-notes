@@ -1,6 +1,6 @@
 # 体調管理アプリ「Feeling-notes」
 
-![20200613004119](https://user-images.githubusercontent.com/40636920/84520907-3562bf00-ad0f-11ea-9b9b-eb86bff1a929.png)
+![20200710221652](https://user-images.githubusercontent.com/40636920/87165260-dd66aa80-c304-11ea-9fa5-166b2c668ab5.png)
 
 ![20200613004055](https://user-images.githubusercontent.com/40636920/84520836-1e23d180-ad0f-11ea-9056-df95e0aaafa2.png)
 
