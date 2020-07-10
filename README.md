@@ -4,6 +4,8 @@
 
 ![20200710221511](https://user-images.githubusercontent.com/40636920/87165360-00915a00-c305-11ea-8b08-0fd7bf50a2d4.png)
 
+![20200710221445](https://user-images.githubusercontent.com/40636920/87165441-1d2d9200-c305-11ea-8242-98935e8d7546.png)
+
 ![20200613004021](https://user-images.githubusercontent.com/40636920/84520968-4f040680-ad0f-11ea-9a89-7a90925bd1fe.png)
 
 # Feeling-notesとは
