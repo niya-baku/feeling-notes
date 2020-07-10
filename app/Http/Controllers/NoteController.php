@@ -24,7 +24,9 @@ class NoteController extends Controller
     {
         $user_id = Auth::id();
         //$notes = Note::with(['user'])->orderBy(Note::CREATED_AT, 'desc')->paginate();
-        $notes = Note::where('user_id',$user_id)->orderBy('record', 'desc')->paginate();
+        $len = Note::where('user_id',$user_id)->orderBy('record', 'asc')->count();
+
+        $notes = Note::where('user_id',$user_id)->orderBy('record', 'asc')->paginate($len);
         return $notes;
     }
 

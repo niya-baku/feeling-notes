@@ -39,6 +39,7 @@ li {
 .display{
   display: flex;
   justify-content: center;
+  padding-top: 1em;
 }
 
 .display-item{
@@ -48,12 +49,14 @@ li {
 
 input.width-record{
   height: 25%;
-  margin: 1em 0  0 1.5em; 
+  margin: 0  0  0 1.5em; 
+  border: solid 1px;
 }
 
 input.width-time{
   height: 25%;
-  margin: 1em 0  0 1.5em; 
+  margin: 0  0  0 1.5em; 
+  border: solid 1px;
 }
 
 .image-radio-button {

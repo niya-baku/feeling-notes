@@ -27,6 +27,9 @@
     border: 0;
     padding: 0.7rem 1.2rem;
     font-size: 1.2rem;
+    border: 1px solid #dedede;
+    transition: border-color 300ms ease-in-out, color 300ms ease-in-out;
+    background-color: #EFEFEF;
   }
 
   &--inverse {
@@ -72,6 +75,7 @@
 
 .button_column {
   border: 1px solid $grey-3;
+  background-color: #EFEFEF;
   border-radius: .25rem;
   color: $grey-2;
   cursor: pointer;
@@ -144,6 +148,7 @@
 
 .button_notes {
   border: 1px solid $grey-3;
+  background-color: #EFEFEF;
   border-radius: .25rem;
   color: $grey-2;
   cursor: pointer;
@@ -370,7 +375,6 @@
   -webkit-tap-highlight-color: transparent;
   transition: .3s ease-out;/*変化を緩やかに*/
 }
-
 
 
 @media screen and ( max-width:479px ) {
