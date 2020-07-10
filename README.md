@@ -8,6 +8,9 @@
 
 ![20200613004021](https://user-images.githubusercontent.com/40636920/84520968-4f040680-ad0f-11ea-9a89-7a90925bd1fe.png)
 
+![20200710221619](https://user-images.githubusercontent.com/40636920/87165554-46e6b900-c305-11ea-9b04-74ed0b6d1160.png)
+
+
 # Feeling-notesとは
 
 自分のその日の体調を投稿し、集計してチャート化することで日々の体調の変化を記録することができるアプリです
