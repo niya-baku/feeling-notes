@@ -79,8 +79,8 @@ export default {
         password: ''
       },
       guestloginForm: {
-        email: 'guest@laravel.com',
-        password: 'guestuser'
+        email: 'guest-user@laravelfeeling.com',
+        password: 'guestuser-laravel'
       },
       registerForm: {
         name: '',

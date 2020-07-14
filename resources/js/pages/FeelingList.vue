@@ -113,8 +113,8 @@ Vue.config.productionTip = false
       return{
         notes: [],
         guestloginForm: {
-          email: 'guest@laravel.com',
-          password: 'guestuser'
+        email: 'guest-user@laravelfeeling.com',
+        password: 'guestuser-laravel'
         },
         focus: '',
         record_data: '',
