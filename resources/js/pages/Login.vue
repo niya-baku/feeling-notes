@@ -79,8 +79,8 @@ export default {
         password: ''
       },
       guestloginForm: {
-        email: 'guest-user@laravelfeeling.com',
-        password: 'guestuser-laravel'
+        email: null,
+        password: null
       },
       registerForm: {
         name: '',
@@ -111,6 +111,11 @@ export default {
     },
     async guestlogin () {
       // authストアのloginアクションを呼び出す
+      this.guestloginForm = {
+          email: 'guest-user@laravelfeeling.com',
+          password: 'guestuser-laravel'
+      }
+      console.log(this.guestloginForm)
       await this.$store.dispatch('auth/login', this.guestloginForm)
       if (this.apiStatus) {
         // メッセージ登録

@@ -113,8 +113,8 @@ Vue.config.productionTip = false
       return{
         notes: [],
         guestloginForm: {
-        email: 'guest-user@laravelfeeling.com',
-        password: 'guestuser-laravel'
+        email: null,
+        password: null
         },
         focus: '',
         record_data: '',
@@ -178,6 +178,10 @@ Vue.config.productionTip = false
       },
       async guestlogin () {
         // authストアのloginアクションを呼び出す
+        this.guestloginForm = {
+            email: 'guest-user@laravelfeeling.com',
+            password: 'guestuser-laravel'
+        }
         await this.$store.dispatch('auth/login', this.guestloginForm)
         if (this.apiStatus) {
           // メッセージ登録
