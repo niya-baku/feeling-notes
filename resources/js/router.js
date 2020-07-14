@@ -5,6 +5,7 @@ import VueRouter from 'vue-router'
 // ページコンポーネントをインポートする
 import FeelingList from './pages/FeelingList.vue'
 import Login from './pages/Login.vue'
+import Changepassword from './pages/Changepassword.vue'
 import store from './store'
 import SystemError from './pages/errors/System.vue'
 import NoteDetail from './pages/NoteDetail.vue'
@@ -86,6 +87,17 @@ const routes = [
         next('/')
       } else {
         next()
+      }
+    }
+  },
+  {
+    path: '/changepassword',
+    component: Changepassword,
+    beforeEnter (to, from, next) {
+      if (store.getters['auth/check']) {
+        next()
+      } else {
+        next('/login')
       }
     }
   },

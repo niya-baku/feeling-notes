@@ -16,6 +16,11 @@ use Illuminate\Http\Request;
 // 会員登録
 Route::post('/register', 'Auth\RegisterController@register')->name('register');
 
+// PW変更画面
+//Route::get('/changepassword', 'Auth\ChangePasswordController@showChangePasswordForm')->name('password.form');
+// PW変更
+//Route::post('/changepasswordchange', 'Auth\ChangePasswordController@ChangePassword')->name('password.change');
+
 // ログイン
 Route::post('/login', 'Auth\LoginController@login')->name('login');
 

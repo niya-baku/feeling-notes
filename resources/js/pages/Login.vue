@@ -115,7 +115,6 @@ export default {
           email: 'guest-user@laravelfeeling.com',
           password: 'guestuser-laravel'
       }
-      console.log(this.guestloginForm)
       await this.$store.dispatch('auth/login', this.guestloginForm)
       if (this.apiStatus) {
         // メッセージ登録
