@@ -18,7 +18,6 @@
     </a>
   </slide>
   <div id="page-wrap"></div>
-
     <div class="navbar__menu">
       <span v-if="isLogin" class="navbar__item">
             {{ username }}

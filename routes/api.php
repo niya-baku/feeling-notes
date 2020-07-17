@@ -17,9 +17,9 @@ use Illuminate\Http\Request;
 Route::post('/register', 'Auth\RegisterController@register')->name('register');
 
 // PW変更画面
-//Route::get('/changepassword', 'Auth\ChangePasswordController@showChangePasswordForm')->name('password.form');
+Route::get('/changepassword', 'Auth\ChangePasswordController@setindex')->name('changepassword.setindex');
 // PW変更
-//Route::post('/changepasswordchange', 'Auth\ChangePasswordController@ChangePassword')->name('password.change');
+Route::post('/changepassword', 'Auth\ChangePasswordController@change')->name('changepassword.change');
 
 // ログイン
 Route::post('/login', 'Auth\LoginController@login')->name('login');
