@@ -112,6 +112,8 @@ return [
         'situation' => '第一項目',
         'feeling' => '第二項目',
         'think' => '第三項目',
+        'currentpassword' => '現在のパスワード',
+        'newpassword' => '新しいパスワード',
     ],
 
 ];
