@@ -112,8 +112,8 @@ export default {
     async guestlogin () {
       // authストアのloginアクションを呼び出す
       this.guestloginForm = {
-          email: 'guest-user@laravelfeeling.com',
-          password: 'guestuser-laravel'
+            email: 'guest@laravel.com',
+            password: 'feelingnote-guestuser'
       }
       await this.$store.dispatch('auth/login', this.guestloginForm)
       if (this.apiStatus) {

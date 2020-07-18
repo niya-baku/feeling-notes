@@ -51,7 +51,7 @@
             <v-card-text>
               <span v-html="selectedEvent.details"></span>
             </v-card-text>
-                <Note 
+                <Note
                   class="grid__item"
                   v-for="note in notes"
                   :key="note.id"
@@ -133,7 +133,7 @@ Vue.config.productionTip = false
         record_datatime: function() {
           return moment(this.record_data).format('YYYY-MM-DD');
         },
-      }  
+      }
     },
     filters: {
         moment: function (date) {
@@ -164,14 +164,14 @@ Vue.config.productionTip = false
 
           //ローカル環境用
           const response = await axios.get(`api/notes/?page=${this.page}`)
-          
+
           if (response.status !== OK) {
             this.$store.commit('error/setCode', response.status)
             return false
           }
 
           this.notes = response.data.data
-          
+
           this.currentPage = response.data.current_page
           this.lastPage = response.data.last_page
         }
@@ -179,8 +179,8 @@ Vue.config.productionTip = false
       async guestlogin () {
         // authストアのloginアクションを呼び出す
         this.guestloginForm = {
-            email: 'guest-user@laravelfeeling.com',
-            password: 'guestuser-laravel'
+            email: 'guest@laravel.com',
+            password: 'feelingnote-guestuser'
         }
         await this.$store.dispatch('auth/login', this.guestloginForm)
         if (this.apiStatus) {
@@ -194,7 +194,7 @@ Vue.config.productionTip = false
 
           // トップページに移動する
           this.$router.push('/').catch(err => {})
-          
+
         }
       },
       viewDay (alldays) {
@@ -227,13 +227,13 @@ Vue.config.productionTip = false
         } else {
           open()
         }
-        
+
         nativeEvent.stopPropagation()
       },
       async updateRange ({ start, end }) {
         if(this.$store.getters['auth/check']){
           const response = await axios.get(`api/notes/?page=${this.page}`)
-            
+
             if (response.status !== OK) {
               this.$store.commit('error/setCode', response.status)
               return false
@@ -243,7 +243,7 @@ Vue.config.productionTip = false
 
           const events = []
           const alldays = []
-          
+
           const min = new Date(`${start.date}T00:00:00`)
           const max = new Date(`${end.date}T23:59:59`)
           const days = (max.getTime() - min.getTime()) / 86400000
@@ -276,7 +276,7 @@ Vue.config.productionTip = false
 </script>
 
 <style>
-/*vuetity_CSS*/ 
+/*vuetity_CSS*/
 [role=button], [type=button], [type=reset], [type=submit], button {
   cursor: pointer;
   color: #FFF;
