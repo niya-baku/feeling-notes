@@ -95,7 +95,11 @@ const routes = [
     component: Changepassword,
     beforeEnter (to, from, next) {
       if (store.getters['auth/check']) {
-        next()
+        if(store.getters['auth/username'] != store.getters['auth/usercheck']){
+          next()
+        }else{
+          next('/')
+        }
       } else {
         next('/login')
       }

@@ -5,12 +5,14 @@ const state = {
     apiStatus: null,
     loginErrorMessages: null,
     registerErrorMessages: null,
-    ChangeErrorMessages: null
+    ChangeErrorMessages: null,
+    guestuser: 'ゲストユーザー'
   }
 
   const getters = {
     check: state => !! state.user,
     username: state => state.user ? state.user.name : '',
+    usercheck: state => state.guestuser
   }
 
   const mutations = {

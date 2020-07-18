@@ -15,6 +15,5 @@ return [
 
     'failed' => 'ログインできません。入力した情報に誤りがないかご確認ください。',
     'throttle' => '何度もログインに失敗したため、:seconds秒後に再度お試しください。',
-    "The current password is incorrect."=> "現在のパスワードが違います。",
 
 ];

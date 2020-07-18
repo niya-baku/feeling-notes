@@ -16,9 +16,10 @@
     <a class="navbar__chart" href="/columns">
       <span><i class="icon ion-md-paper"></i> Column</span>
     </a>
-    <a class="navbar__chart" href="/changepassword">
+    <a class="navbar__chart" href="/changepassword" v-if="username != this.guestname">
       <span><i class="icon ion-md-key"></i> changepassword</span>
     </a>
+    <span v-else><i class="icon ion-md-key"></i> これは使用できません。</span>
   </slide>
   <div id="page-wrap"></div>
     <div class="navbar__menu">
@@ -60,7 +61,8 @@ export default {
       showForm: false,
       showForm_column: false,
       isnotes: true,
-      iscolumns: false
+      iscolumns: false,
+      guestname: 'ゲストユーザー'
     }
   },
   methods: {
