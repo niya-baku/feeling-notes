@@ -16,11 +16,14 @@
     <a class="navbar__chart" href="/columns">
       <span><i class="icon ion-md-paper"></i> Column</span>
     </a>
+    <a class="navbar__chart" href="/changepassword">
+      <span><i class="icon ion-md-key"></i> changepassword</span>
+    </a>
   </slide>
   <div id="page-wrap"></div>
     <div class="navbar__menu">
       <span v-if="isLogin" class="navbar__item">
-            {{ username }}
+            {{ username | capitalize(10) }}
       </span>
       <div v-if="isLogin && ispath == '/columns' || ispath == `/columns/${this.$route.params.id}` " class="navbar__item">
         <button class="button_column" v-click-outside="column_colse_toggle" @click="column_toggle">
@@ -102,6 +105,16 @@ export default {
         this.isnotes =  false
         return this.iscolumns
       }
+    }
+  },
+  filters: {
+    capitalize: function (value, length, omission) {
+      var length = length ? parseInt(length, 10) : 10;
+      var ommision = omission ? omission.toString() : '...';
+      if (value == null || value.length <= length) {
+        return value;
+      }
+       return value.substring(0, length) + ommision;
     }
   }
 }

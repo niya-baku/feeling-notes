@@ -23,14 +23,14 @@
       </form>
        <p  class="chart_p" v-if="show_chart">午前・午後・夜の体調を5段階で評価しています。</p>
       <div class="display" v-if="show_chart">
-        <div v-for="(icon,icon_id) in icons_image" class="image-chart">
+        <div v-for="(icon,icon_id) in icons_image" :key="icon_id" class="image-chart">
           <label>
             {{icon_id}}
             <img :src="icon">
           </label>
         </div>
       </div>
-      <Chart 
+      <Chart
         v-if="show_chart"
         :chart-data="chartData"
         :options="options"
@@ -76,7 +76,7 @@ export default {
             month: this.month,
         };
         const response = await axios.post('api/chart', params)
-  
+
         if (response.status === UNPROCESSABLE_ENTITY) {
           this.errors = response.data.errors
           return false
@@ -106,7 +106,7 @@ export default {
             this.$set(this.chartrecord, i, this.charts[i].record )
             //this.data.datasets[0].data[i] = this.charts[i].am_image + this.charts[i].pm_image + this.charts[i].night_image
             this.$set(this.chartsum, i, this.charts[i].am_image + this.charts[i].pm_image + this.charts[i].night_image)
-            //console.log(this.data.datasets[0].data) 
+            //console.log(this.data.datasets[0].data)
         }
         this.chartData = {
           labels: this.chartrecord,
@@ -142,7 +142,7 @@ export default {
             }
         },
         this.show_chart = true
-        
+
     }
   }
 }
