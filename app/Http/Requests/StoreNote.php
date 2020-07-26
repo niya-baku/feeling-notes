@@ -31,7 +31,6 @@ class StoreNote extends FormRequest
         return [
             'record' => [
                 'required',
-                //Rule::unique('notes')->where('user_id',$user_id)
                 Rule::unique('notes', 'user_id')
                     ->ignore($user_id, 'user_id')
             ],
