@@ -28,7 +28,7 @@
         <div id="app">
             <h2 class="border">午前中の体調は？</h2>
             <div class="display">
-            
+
             <div
                 v-for="(icon,am_id) in noteform.icons_1"
                 class="image-radio-button"
@@ -39,11 +39,11 @@
                 </label>
             </div>
             </div>
-            
+
 
             <h2 class="border">午後の体調は？</h2>
             <div class="display">
-            
+
             <div
                 v-for="(icon,pm_id) in noteform.icons_2"
                 class="image-radio-button"
@@ -54,11 +54,11 @@
                 </label>
             </div>
             </div>
-            
+
 
             <h2 class="border">夜の体調は？</h2>
             <div class="display">
-          
+
             <div
                 v-for="(icon,night_id) in noteform.icons_3"
                 class="image-radio-button"
@@ -69,24 +69,10 @@
                 </label>
             </div>
             </div>
-            
-        
+
+
         <h2 class="border">一言ありますか？</h2>
         <textarea name="body" class="text_form" v-model="noteform.body" cols="30" rows="10" placeholder="(例)早く起きれた、投稿できたとか何か褒めてみよう！"></textarea>
-
-            <!--<div>
-                <h2>残しておきたい画像があればこちら</h2>
-                <input type="file" name="image" @change="onFileChange">
-            </div>
-            <div v-if="images">
-                <ol>
-                    <li v-for="(image, index) in images">
-                        <h2>{{image.name}}</h2>
-                        <img :src="image.thumnail" />
-                        <button @click="images.splice(index, 1)">Remove image</button>
-                    </li>
-                </ol>
-            </div>-->
             <div class="submit_button">
                 <button type="submit" class="raised" >投稿する</button>
             </div>
@@ -182,15 +168,15 @@ export default {
         },
         async note () {
             await this.$store.dispatch('create/note', this.noteform)
-            
+
             if (this.apiStatus) {
 
                 // メッセージ登録
                 this.$store.commit('message/setContent', {
-                    content: '写真が投稿されました！',
+                    content: 'ノートが投稿されました！',
                     timeout: 3000
                 })
-                
+
                 this.reset()
                 this.$emit('input', false)
                 this.$router.push(`/notes/${this.noteStatus.id}`)
@@ -199,7 +185,7 @@ export default {
                 scrollTop.forEach(function(item) {
                     item.scrollTop = 0
                 });
-                
+
             }else{
                 var divElement = document.getElementsByClassName( "note-form" )
                 var scrollTop = Array.prototype.slice.call(divElement)
@@ -208,7 +194,7 @@ export default {
                 });
                 console.log('send NG')
             }
-            
+
         }
     }
 }

@@ -3,7 +3,51 @@ jobs:
   build:
     docker:
       - image: circleci/php:7.3-node-browsers
+      - image: circleci/mysql:5.7
+        environment:
+          MYSQL_DATABASE: feeling-notes
+          MYSQL_USER: homestead
+          MYSQL_PASSWORD: secret
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
+    environment:
+        APP_ENV: testing
+        DB_CONNECTION: mysql
+        DB_HOST: 127.0.0.1
+        DB_PORT: 3306
+        DB_DATABASE: feeling-notes
+        DB_USERNAME: homestead
+        DB_PASSWORD: secret
     steps:
-      - run: echo "ようこそ circleciの世界へ！！"
+      - checkout
+      - restore_cache:
+          key: composer-v1-{{ checksum "composer.lock" }}
+      - run: composer install -n --prefer-dist
 
+      - save_cache:
+          key: composer-v1-{{ checksum "composer.lock" }}
+          paths:
+            - vendor
+      - restore_cache:
+          key: npm-v1-{{ checksum "package-lock.json" }}
+      - run:
+          name: npm ci
+          command: |
+            if [ ! -d node_modules ]; then
+              npm ci
+            fi
+      - save_cache:
+          key: npm-v1-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+      - run: npm run dev
+      - run:
+          name: get ready for mysql
+          command: |
+            sudo apt-get update
+            sudo apt-get install libpq-dev
+            sudo docker-php-ext-install pdo_mysql
+            dockerize -wait tcp://localhost:3306 -timeout 1m
+      - run:
+          name: php test
+          command: vendor/bin/phpunit
 
