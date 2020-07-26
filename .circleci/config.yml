@@ -5,7 +5,7 @@ jobs:
       - image: circleci/php:7.3-node-browsers
       - image: circleci/mysql:5.7
         environment:
-          MYSQL_DATABASE: laravel-ci
+          MYSQL_DATABASE: feeling-notes
           MYSQL_USER: homestead
           MYSQL_PASSWORD: secret
           MYSQL_ALLOW_EMPTY_PASSWORD: true
@@ -14,7 +14,7 @@ jobs:
         DB_CONNECTION: mysql
         DB_HOST: 127.0.0.1
         DB_PORT: 3306
-        DB_DATABASE: laravel-ci
+        DB_DATABASE: feeling-notes
         DB_USERNAME: homestead
         DB_PASSWORD: secret
     steps:
