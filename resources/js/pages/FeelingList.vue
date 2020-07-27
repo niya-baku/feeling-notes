@@ -76,7 +76,7 @@
     <img src="images/Green_Heart.jpg" alt="image">
     <div class="top_sentence">
       <h1>Feeling-notesとは？</h1>
-        <p>あなたのある日の<span style="font-weight: bold">「起床時間」「就寝時間」</span>朝から寝るまでの間の<span style="font-weight: bold">「調子の変化」</span>を記録することができるアプリです。</p>
+        <p>あなたのある日の<span style="font-weight: bold">「起床時間」「就寝時間」</span>起床から寝るまでの間の<span style="font-weight: bold">「調子の変化」</span>を記録し管理することができるアプリです。</p>
         <p><span style="font-weight: bold">「正しい生活リズム」</span>と<span style="font-weight: bold">「調子の波を知ること」</span>は心身の健康に繋がります。</p>
         <p>毎日の<span style="font-weight: bold">「Feeling」</span>を知りましょう。</p>
         <RouterLink class="button_top button_top--link" to="/login">
@@ -186,7 +186,7 @@ Vue.config.productionTip = false
         if (this.apiStatus) {
           // メッセージ登録
           this.$store.commit('message/setContent', {
-              content: 'ゲストユーザーさん、ようこそ！！',
+              content: 'ゲストユーザーさん、ようこそFeeling-notesの世界へ！！',
               timeout: 5000
           })
           const response = await axios.get(`api/notes/?page=${this.page}`)
@@ -254,7 +254,7 @@ Vue.config.productionTip = false
             const date = new Date(this.notes[i].record)
 
             events.push({
-              name: "Oneday_note",
+              name: "Oneday-note",
               start: first,
               color: this.colors[this.rnd(0, this.colors.length - 1)]
             })
