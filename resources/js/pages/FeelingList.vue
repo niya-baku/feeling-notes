@@ -254,7 +254,7 @@ Vue.config.productionTip = false
             const date = new Date(this.notes[i].record)
 
             events.push({
-              name: "Oneday-note",
+              name: "Oneday_note",
               start: first,
               color: this.colors[this.rnd(0, this.colors.length - 1)]
             })
