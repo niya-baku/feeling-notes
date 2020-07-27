@@ -248,14 +248,13 @@ Vue.config.productionTip = false
           const max = new Date(`${end.date}T23:59:59`)
           const days = (max.getTime() - min.getTime()) / 86400000
           const eventCount = this.notes.length
-          //console.log(eventCount)
 
           for (let i = 0; i < eventCount; i++) {
             const first = new Date(this.notes[i].record)
             const date = new Date(this.notes[i].record)
-            //console.log(this.notes[i])
+
             events.push({
-              name: "Oneday_note",
+              name: "Oneday-note",
               start: first,
               color: this.colors[this.rnd(0, this.colors.length - 1)]
             })
