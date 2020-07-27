@@ -174,7 +174,7 @@ export default {
                 // メッセージ登録
                 this.$store.commit('message/setContent', {
                     content: 'ノートが投稿されました！',
-                    timeout: 3000
+                    timeout: 5000
                 })
 
                 this.reset()
