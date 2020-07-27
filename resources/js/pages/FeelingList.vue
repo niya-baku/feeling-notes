@@ -187,7 +187,7 @@ Vue.config.productionTip = false
           // メッセージ登録
           this.$store.commit('message/setContent', {
               content: 'ゲストユーザーさん、ようこそ！！',
-              timeout: 4000
+              timeout: 5000
           })
           const response = await axios.get(`api/notes/?page=${this.page}`)
           this.notes = response.data.data
@@ -255,7 +255,7 @@ Vue.config.productionTip = false
             const date = new Date(this.notes[i].record)
             //console.log(this.notes[i])
             events.push({
-              name: "Oneday-note",
+              name: "Oneday_note",
               start: first,
               color: this.colors[this.rnd(0, this.colors.length - 1)]
             })
