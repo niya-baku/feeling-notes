@@ -63,7 +63,11 @@ jobs:
               composer install -n --no-dev --prefer-dist && \
               php artisan migrate --force && \
               php artisan config:cache"
-
+      - run:
+          name: npm install
+          command: |
+            npm install && \
+            npm run prod && \
 workflows:
   version: 2
   build_deploy:
