@@ -64,11 +64,11 @@ jobs:
               php artisan migrate --force && \
               php artisan config:cache"
       - run:
-          name: npm install
+          name: npm
           command: |
-          ssh -o StrictHostKeyChecking=no -t ec2-user@${HOST_NAME} "cd /var/www/feeling-notes && \
-            npm install && \
-            npm run prod"
+            ssh -o StrictHostKeyChecking=no -t ec2-user@${HOST_NAME} "cd /var/www/feeling-notes && \
+              npm install && \
+              npm run prod"
 workflows:
   version: 2
   build_deploy:
