@@ -67,6 +67,7 @@ jobs:
           name: npm
           command: |
             ssh -o StrictHostKeyChecking=no -t ec2-user@${HOST_NAME} "cd /var/www/feeling-notes && \
+              apt-get install -y npm && \
               npm install && \
               npm run prod"
 workflows:
