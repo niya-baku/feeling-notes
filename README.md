@@ -42,7 +42,8 @@
 </ul>
 
 ## 使用技術(本番環境)
-<h2>フロントエンド</h2>
+
+### フロントエンド
 <ul>
     <li>HTML/CSS・Sass</li>
     <li>Vue.js 2.6.11</li>
@@ -62,12 +63,14 @@
     <li>vue2-perfect-scrollbar ^1.5.0</li>
     <li>yargs-parser ^13.1.2</li>
 </ul>
-<h2>バックエンド</h2>
+
+### バックエンド
 <ul>
     <li>PHP 7.3.19</li>
     <li>Laravel Framework  6.18.13</li>
 </ul>
-<h2>インフラストラクチャー</h2>
+
+### インフラストラクチャー
 <ul>
     <li>Mysql 5.7</li>
     <li>nginx 1.18.0</li>
@@ -75,14 +78,16 @@
     <li>docker-compose 1.24.1</li>
     <li>CircleCI</li>
 </ul>
-<h2>AWS</h2>
+
+### AWS
 <ul>
     <li>AWS EC2</li>
     <li>AWS RDS</li>
     <li>AWS Route53</li>
     <li>VPC</li>
 </ul>
-<h2>その他</h2>
+
+### その他
 <ul>
     <li>SSL証明書 Let’s Encrypt</li>
     <li>git 2.17.1</li>

@@ -59,6 +59,9 @@ jobs:
           name: deploy
           command: |
             ssh -o StrictHostKeyChecking=no -t ec2-user@${HOST_NAME} "cd /var/www/feeling-notes && \
+              rm  public/css/app.css && \
+              rm public/js/app.js && \
+              rm public/mix-manifest.json && \
               git pull origin master && \
               composer install -n --no-dev --prefer-dist && \
               php artisan migrate --force && \
