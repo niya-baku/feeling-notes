@@ -13,7 +13,7 @@
             </ul>
         </div>
 
-        <div class="display-item" v-model="noteform.id">
+        <div class="display-item">
             <h3 class="note_title"><span class="required">必須</span>記録日</h3>
             <input type="date" name="record" class="width-record" v-model="noteform.record">
         </div>
@@ -32,7 +32,9 @@
             <div
                 v-for="(icon,am_id) in noteform.icons_1"
                 class="image-radio-button"
-                :style="{background: (am_id == noteform.iconId_1) ? '#ddd' : ''}">
+                :style="{background: (am_id == noteform.iconId_1) ? '#ddd' : ''}"
+                :key="am_id"
+            >
                 <label>
                     <input type="radio" name="iconId_1" :value="am_id" v-model="noteform.iconId_1"><br>
                     <img :src="icon">
@@ -47,7 +49,9 @@
             <div
                 v-for="(icon,pm_id) in noteform.icons_2"
                 class="image-radio-button"
-                :style="{background: (pm_id == noteform.iconId_2) ? '#ddd' : ''}">
+                :style="{background: (pm_id == noteform.iconId_2) ? '#ddd' : ''}"
+                :key="pm_id"
+            >
                 <label>
                     <input type="radio" name="iconId_2" :value="pm_id" v-model="noteform.iconId_2"><br>
                     <img :src="icon">
@@ -62,7 +66,9 @@
             <div
                 v-for="(icon,night_id) in noteform.icons_3"
                 class="image-radio-button"
-                :style="{background: (night_id == noteform.iconId_3) ? '#ddd' : ''}">
+                :style="{background: (night_id == noteform.iconId_3) ? '#ddd' : ''}"
+                :key="night_id"
+            >
                 <label>
                     <input type="radio" name="iconId_3" :value="night_id" v-model="noteform.iconId_3"><br>
                     <img :src="icon">
