@@ -6,30 +6,30 @@
       <h3 class="note-item">就寝時間 {{ bed_time() }}</h3>
       <div class="icon_display">
         <div class="icon_side">
-          <p class="icon_Vertical" >午前の気分</p>  
-          <div v-for="(am_icon,id) in am_icons">
+          <p class="icon_Vertical" >午前の気分</p>
+          <div v-for="(am_icon,id) in am_icons" :key="id">
             <div v-if="id == show_am_id" class="image-radio-button">
-              <img :src="am_icon">    
+              <img :src="am_icon">
             </div>
           </div>
         </div>
         <div class="icon_side">
           <p class="icon_Vertical">午後の気分</p>
-          <div v-for="(pm_icon,id) in pm_icons">
+          <div v-for="(pm_icon,id) in pm_icons" :key="id">
             <div v-if="id == show_pm_id" class="image-radio-button">
-              <img :src="pm_icon">    
+              <img :src="pm_icon">
             </div>
           </div>
         </div>
         <div class="icon_side">
-          <p class="icon_Vertical">夜の気分</p>  
-          <div v-for="(night_icon,id) in night_icons">
+          <p class="icon_Vertical">夜の気分</p>
+          <div v-for="(night_icon,id) in night_icons" :key="id">
             <div v-if="id == show_night_id" class="image-radio-button">
-              <img :src="night_icon">    
+              <img :src="night_icon">
             </div>
           </div>
         </div>
-      </div>     
+      </div>
     </figure>
     <RouterLink
       class="note__overlay"
@@ -50,7 +50,7 @@ export default {
   },
   data(){
     return{
-      show: false, 
+      show: false,
       am_icon_id: 1,
       pm_icon_id: 1,
       night_icon_id: 1,
@@ -79,7 +79,7 @@ export default {
         moment.updateLocale('ja', {
           weekdays: ["日曜日","月曜日","火曜日","水曜日","木曜日","金曜日","土曜日"],
           weekdaysShort: ["日","月","火","水","木","金","土"],
-        }); 
+        });
         return moment(this.item.record).format('YYYY年MM月DD日(ddd)');
       },
       wake_uptime: function() {
@@ -105,7 +105,7 @@ export default {
     },
     sum: function(){
       return this.item.am_image + this.item.pm_image + this.item.night_image
-    }     
+    }
   },
   computed: {
     show_am_id() {

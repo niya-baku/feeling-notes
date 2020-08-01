@@ -41,21 +41,14 @@
     <li>レスポンシブ対応</li>
 </ul>
 
-## 使用ツール(本番環境)
+## 使用技術(本番環境)
+<h2>フロントエンド</h2>
 <ul>
-    <li>PHP 7.4</li>
-    <li>Laravel Framework  6.18.13</li>
-    <li>MySQL 5.7</li>
-    <li>AWS EC2</li>
-    <li>AWS RDS</li>
-    <li>AWS Route53</li>
-    <li>SSL証明書 Let’s Encrypt</li>
-    <li>node.js v12.16.2</li>
-    <li>npm 6.14.5</li>
+    <li>HTML/CSS・Sass</li>
     <li>Vue.js 2.6.11</li>
+    <li>node.js v12.16.2</li>
     <li>vue-router 3.1.6</li>
     <li>vuex 3.3.0</li>
-    <li>git 2.17.1</li>
     <li>chart.js ^2.9.3</li>
     <li>moment ^2.26.0</li>
     <li>vue-chartjs ^3.5.0</li>
@@ -69,8 +62,33 @@
     <li>vue2-perfect-scrollbar ^1.5.0</li>
     <li>yargs-parser ^13.1.2</li>
 </ul>
+<h2>バックエンド</h2>
+<ul>
+    <li>PHP 7.3.19</li>
+    <li>Laravel Framework  6.18.13</li>
+</ul>
+<h2>インフラストラクチャー</h2>
+<ul>
+    <li>Mysql 5.7</li>
+    <li>nginx 1.18.0</li>
+    <li>Docker 19.03.1</li>
+    <li>docker-compose 1.24.1</li>
+    <li>CircleCI</li>
+</ul>
+<h2>AWS</h2>
+<ul>
+    <li>AWS EC2</li>
+    <li>AWS RDS</li>
+    <li>AWS Route53</li>
+    <li>VPC</li>
+</ul>
+<h2>その他</h2>
+<ul>
+    <li>SSL証明書 Let’s Encrypt</li>
+    <li>git 2.17.1</li>
+</ul>
 
-## 使用ツール(検証環境)
+## 使用技術(検証環境)
 <ul>
     <li>VirtualBox</li>
     <li>Vagrant</li>

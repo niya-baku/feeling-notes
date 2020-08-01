@@ -16,15 +16,17 @@
         </div>
           <h3>今日の一言</h3>
           <textarea name="body" class="text_edit" v-model="item.body"></textarea>
-        
-      
+
+
 
             <h3 class="border">午前中の体調は？</h3>
-            <div class="display">          
+            <div class="display">
             <div
                 v-for="(icon,am_id) in am_icons"
                 class="image-radio-button-small"
-                :style="{background: (am_id == item.am_image) ? '#ddd' : ''}">
+                :style="{background: (am_id == item.am_image) ? '#ddd' : ''}"
+                :key="am_id"
+            >
                 <label>
                     <input type="radio" name="am_icons" :value="am_id"  v-model="item.am_image"><br>
                     <img :src="icon"  class="small-icon" >
@@ -32,11 +34,13 @@
             </div>
             </div>
             <h3 class="border">午後の体調は？</h3>
-            <div class="display">            
+            <div class="display">
             <div
                 v-for="(icon,pm_id) in pm_icons"
                 class="image-radio-button-small"
-                :style="{background: (pm_id == item.pm_image) ? '#ddd' : ''}">
+                :style="{background: (pm_id == item.pm_image) ? '#ddd' : ''}"
+                :key="pm_id"
+            >
                 <label>
                     <input type="radio" name="pm_icons" :value="pm_id" v-model="item.pm_image"><br>
                     <img :src="icon" class="small-icon">
@@ -44,11 +48,13 @@
             </div>
             </div>
             <h3 class="border">夜の体調は？</h3>
-            <div class="display">    
+            <div class="display">
             <div
                 v-for="(icon,night_id) in night_icons"
                 class="image-radio-button-small"
-                :style="{background: (night_id == item.night_image) ? '#ddd' : ''}">
+                :style="{background: (night_id == item.night_image) ? '#ddd' : ''}"
+                :key="night_id"
+            >
                 <label>
                     <input type="radio" name="night_icons" :value="night_id" v-model="item.night_image"><br>
                     <img :src="icon" class="small-icon">
@@ -119,7 +125,7 @@ export default {
     },
     async update () {
       await this.$store.dispatch('create/update', this.item)
-      
+
       if (this.apiStatus) {
           this.$store.commit('message/setEditcontent', {
             content: '情報が更新されました！',
