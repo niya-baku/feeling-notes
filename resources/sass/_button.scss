@@ -241,7 +241,7 @@
 
 .cancel{
   display: inline-block;
-  background-color: #f50000;/*背景色*/ 
+  background-color: #f50000;/*背景色*/
   color: #FFF;/*文字色*/
   font-size: 1em;/*文字サイズ*/
   line-height: 1;
@@ -308,7 +308,7 @@
   outline: none;
   padding: .5rem .75rem;
   text-decoration: none;
-  
+
   transition:
     border-color 300ms ease-in-out,
     color 300ms ease-in-out;
@@ -330,6 +330,9 @@
 
 .button_top {
   border: 3px solid #02bcf5;
+  border-color: #0196c4;
+  background-color: #02bcf5;
+
   border-radius: .25rem;
   cursor: pointer;
   display: inline-block;
@@ -346,13 +349,11 @@
     color 300ms ease-in-out;
 
   &:hover {
-    border-color: #0196c4;
-    background-color: #02bcf5;
-    color: inherit;
+    color: black;
   }
 
 
-  
+
 
 }
 
@@ -412,59 +413,59 @@
     transition:
       border-color 300ms ease-in-out,
       color 300ms ease-in-out;
-  
+
     &:hover {
       border-color: $grey-1;
       color: inherit;
     }
-  
+
     .icon {
       margin-right: .5em;
     }
-  
+
     &--link {
       border: 0;
     }
-  
+
     &--inverse {
       background: $text-color;
       border-color: $text-color;
       color: #fff;
       transition: opacity 300ms ease-in-out;
-  
+
       &:hover {
         background: $text-color;
         color: #fff;
         opacity: .8;
       }
     }
-  
+
     &--fluid {
       width: 100%;
     }
-  
+
     &--like {
       .icon {
         color: $red;
       }
     }
-  
+
     &--liked {
       background: $red;
       border-color: $red;
       color: #fff;
-  
+
       .icon {
         color: #fff;
       }
-  
+
       &:hover {
         border-color: $red;
         color: #fff;
         opacity: .8;
       }
     }
-  
+
   }
 
 }

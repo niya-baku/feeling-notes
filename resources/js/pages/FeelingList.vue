@@ -79,8 +79,8 @@
         <p>あなたのある日の<span style="font-weight: bold">「起床時間」「就寝時間」</span>起床から寝るまでの間の<span style="font-weight: bold">「調子の変化」</span>を記録し管理することができるアプリです。</p>
         <p><span style="font-weight: bold">「正しい生活リズム」</span>と<span style="font-weight: bold">「調子の波を知ること」</span>は心身の健康に繋がります。</p>
         <p>毎日の<span style="font-weight: bold">「Feeling」</span>を知りましょう。</p>
-        <RouterLink class="button_top button_top--link" to="/login">
-            Login / Register
+        <RouterLink class="button_top" to="/login">
+            ログイン / ユーザー登録
         </RouterLink>
         <form class="form" @submit.prevent="guestlogin">
           <div class="guest_login">

@@ -1111,6 +1111,8 @@ img {
 
 .button_top {
   border: 3px solid #02bcf5;
+  border-color: #0196c4;
+  background-color: #02bcf5;
   border-radius: 0.25rem;
   cursor: pointer;
   display: inline-block;
@@ -1126,9 +1128,7 @@ img {
 }
 
 .button_top:hover {
-  border-color: #0196c4;
-  background-color: #02bcf5;
-  color: inherit;
+  color: black;
 }
 
 .guest_login {
