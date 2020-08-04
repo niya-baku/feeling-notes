@@ -65,6 +65,8 @@ Route::put('/notes/{id}', 'NoteController@update')->name('note.update');
 //ノート削除
 Route::delete('/notes/{id}', 'NoteController@delete')->name('note.delete');
 
+//デフォルトチャート表示
+Route::get('/chart', 'NoteController@defaultchart')->name('defaultchart');
 //チャート表示
 Route::post('/chart', 'NoteController@chart')->name('chart');
 

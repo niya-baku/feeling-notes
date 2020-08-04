@@ -6,7 +6,7 @@ use App\Http\Requests\StoreNote;
 use App\Http\Requests\StoreChart;
 use Illuminate\Support\Facades\Auth;
 use App\Note;
-
+use Carbon\Carbon;
 
 
 class NoteController extends Controller
@@ -92,6 +92,23 @@ class NoteController extends Controller
                 ->whereYear('record', $year)
                 ->whereMonth('record', $month)
                 ->orderBy('record', 'ASC')->get(['record','am_image','pm_image','night_image']);
+
+        return $charts;
+    }
+
+    public function defaultchart(){
+        $datetime = new Carbon();
+        $default_year = $datetime->year;
+        $default_month = $datetime->month;
+
+        $user_id = Auth::id();
+
+        //年月検索用
+        $charts = Note::where('user_id',$user_id)
+                ->whereYear('record', $default_year)
+                ->whereMonth('record', $default_month)
+                ->orderBy('record', 'ASC')->get(['record','am_image','pm_image','night_image']);
+
         return $charts;
     }
 }

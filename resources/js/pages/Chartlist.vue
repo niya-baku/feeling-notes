@@ -57,7 +57,7 @@ export default {
       options: null,
       chartrecord: [],
       chartsum: [],
-      show_chart: false,
+      show_chart: true,
       errors: null,
       icons_image: {
         1: '/images/absolute_upset_nimi.png',
@@ -67,6 +67,79 @@ export default {
         5: '/images/nice_smile_nimi.png'
       }
     }
+  },
+  async mounted() {
+        var params = {
+            year: this.year,
+            month: this.month,
+        };
+        const response = await axios.get('api/chart', params)
+        console.log(response)
+        if (response.status === UNPROCESSABLE_ENTITY) {
+          this.errors = response.data.errors
+          return false
+        }
+
+
+        if (response.status !== OK) {
+          this.$store.commit('error/setCode', response.status)
+          return false
+        }else{
+          this.errors = null
+        }
+
+        if(this.charts.length > 0) {
+            this.chartData = null
+            this.charts.splice(0, this.charts.length)
+            this.chartsum.splice(0, this.chartsum.length)
+            this.chartrecord.splice(0, this.chartrecord.length)
+            this.charts = response.data
+
+          }else{
+            this.charts = response.data
+          }
+
+        for(let i = 0; i < this.charts.length; i++){
+            //this.data.labels[i] = this.charts[i].record
+            this.$set(this.chartrecord, i, this.charts[i].record )
+            //this.data.datasets[0].data[i] = this.charts[i].am_image + this.charts[i].pm_image + this.charts[i].night_image
+            this.$set(this.chartsum, i, this.charts[i].am_image + this.charts[i].pm_image + this.charts[i].night_image)
+            //console.log(this.data.datasets[0].data)
+        }
+        this.chartData = {
+          labels: this.chartrecord,
+            datasets: [
+              {
+                label: '調子の波',
+                data: this.chartsum,
+                borderColor: '#66CCFF',
+                fill: false,
+                type: 'line',
+                lineTension: 0.3,
+              }
+            ]
+        },
+        this.options = {
+          responsive: true,
+          maintainAspectRatio: false,
+            scales: {
+              xAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString: 'day'
+                }
+              }],
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                  stepSize: 3,
+                  min: 3,
+                  max: 15
+                }
+              }]
+            }
+        }
+        //this.show_chart = true
   },
   methods: {
     async onSubmit() {
@@ -140,9 +213,8 @@ export default {
                 }
               }]
             }
-        },
-        this.show_chart = true
-
+        }
+        //this.show_chart = true
     }
   }
 }
