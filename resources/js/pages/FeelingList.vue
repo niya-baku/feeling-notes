@@ -100,7 +100,6 @@ import Calendar from 'v-calendar/lib/components/calendar.umd'
 
 import { OK } from '../util'
 import Note from '../components/Note.vue'
-import { mapState } from 'vuex'
 import moment from 'moment';
 
 Vue.config.productionTip = false
@@ -141,11 +140,6 @@ Vue.config.productionTip = false
         }
     },
     computed: {
-      ...mapState({
-        apiStatus: state => state.auth.apiStatus,
-        loginErrors: state => state.auth.loginErrorMessages,
-        registerErrors: state => state.auth.registerErrorMessages
-      }),
       isLogin () {
         return this.$store.getters['auth/check']
       },
@@ -161,8 +155,6 @@ Vue.config.productionTip = false
     methods: {
       async fetchNotes() {
         if(this.$store.getters['auth/check']){
-
-          //ローカル環境用
           const response = await axios.get(`api/notes/?page=${this.page}`)
 
           if (response.status !== OK) {

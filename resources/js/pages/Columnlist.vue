@@ -1,7 +1,7 @@
 <template>
   <div class="photo-list">
     <div class="grid_column" media="(min-width: 320px) and (max-width: 639px)">
-      <Column 
+      <Column
         class="grid_column__item"
         v-for="column in columns"
         :key="column.id"
@@ -17,7 +17,7 @@
 import { OK } from '../util'
 import Column from '../components/Column.vue'
 import ColumnPagination from '../components/ColumnPagination.vue'
-import { mapState } from 'vuex'
+
 
 export default {
   components: {
@@ -32,11 +32,6 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      apiStatus: state => state.auth.apiStatus,
-      loginErrors: state => state.auth.loginErrorMessages,
-      registerErrors: state => state.auth.registerErrorMessages
-    }),
     isLogin () {
       return this.$store.getters['auth/check']
     }
@@ -54,7 +49,7 @@ export default {
 
           //ローカル環境用
           const response = await axios.get(`api/columns/?page=${this.page}`)
-          
+
           if (response.status !== OK) {
             this.$store.commit('error/setCode', response.status)
             return false
