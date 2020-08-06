@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
+use App\Note;
 
 class StoreNote extends FormRequest
 {
@@ -26,16 +27,14 @@ class StoreNote extends FormRequest
      */
     public function rules()
     {
-         // ログインしているユーザーIDを取得
-        $user_id = Auth::id();
+        //$record = Note::where('user_id',$user_id)->where('record', $this->record)->exists();
         return [
             'record' => [
                 'required',
-                'unique:notes',
-                //Rule::unique('notes')->where('user_id',$user_id)
-                Rule::unique('notes', 'user_id')
-                    ->ignore($user_id, 'user_id'),
-
+                Rule::unique('notes')->where(function ($query) {
+                    $user_id = Auth::id();
+                    return $query->where('user_id',$user_id)->where('record', $this->record);
+                })
             ],
             'wake_uptime' => 'required',
             'bedtime' => 'required',
