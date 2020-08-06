@@ -7,7 +7,7 @@ use App\Http\Requests\StoreChart;
 use Illuminate\Support\Facades\Auth;
 use App\Note;
 use Carbon\Carbon;
-
+use phpDocumentor\Reflection\Types\Null_;
 
 class NoteController extends Controller
 {
@@ -22,11 +22,12 @@ class NoteController extends Controller
      */
     public function index()
     {
+
         $user_id = Auth::id();
         //$notes = Note::with(['user'])->orderBy(Note::CREATED_AT, 'desc')->paginate();
         $len = Note::where('user_id',$user_id)->orderBy('record', 'asc')->count();
-
         $notes = Note::where('user_id',$user_id)->orderBy('record', 'asc')->paginate($len);
+
         return $notes;
     }
 
@@ -38,9 +39,7 @@ class NoteController extends Controller
     }
 
     public function create(StoreNote $request){
-
         $note = new Note();
-
         $note->record = $request->record; //日付取得
         $note->wake_uptime = $request->wake_uptime; //起床時間の取得
         $note->bedtime = $request->bedtime; //就寝時間の取得
@@ -48,12 +47,11 @@ class NoteController extends Controller
         $note->pm_image = $request->iconId_2; //午後の調子値
         $note->night_image = $request->iconId_3; //夜の調子値
         $note->body = $request->body; //テキスト取得
-        //$note->bedtime = $request->bedtime; 画像データ取得
         $note->user_id = $request->user()->id;
 
         $note->save();
-
         return response($note, 201);
+
     }
 
     public function update(Request $request, $id){
