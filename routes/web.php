@@ -20,3 +20,4 @@ Route::get('/{any?}', function () {
 //Route::get('/', 'NoteController@index')->name('note.index');
 
 
+
