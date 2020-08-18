@@ -40,4 +40,25 @@ class ColumnSubmitApiTest extends TestCase
         $response->assertStatus(201);
         $column = Column::first();
     }
+
+        /**
+     * @test
+     */
+    public function should_コラムバリデーションエラー()
+    {
+
+
+        $response = $this->actingAs($this->user)
+            ->json('POST', route('column.create'), [
+                'situation' => '',
+                'feeling' => '',
+                'think' => '',
+                'another_think' => '別の考え',
+                'another_feeling' => '別の気分',
+                'another_situation' => '対策'
+        ]);
+
+        $response->assertStatus(422);
+        $column = Column::first();
+    }
 }
